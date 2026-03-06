@@ -5,11 +5,13 @@ import AbilitiesSection from "@/components/sections/AbilitiesSection";
 import CaseFilesSection from "@/components/sections/CaseFilesSection";
 import IntelSection from "@/components/sections/IntelSection";
 import SocialSection from "@/components/sections/SocialSection";
+import SectionDialogues from "@/components/vn/SectionDialogues";
 
 export default function Home() {
   return (
     <Shell>
       <HeroSection />
+      <SectionDialogues />
       <AboutSection />
       <AbilitiesSection />
       <CaseFilesSection />
