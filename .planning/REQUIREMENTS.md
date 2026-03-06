@@ -16,10 +16,10 @@
 
 ### Navigation
 
-- [ ] **NAV-01**: BSD-styled navigation panel visible at all times
-- [ ] **NAV-02**: Smooth scroll between sections via Lenis
-- [ ] **NAV-03**: Section progress indicator showing current position
-- [ ] **NAV-04**: All sections directly accessible — no content gated behind interactions
+- [x] **NAV-01**: BSD-styled navigation panel visible at all times
+- [x] **NAV-02**: Smooth scroll between sections via Lenis
+- [x] **NAV-03**: Section progress indicator showing current position
+- [x] **NAV-04**: All sections directly accessible — no content gated behind interactions
 
 ### Landing / Hero
 
@@ -81,11 +81,11 @@
 
 ### Animation & Transitions
 
-- [ ] **ANIM-01**: GSAP ScrollTrigger for scroll-driven animations throughout
+- [x] **ANIM-01**: GSAP ScrollTrigger for scroll-driven animations throughout
 - [ ] **ANIM-02**: Scene transitions between sections (fade, slide, page-turn effects)
-- [ ] **ANIM-03**: Motion (framer-motion) for component lifecycle animations
+- [x] **ANIM-03**: Motion (framer-motion) for component lifecycle animations
 - [ ] **ANIM-04**: Parallax depth effects on key sections
-- [ ] **ANIM-05**: Reduced motion mode respecting `prefers-reduced-motion`
+- [x] **ANIM-05**: Reduced motion mode respecting `prefers-reduced-motion`
 
 ### 3D Elements
 
@@ -150,10 +150,10 @@
 | FNDN-04 | Phase 1 | Complete |
 | FNDN-05 | Phase 1 | Complete |
 | FNDN-06 | Phase 1 | Complete |
-| NAV-01 | Phase 2 | Pending |
-| NAV-02 | Phase 2 | Pending |
-| NAV-03 | Phase 2 | Pending |
-| NAV-04 | Phase 2 | Pending |
+| NAV-01 | Phase 2 | Complete |
+| NAV-02 | Phase 2 | Complete |
+| NAV-03 | Phase 2 | Complete |
+| NAV-04 | Phase 2 | Complete |
 | HERO-01 | Phase 2 | Pending |
 | HERO-02 | Phase 2 | Pending |
 | HERO-03 | Phase 2 | Pending |
@@ -191,11 +191,11 @@
 | VN-04 | Phase 3 | Pending |
 | VN-05 | Phase 3 | Pending |
 | VN-06 | Phase 3 | Pending |
-| ANIM-01 | Phase 2 | Pending |
+| ANIM-01 | Phase 2 | Complete |
 | ANIM-02 | Phase 3 | Pending |
-| ANIM-03 | Phase 2 | Pending |
+| ANIM-03 | Phase 2 | Complete |
 | ANIM-04 | Phase 2 | Pending |
-| ANIM-05 | Phase 2 | Pending |
+| ANIM-05 | Phase 2 | Complete |
 | 3D-01 | Phase 3 | Pending |
 | 3D-02 | Phase 3 | Pending |
 | 3D-03 | Phase 3 | Pending |
