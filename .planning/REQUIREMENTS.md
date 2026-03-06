@@ -72,12 +72,12 @@
 
 ### Visual Novel System
 
-- [ ] **VN-01**: Custom dialogue engine with typewriter text effect
-- [ ] **VN-02**: Dazai character portrait with expression variants
-- [ ] **VN-03**: Dialogue boxes styled as BSD speech bubbles
+- [x] **VN-01**: Custom dialogue engine with typewriter text effect
+- [x] **VN-02**: Dazai character portrait with expression variants
+- [x] **VN-03**: Dialogue boxes styled as BSD speech bubbles
 - [ ] **VN-04**: All dialogues skippable — never gate portfolio content
 - [ ] **VN-05**: VN dialogues trigger at landing and section transitions
-- [ ] **VN-06**: Dialogue data stored as JSON (easy to update content)
+- [x] **VN-06**: Dialogue data stored as JSON (easy to update content)
 
 ### Animation & Transitions
 
@@ -185,12 +185,12 @@
 | SOCL-02 | Phase 2 | Complete |
 | SOCL-03 | Phase 2 | Complete |
 | SOCL-04 | Phase 2 | Complete |
-| VN-01 | Phase 3 | Pending |
-| VN-02 | Phase 3 | Pending |
-| VN-03 | Phase 3 | Pending |
+| VN-01 | Phase 3 | Complete |
+| VN-02 | Phase 3 | Complete |
+| VN-03 | Phase 3 | Complete |
 | VN-04 | Phase 3 | Pending |
 | VN-05 | Phase 3 | Pending |
-| VN-06 | Phase 3 | Pending |
+| VN-06 | Phase 3 | Complete |
 | ANIM-01 | Phase 2 | Complete |
 | ANIM-02 | Phase 3 | Pending |
 | ANIM-03 | Phase 2 | Complete |

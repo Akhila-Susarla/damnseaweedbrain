@@ -2,16 +2,16 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: completed
-stopped_at: Phase 3 context gathered
-last_updated: "2026-03-06T13:08:55.386Z"
-last_activity: 2026-03-06 -- Completed plan 02-07 (final assembly and integration)
+status: executing
+stopped_at: Completed 03-01-PLAN.md
+last_updated: "2026-03-06T17:19:34.854Z"
+last_activity: 2026-03-06 -- Completed plan 03-01 (VN dialogue core)
 progress:
   total_phases: 4
   completed_phases: 2
-  total_plans: 9
-  completed_plans: 9
-  percent: 69
+  total_plans: 14
+  completed_plans: 10
+  percent: 71
 ---
 
 # Project State
@@ -21,16 +21,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-06)
 
 **Core value:** Visitors experience a memorable, game-like portfolio that showcases Akhila's data science skills through the BSD universe
-**Current focus:** Phase 2: Content Scenes & Navigation
+**Current focus:** Phase 3: BSD Experience Layer
 
 ## Current Position
 
-Phase: 2 of 4 (Content Scenes & Navigation) -- COMPLETE
-Plan: 7 of 7 in current phase (02-07 complete)
-Status: Phase 2 Complete
-Last activity: 2026-03-06 -- Completed plan 02-07 (final assembly and integration)
+Phase: 3 of 4 (BSD Experience Layer) -- IN PROGRESS
+Plan: 1 of 5 in current phase (03-01 complete)
+Status: Executing Phase 3
+Last activity: 2026-03-06 -- Completed plan 03-01 (VN dialogue core)
 
-Progress: [███████░░░] 69%
+Progress: [███████░░░] 71%
 
 ## Performance Metrics
 
@@ -55,6 +55,7 @@ Progress: [███████░░░] 69%
 | Phase 02 P05 | 5min | 2 tasks | 4 files |
 | Phase 02 P06 | 4min | 2 tasks | 3 files |
 | Phase 02 P07 | 12min | 2 tasks | 6 files |
+| Phase 03 P01 | 6min | 2 tasks | 15 files |
 
 ## Accumulated Context
 
@@ -88,6 +89,9 @@ Recent decisions affecting current work:
 - [02-06]: Timeline node positioned with negative left offset matching container padding for alignment
 - [02-07]: Parallax depth via yPercent + scale + opacity fade per layer (not flat pixel offsets)
 - [02-07]: Background blur (0.5px) for depth-of-field effect separating parallax layers
+- [03-01]: SVG expression layers with motion/react AnimatePresence for portrait transitions
+- [03-01]: DialogueBox-specific GSAP typewriter (not TypewriterText) for click-to-complete support
+- [03-01]: Caveat font registered in layout.tsx + globals.css @theme for font-caveat utility
 
 ### Pending Todos
 
@@ -100,6 +104,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T13:08:55.371Z
-Stopped at: Phase 3 context gathered
-Resume file: .planning/phases/03-bsd-experience-layer/03-CONTEXT.md
+Last session: 2026-03-06T17:19:34.839Z
+Stopped at: Completed 03-01-PLAN.md
+Resume file: None
