@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, JetBrains_Mono } from "next/font/google";
+import SmoothScroll from "@/components/layout/SmoothScroll";
+import NavPanel from "@/components/nav/NavPanel";
 import "./globals.css";
 
 const playfairDisplay = Playfair_Display({
@@ -37,7 +39,10 @@ export default function RootLayout({
       className={`${playfairDisplay.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
       <body className="bg-midnight text-parchment font-body antialiased">
-        {children}
+        <SmoothScroll>
+          <NavPanel />
+          {children}
+        </SmoothScroll>
       </body>
     </html>
   );
