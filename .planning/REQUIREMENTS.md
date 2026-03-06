@@ -7,12 +7,12 @@
 
 ### Foundation
 
-- [ ] **FNDN-01**: Site built with Next.js 15 + React 19 + TypeScript
-- [ ] **FNDN-02**: BSD dark noir theme system with design tokens (colors, typography, motifs)
-- [ ] **FNDN-03**: Responsive layout — desktop-first with mobile breakpoints (375px minimum)
+- [x] **FNDN-01**: Site built with Next.js 15 + React 19 + TypeScript
+- [x] **FNDN-02**: BSD dark noir theme system with design tokens (colors, typography, motifs)
+- [x] **FNDN-03**: Responsive layout — desktop-first with mobile breakpoints (375px minimum)
 - [ ] **FNDN-04**: Performance budget enforced — 1.5MB initial load, WebP images, lazy loading
-- [ ] **FNDN-05**: Tailwind CSS v4 for styling with custom theme configuration
-- [ ] **FNDN-06**: Zustand store for global state (dialogue, section, animation tracking)
+- [x] **FNDN-05**: Tailwind CSS v4 for styling with custom theme configuration
+- [x] **FNDN-06**: Zustand store for global state (dialogue, section, animation tracking)
 
 ### Navigation
 
@@ -99,7 +99,7 @@
 
 - [ ] **ASSET-01**: BSD-inspired custom visuals (original art, not copyrighted game rips)
 - [ ] **ASSET-02**: Bandage textures, paper/parchment backgrounds, classified stamps as SVG/CSS
-- [ ] **ASSET-03**: Custom fonts (serif headings, clean body, monospace accents) in WOFF2
+- [x] **ASSET-03**: Custom fonts (serif headings, clean body, monospace accents) in WOFF2
 - [ ] **ASSET-04**: BSD-themed OG image for social media sharing
 - [ ] **ASSET-05**: Optimized asset pipeline — WebP, lazy loading, responsive images
 
@@ -144,12 +144,12 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| FNDN-01 | Phase 1 | Pending |
-| FNDN-02 | Phase 1 | Pending |
-| FNDN-03 | Phase 1 | Pending |
+| FNDN-01 | Phase 1 | Complete |
+| FNDN-02 | Phase 1 | Complete |
+| FNDN-03 | Phase 1 | Complete |
 | FNDN-04 | Phase 1 | Pending |
-| FNDN-05 | Phase 1 | Pending |
-| FNDN-06 | Phase 1 | Pending |
+| FNDN-05 | Phase 1 | Complete |
+| FNDN-06 | Phase 1 | Complete |
 | NAV-01 | Phase 2 | Pending |
 | NAV-02 | Phase 2 | Pending |
 | NAV-03 | Phase 2 | Pending |
@@ -203,7 +203,7 @@
 | 3D-05 | Phase 3 | Pending |
 | ASSET-01 | Phase 1 | Pending |
 | ASSET-02 | Phase 1 | Pending |
-| ASSET-03 | Phase 1 | Pending |
+| ASSET-03 | Phase 1 | Complete |
 | ASSET-04 | Phase 4 | Pending |
 | ASSET-05 | Phase 1 | Pending |
 | SEO-01 | Phase 2 | Pending |
