@@ -213,10 +213,16 @@
 | SEO-05 | Phase 2 | Pending |
 
 **Coverage:**
-- v1 requirements: 55 total
-- Mapped to phases: 55
-- Unmapped: 0 ✓
+- v1 requirements: 67 total
+- Mapped to phases: 67
+- Unmapped: 0
+
+**Phase Distribution:**
+- Phase 1 (Foundation & Theme System): 11 requirements
+- Phase 2 (Content Scenes & Navigation): 41 requirements
+- Phase 3 (BSD Experience Layer): 13 requirements
+- Phase 4 (Polish & Launch): 2 requirements
 
 ---
 *Requirements defined: 2026-03-06*
-*Last updated: 2026-03-06 after initial definition*
+*Last updated: 2026-03-06 after roadmap creation*
