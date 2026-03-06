@@ -1,0 +1,88 @@
+import type { IntelDossier } from './types';
+
+export const intelDossiers: IntelDossier[] = [
+  {
+    id: 'intel-001',
+    organization: 'American Airlines',
+    role: 'Software Developer Intern',
+    period: 'June 2025 - August 2025',
+    status: 'Solved',
+    highlights: [
+      'Automated ETL pipelines reconciling inventory between Korber WMS and SCEPTRE mainframe, reducing manual effort by 35%',
+      'Surfaced discrepancies impacting $2M+ worth of airplane parts',
+      'Engineered data transformation strategies with MongoDB and MS SQL Server for system migration',
+      'Built dataflow and system diagrams for 20+ APIs and GT services, cutting onboarding time by 40%',
+      'Analyzed large-scale CFC warehouse datasets for supply chain workflow insights',
+      'Deployed data-centric services in Kubernetes (AKS) for warehouse automation and AOG cases',
+    ],
+    technologies: [
+      'MongoDB',
+      'MS SQL Server',
+      'Kubernetes',
+      'AKS',
+      'ETL',
+    ],
+  },
+  {
+    id: 'intel-002',
+    organization: 'Autodesk (via Infocusp Innovations)',
+    role: 'Consultant - Data Scientist',
+    period: 'July 2023 - July 2024',
+    status: 'Classified',
+    highlights: [
+      'Implemented SINDy with Model Predictive Control for water treatment optimization',
+      'Reduced operating costs by 20% and improved accuracy by 23% for WTP authorities',
+      'Developed LLMs to build interactive chatbot simulating movie character conversations',
+      'Led cross-functional ML project in Agile environment, reducing deployment time from 4 to 2 weeks',
+      'Utilized multivariate anomaly detection to decrease operational risks by 40%',
+    ],
+    technologies: [
+      'Python',
+      'scikit-learn',
+      'SINDy',
+      'MPC',
+      'LLMs',
+      'Transformers',
+      'GPT',
+      'BERT',
+    ],
+  },
+  {
+    id: 'intel-003',
+    organization: 'Autodesk (via Infocusp Innovations)',
+    role: 'Consultant - Associate ML Engineer (Intern)',
+    period: 'July 2022 - June 2023',
+    status: 'Classified',
+    highlights: [
+      'Optimized Random Forest and XGBoost models through hyperparameter tuning, increasing accuracy by 12%',
+      'Engineered robust CI/CD pipelines with unit tests and YAML configurations',
+      'Automated savings calculations by simulating production environment, reducing troubleshooting time by 70%',
+      'Maintained data quality framework with automated checks for SCADA and lab data impacting 1M+ data points daily',
+    ],
+    technologies: [
+      'Python',
+      'scikit-learn',
+      'XGBoost',
+      'Random Forest',
+      'CI/CD',
+      'YAML',
+    ],
+  },
+  {
+    id: 'intel-004',
+    organization: 'SRM University',
+    role: 'Research Intern',
+    period: 'June 2021 - August 2021',
+    status: 'Solved',
+    highlights: [
+      'Devised mathematical approach with regression algorithms to predict COVID-19 case trends',
+      'Model predicted cases and deaths with 95.2% and 93.9% accuracy respectively',
+    ],
+    technologies: [
+      'Python',
+      'scikit-learn',
+      'matplotlib',
+      'Regression',
+    ],
+  },
+];
