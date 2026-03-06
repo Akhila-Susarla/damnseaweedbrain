@@ -6,16 +6,22 @@ import CaseFilesSection from "@/components/sections/CaseFilesSection";
 import IntelSection from "@/components/sections/IntelSection";
 import SocialSection from "@/components/sections/SocialSection";
 import SectionDialogues from "@/components/vn/SectionDialogues";
+import InkWashTransition from "@/components/transitions/InkWashTransition";
 
 export default function Home() {
   return (
     <Shell>
       <HeroSection />
+      <InkWashTransition triggerSelector="#about" />
       <SectionDialogues />
       <AboutSection />
+      <InkWashTransition triggerSelector="#abilities" />
       <AbilitiesSection />
+      <InkWashTransition triggerSelector="#case-files" />
       <CaseFilesSection />
+      <InkWashTransition triggerSelector="#intel" />
       <IntelSection />
+      <InkWashTransition triggerSelector="#social" />
       <SocialSection />
     </Shell>
   );
