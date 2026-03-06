@@ -1,19 +1,26 @@
 'use client';
 
 import { useRef } from 'react';
+import dynamic from 'next/dynamic';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useLenis } from 'lenis/react';
 import Section from '@/components/layout/Section';
 import TypewriterText from '@/components/ui/TypewriterText';
+import HeroIntro from '@/components/vn/HeroIntro';
 import { usePortfolioStore } from '@/lib/store';
+
+const Scene3D = dynamic(() => import('@/components/three/Scene3D'), {
+  ssr: false,
+});
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const dialogueActive = usePortfolioStore((s) => s.dialogueActive);
   const lenis = useLenis();
 
   useGSAP(
@@ -143,6 +150,11 @@ export default function HeroSection() {
           <div className="absolute top-[45%] left-[30%] w-1.5 h-1.5 rounded-full bg-teal/15" />
         </div>
 
+        {/* 3D particle overlay -- above parallax foreground, below text */}
+        <div className="absolute inset-0 z-[3]">
+          <Scene3D />
+        </div>
+
         {/* Content overlay */}
         <div className="relative z-10 flex flex-col items-center justify-center min-h-screen text-center px-4">
           <TypewriterText
@@ -154,10 +166,13 @@ export default function HeroSection() {
           <p className="font-mono text-sm tablet:text-base text-parchment/70 tracking-widest">
             Data Scientist | ML Engineer
           </p>
+
+          {/* VN hero intro dialogue */}
+          <HeroIntro />
         </div>
 
-        {/* Scroll-down indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
+        {/* Scroll-down indicator -- hidden during dialogue */}
+        <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 transition-opacity duration-300 ${dialogueActive ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           <button
             onClick={handleScrollDown}
             className="flex flex-col items-center gap-2 cursor-pointer bg-transparent border-none group"
