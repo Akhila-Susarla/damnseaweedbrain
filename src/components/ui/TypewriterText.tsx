@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, createElement } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { usePortfolioStore } from '@/lib/store';
@@ -9,14 +9,14 @@ interface TypewriterTextProps {
   text: string;
   className?: string;
   delay?: number;
-  as?: React.ElementType;
+  as?: keyof React.JSX.IntrinsicElements;
 }
 
 export default function TypewriterText({
   text,
   className,
   delay = 0,
-  as: Tag = 'span',
+  as: tag = 'span',
 }: TypewriterTextProps) {
   const ref = useRef<HTMLElement>(null);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
@@ -42,13 +42,9 @@ export default function TypewriterText({
     };
   }, { dependencies: [text, delay, reducedMotion] });
 
-  return (
-    <Tag
-      ref={ref}
-      className={className}
-      aria-label={text}
-    >
-      {reducedMotion ? text : ''}
-    </Tag>
+  return createElement(
+    tag,
+    { ref, className, 'aria-label': text },
+    reducedMotion ? text : ''
   );
 }

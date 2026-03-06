@@ -8,7 +8,6 @@ interface TiltCardProps {
   children: React.ReactNode;
   maxAngle?: number;
   className?: string;
-  as?: React.ElementType;
   disabled?: boolean;
 }
 
@@ -16,7 +15,6 @@ export default function TiltCard({
   children,
   maxAngle = 12,
   className,
-  as: Component = 'div',
   disabled = false,
 }: TiltCardProps) {
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
@@ -25,14 +23,14 @@ export default function TiltCard({
   const isDisabled = disabled || reducedMotion;
 
   return (
-    <Component
-      ref={isDisabled ? undefined : ref}
+    <div
+      ref={isDisabled ? undefined : ref as React.RefObject<HTMLDivElement | null>}
       className={cn(className)}
       style={isDisabled ? undefined : style}
       onMouseMove={isDisabled ? undefined : handlers.onMouseMove}
       onMouseLeave={isDisabled ? undefined : handlers.onMouseLeave}
     >
       {children}
-    </Component>
+    </div>
   );
 }
