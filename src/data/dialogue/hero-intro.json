@@ -1,0 +1,31 @@
+{
+  "id": "hero-intro",
+  "section": "hero",
+  "type": "intro",
+  "lines": [
+    {
+      "id": "hero-01",
+      "character": "dazai",
+      "expression": "mysterious",
+      "text": "Ah... another visitor to the Armed Detective Agency."
+    },
+    {
+      "id": "hero-02",
+      "character": "dazai",
+      "expression": "mysterious",
+      "text": "I'm Dazai -- your guide through this particular case file."
+    },
+    {
+      "id": "hero-03",
+      "character": "dazai",
+      "expression": "smirk",
+      "text": "Don't let the atmosphere fool you. Our newest operative is quite... capable."
+    },
+    {
+      "id": "hero-04",
+      "character": "dazai",
+      "expression": "smirk",
+      "text": "Scroll down, if you dare. The dossier awaits."
+    }
+  ]
+}

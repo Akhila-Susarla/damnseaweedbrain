@@ -57,3 +57,28 @@ export interface SocialLink {
   url: string;
   label: string;
 }
+
+/** Dazai expression variants for character portrait */
+export type DazaiExpression =
+  | 'neutral'
+  | 'smirk'
+  | 'laugh'
+  | 'serious'
+  | 'annoyed'
+  | 'mysterious';
+
+/** Single line of VN dialogue */
+export interface DialogueLine {
+  id: string;
+  character: 'dazai';
+  expression: DazaiExpression;
+  text: string;
+}
+
+/** A complete dialogue sequence (intro or transition) */
+export interface DialogueSequence {
+  id: string;
+  section: string;
+  type: 'intro' | 'transition';
+  lines: DialogueLine[];
+}

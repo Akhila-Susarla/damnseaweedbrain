@@ -1,0 +1,19 @@
+{
+  "id": "casefiles-transition",
+  "section": "casefiles",
+  "type": "transition",
+  "lines": [
+    {
+      "id": "casefiles-01",
+      "character": "dazai",
+      "expression": "mysterious",
+      "text": "Ah, the case files. Some of these were nearly as puzzling as Chuuya's fashion sense."
+    },
+    {
+      "id": "casefiles-02",
+      "character": "dazai",
+      "expression": "laugh",
+      "text": "Nearly."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "abilities-transition",
+  "section": "abilities",
+  "type": "transition",
+  "lines": [
+    {
+      "id": "abilities-01",
+      "character": "dazai",
+      "expression": "smirk",
+      "text": "Python, R, TensorFlow... dangerous weapons in the right hands."
+    },
+    {
+      "id": "abilities-02",
+      "character": "dazai",
+      "expression": "laugh",
+      "text": "Almost as dangerous as my own ability. Almost."
+    }
+  ]
+}

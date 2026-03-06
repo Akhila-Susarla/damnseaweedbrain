@@ -1,0 +1,19 @@
+{
+  "id": "social-transition",
+  "section": "social",
+  "type": "transition",
+  "lines": [
+    {
+      "id": "social-01",
+      "character": "dazai",
+      "expression": "smirk",
+      "text": "If you'd like to contact the Agency directly... well, here's how."
+    },
+    {
+      "id": "social-02",
+      "character": "dazai",
+      "expression": "laugh",
+      "text": "Tell them Dazai sent you. It won't help, but it'll be funny."
+    }
+  ]
+}

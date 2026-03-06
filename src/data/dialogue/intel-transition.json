@@ -1,0 +1,13 @@
+{
+  "id": "intel-transition",
+  "section": "intel",
+  "type": "transition",
+  "lines": [
+    {
+      "id": "intel-01",
+      "character": "dazai",
+      "expression": "serious",
+      "text": "Classified missions. Handle with discretion -- or don't. I rarely do."
+    }
+  ]
+}
