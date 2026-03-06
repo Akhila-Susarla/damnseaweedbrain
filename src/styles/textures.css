@@ -1,6 +1,10 @@
 /* BSD Noir Visual Motifs — CSS/SVG-only textures */
 
-/* Paper noise texture overlay using inline SVG feTurbulence filter */
+/* Paper noise texture overlay
+   Uses CSS gradient-based noise pattern for cross-browser visibility.
+   Design note: SVG feTurbulence (fractalNoise, baseFrequency 0.65, numOctaves 3)
+   does not render reliably as CSS background-image in all browsers,
+   so we use a repeating fine-grain gradient pattern instead. */
 .texture-paper {
   position: relative;
 }
@@ -9,11 +13,31 @@
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.04;
   pointer-events: none;
   z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
+  opacity: 0.15;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(232, 224, 212, 0.08) 2px,
+      rgba(232, 224, 212, 0.08) 3px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(232, 224, 212, 0.06) 3px,
+      rgba(232, 224, 212, 0.06) 4px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 5px,
+      rgba(232, 224, 212, 0.04) 5px,
+      rgba(232, 224, 212, 0.04) 6px
+    );
 }
 
 /* Bandage stripe pattern — Dazai's iconic visual motif as subtle divider */
@@ -21,9 +45,9 @@
   background-image: repeating-linear-gradient(
     45deg,
     transparent,
-    transparent 4px,
-    rgba(232, 224, 212, 0.05) 4px,
-    rgba(232, 224, 212, 0.05) 5px
+    transparent 6px,
+    rgba(232, 224, 212, 0.25) 6px,
+    rgba(232, 224, 212, 0.25) 9px
   );
 }
 
@@ -62,12 +86,12 @@
     radial-gradient(circle 20% at 85% 15%, rgba(10, 14, 26, 0.5), transparent);
 }
 
-/* Aged paper edges — inset box shadows simulating worn document edges */
+/* Aged paper edges — inset box shadows in warm tones to contrast midnight bg */
 .texture-aged-edge {
   box-shadow:
-    inset 0 0 20px rgba(10, 14, 26, 0.3),
-    inset 0 0 40px rgba(10, 14, 26, 0.15),
-    inset 0 0 60px rgba(10, 14, 26, 0.08);
+    inset 0 0 15px rgba(160, 140, 100, 0.25),
+    inset 0 0 30px rgba(140, 120, 80, 0.15),
+    inset 0 0 50px rgba(120, 100, 60, 0.08);
 }
 
 /* Ability glow effect — teal supernatural activation glow with pulse */

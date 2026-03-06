@@ -21,7 +21,9 @@ describe('BSD Texture CSS', () => {
     expect(texturesCSS).toContain(className);
   });
 
-  it('uses feTurbulence SVG filter for paper texture', () => {
+  it('documents feTurbulence fractalNoise design origin for paper texture', () => {
+    // Paper texture uses CSS gradients for cross-browser reliability,
+    // but the design note references the original SVG filter approach.
     expect(texturesCSS).toContain('feTurbulence');
     expect(texturesCSS).toContain('fractalNoise');
   });
