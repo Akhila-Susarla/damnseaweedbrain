@@ -96,6 +96,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Theme System | 2/2 | Complete   | 2026-03-06 |
-| 2. Content Scenes & Navigation | 2/7 | In Progress|  |
+| 2. Content Scenes & Navigation | 5/7 | In Progress|  |
 | 3. BSD Experience Layer | 0/? | Not started | - |
 | 4. Polish & Launch | 0/? | Not started | - |

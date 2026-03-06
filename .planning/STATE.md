@@ -73,10 +73,15 @@ Recent decisions affecting current work:
 - [02-01]: happy-dom instead of jsdom for vitest (jsdom v28 ESM incompatibility with Node 18)
 - [02-01]: ReactLenis root auto-sync with GSAP ScrollTrigger (manual fallback in comments)
 - [02-01]: NavPanel dual-nav-landmark pattern (desktop side rail + mobile bottom bar)
+- [02-02]: CSS clip-path silhouette for Dazai character placeholder (swappable later)
+- [02-02]: Polymorphic as prop on TypewriterText for flexible element rendering
+- [02-02]: bounce-gentle custom keyframe for scroll indicator (gentler than default bounce)
 - [02-03]: Achievements vs leadership highlights classified by keyword matching
 - [02-03]: Platform icons as monospace text tokens [LI] [GH] [@] for terminal aesthetic
 - [Phase 02-04]: ScrollTrigger.batch instead of individual triggers for 32 cards -- better performance
 - [Phase 02-04]: Combined hover and click for card detail expansion (desktop/mobile)
+- [02-05]: Filter out empty-URL links in CaseFolder to avoid broken anchor tags
+- [02-05]: StampBadge uses Tailwind utilities (not CSS texture class) for per-status color flexibility
 
 ### Pending Todos
 
@@ -89,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T12:23:18.239Z
-Stopped at: Completed 02-04-PLAN.md
-Resume file: None
+Last session: 2026-03-06T12:22:09Z
+Stopped at: Completed 02-05-PLAN.md
+Resume file: .planning/phases/02-content-scenes-navigation/02-05-SUMMARY.md

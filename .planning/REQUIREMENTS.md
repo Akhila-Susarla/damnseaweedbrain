@@ -23,11 +23,11 @@
 
 ### Landing / Hero
 
-- [ ] **HERO-01**: Dazai character presence with introduction sequence
-- [ ] **HERO-02**: Typewriter title reveal ("damnseaweedbrain" / character name)
-- [ ] **HERO-03**: Multi-layer parallax scene with depth
+- [x] **HERO-01**: Dazai character presence with introduction sequence
+- [x] **HERO-02**: Typewriter title reveal ("damnseaweedbrain" / character name)
+- [x] **HERO-03**: Multi-layer parallax scene with depth
 - [ ] **HERO-04**: Visual novel dialogue intro — Dazai introduces the visitor
-- [ ] **HERO-05**: Scroll-down indicator / call to explore
+- [x] **HERO-05**: Scroll-down indicator / call to explore
 
 ### About / Origin Story
 
@@ -46,12 +46,12 @@
 
 ### Case Files (Projects)
 
-- [ ] **CASE-01**: Published research paper displayed as case file (Influence Maximization)
-- [ ] **CASE-02**: Real-time NER Radar project as case file
-- [ ] **CASE-03**: UniWay (UXperience hackathon) project as case file
-- [ ] **CASE-04**: Detective case file UI — folders, stamps, evidence photos
-- [ ] **CASE-05**: Expandable case file details with links to publications/demos
-- [ ] **CASE-06**: Case status indicators (solved, active, classified)
+- [x] **CASE-01**: Published research paper displayed as case file (Influence Maximization)
+- [x] **CASE-02**: Real-time NER Radar project as case file
+- [x] **CASE-03**: UniWay (UXperience hackathon) project as case file
+- [x] **CASE-04**: Detective case file UI — folders, stamps, evidence photos
+- [x] **CASE-05**: Expandable case file details with links to publications/demos
+- [x] **CASE-06**: Case status indicators (solved, active, classified)
 
 ### Intel (Experience)
 
@@ -84,7 +84,7 @@
 - [x] **ANIM-01**: GSAP ScrollTrigger for scroll-driven animations throughout
 - [ ] **ANIM-02**: Scene transitions between sections (fade, slide, page-turn effects)
 - [x] **ANIM-03**: Motion (framer-motion) for component lifecycle animations
-- [ ] **ANIM-04**: Parallax depth effects on key sections
+- [x] **ANIM-04**: Parallax depth effects on key sections
 - [x] **ANIM-05**: Reduced motion mode respecting `prefers-reduced-motion`
 
 ### 3D Elements
@@ -154,11 +154,11 @@
 | NAV-02 | Phase 2 | Complete |
 | NAV-03 | Phase 2 | Complete |
 | NAV-04 | Phase 2 | Complete |
-| HERO-01 | Phase 2 | Pending |
-| HERO-02 | Phase 2 | Pending |
-| HERO-03 | Phase 2 | Pending |
+| HERO-01 | Phase 2 | Complete |
+| HERO-02 | Phase 2 | Complete |
+| HERO-03 | Phase 2 | Complete |
 | HERO-04 | Phase 3 | Pending |
-| HERO-05 | Phase 2 | Pending |
+| HERO-05 | Phase 2 | Complete |
 | ABOUT-01 | Phase 2 | Complete |
 | ABOUT-02 | Phase 2 | Complete |
 | ABOUT-03 | Phase 2 | Complete |
@@ -168,12 +168,12 @@
 | ABIL-03 | Phase 2 | Complete |
 | ABIL-04 | Phase 2 | Complete |
 | ABIL-05 | Phase 2 | Complete |
-| CASE-01 | Phase 2 | Pending |
-| CASE-02 | Phase 2 | Pending |
-| CASE-03 | Phase 2 | Pending |
-| CASE-04 | Phase 2 | Pending |
-| CASE-05 | Phase 2 | Pending |
-| CASE-06 | Phase 2 | Pending |
+| CASE-01 | Phase 2 | Complete |
+| CASE-02 | Phase 2 | Complete |
+| CASE-03 | Phase 2 | Complete |
+| CASE-04 | Phase 2 | Complete |
+| CASE-05 | Phase 2 | Complete |
+| CASE-06 | Phase 2 | Complete |
 | INTL-01 | Phase 2 | Pending |
 | INTL-02 | Phase 2 | Pending |
 | INTL-03 | Phase 2 | Pending |
@@ -194,7 +194,7 @@
 | ANIM-01 | Phase 2 | Complete |
 | ANIM-02 | Phase 3 | Pending |
 | ANIM-03 | Phase 2 | Complete |
-| ANIM-04 | Phase 2 | Pending |
+| ANIM-04 | Phase 2 | Complete |
 | ANIM-05 | Phase 2 | Complete |
 | 3D-01 | Phase 3 | Pending |
 | 3D-02 | Phase 3 | Pending |
