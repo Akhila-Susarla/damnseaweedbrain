@@ -11,12 +11,10 @@ import type { DialogueSequence } from '@/data/types';
 interface DialogueEngineProps {
   sequence: DialogueSequence;
   onComplete: () => void;
-  /** compact mode for section transitions (smaller, inline) */
-  compact?: boolean;
   className?: string;
 }
 
-export default function DialogueEngine({ sequence, onComplete, compact = false, className = '' }: DialogueEngineProps) {
+export default function DialogueEngine({ sequence, onComplete, className = '' }: DialogueEngineProps) {
   const { currentLine, advance, skip, isComplete } = useDialogue(sequence);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
   const [isTyping, setIsTyping] = useState(true);
@@ -27,7 +25,6 @@ export default function DialogueEngine({ sequence, onComplete, compact = false, 
     }
   }, [isComplete, onComplete]);
 
-  // ESC key to skip entire sequence
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -57,45 +54,6 @@ export default function DialogueEngine({ sequence, onComplete, compact = false, 
 
   if (isComplete || !currentLine) return null;
 
-  if (compact) {
-    // Section transition: smaller inline dialogue
-    return (
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentLine.id}
-          className={`flex items-end gap-3 ${className}`}
-          initial={reducedMotion ? false : { opacity: 0, y: 8 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reducedMotion ? undefined : { opacity: 0 }}
-          transition={{ duration: reducedMotion ? 0 : 0.2 }}
-          onClick={handleClick}
-          role="region"
-          aria-label="Dialogue"
-        >
-          <CharacterPortrait
-            expression={currentLine.expression}
-            className="w-16 h-24 sm:w-20 sm:h-32"
-          />
-          <div
-            className="flex-1 min-w-0 px-4 py-3 rounded-sm"
-            style={{
-              background: 'linear-gradient(135deg, rgba(10,14,26,0.85) 0%, rgba(10,14,26,0.7) 100%)',
-              border: '1px solid rgba(212,175,55,0.12)',
-              backdropFilter: 'blur(12px)',
-            }}
-          >
-            <DialogueBox
-              text={currentLine.text}
-              isTyping={isTyping}
-              onComplete={handleTypingComplete}
-            />
-          </div>
-        </motion.div>
-      </AnimatePresence>
-    );
-  }
-
-  // Full VN mode: bottom-anchored overlay
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -109,7 +67,6 @@ export default function DialogueEngine({ sequence, onComplete, compact = false, 
         role="region"
         aria-label="Dialogue"
       >
-        {/* VN dialogue panel */}
         <div className="relative max-w-4xl mx-auto px-4 pb-6 pt-2">
           <div className="flex items-end gap-4">
             {/* Character portrait — rises from the panel */}

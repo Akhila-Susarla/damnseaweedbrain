@@ -22,6 +22,10 @@ vi.mock('gsap', () => ({
   default: {
     registerPlugin: vi.fn(),
     to: vi.fn(),
+    timeline: vi.fn(() => ({
+      to: vi.fn().mockReturnThis(),
+      kill: vi.fn(),
+    })),
   },
 }));
 
@@ -35,6 +39,11 @@ vi.mock('gsap/ScrollTrigger', () => ({
     },
     update: vi.fn(),
   },
+}));
+
+// Mock next/image
+vi.mock('next/image', () => ({
+  default: (props: any) => createElement('img', { ...props, fill: undefined }),
 }));
 
 // Mock motion/react -- filter non-DOM props
@@ -52,20 +61,10 @@ vi.mock('motion/react', () => {
   };
 });
 
-import SectionDialogue from '@/components/vn/SectionDialogue';
+import DialogueOverlay from '@/components/vn/DialogueOverlay';
 import { usePortfolioStore } from '@/lib/store';
-import type { DialogueSequence } from '@/data/types';
 
-const mockDialogue: DialogueSequence = {
-  id: 'test-transition',
-  section: 'about',
-  type: 'transition',
-  lines: [
-    { id: 'test-t1', character: 'dazai', expression: 'smirk', text: 'Test transition line.' },
-  ],
-};
-
-describe('SectionDialogue', () => {
+describe('DialogueOverlay', () => {
   beforeEach(() => {
     (globalThis as any).__scrollTriggerCallbacks = {};
     (globalThis as any).__scrollTriggerCreateCalls = [];
@@ -77,37 +76,27 @@ describe('SectionDialogue', () => {
   });
 
   it('does not render dialogue content before scroll trigger fires', () => {
-    render(createElement(SectionDialogue, {
-      sectionId: 'about',
-      dialogueData: mockDialogue,
-    }));
+    render(createElement(DialogueOverlay));
 
     const dialogueEl = screen.queryByTestId('section-dialogue-about');
     expect(dialogueEl).toBeNull();
   });
 
-  it('creates a ScrollTrigger for the target section', () => {
-    render(createElement(SectionDialogue, {
-      sectionId: 'about',
-      dialogueData: mockDialogue,
-    }));
+  it('creates ScrollTriggers for all sections', () => {
+    render(createElement(DialogueOverlay));
 
     const calls = (globalThis as any).__scrollTriggerCreateCalls;
-    expect(calls.length).toBeGreaterThan(0);
-    expect(calls[0]).toMatchObject({
-      trigger: '#about',
-      start: 'top 80%',
-      once: true,
-    });
+    const triggers = calls.map((c: any) => c.trigger);
+    expect(triggers).toContain('#about');
+    expect(triggers).toContain('#abilities');
+    expect(triggers).toContain('#case-files');
+    expect(triggers).toContain('#intel');
+    expect(triggers).toContain('#social');
   });
 
-  it('renders dialogue content when scroll trigger fires', () => {
-    render(createElement(SectionDialogue, {
-      sectionId: 'about',
-      dialogueData: mockDialogue,
-    }));
+  it('renders dialogue when scroll trigger fires for a section', () => {
+    render(createElement(DialogueOverlay));
 
-    // Simulate ScrollTrigger onEnter callback
     act(() => {
       (globalThis as any).__scrollTriggerCallbacks['#about']?.onEnter?.();
     });
@@ -117,10 +106,7 @@ describe('SectionDialogue', () => {
   });
 
   it('renders dialogue region with correct aria label when triggered', () => {
-    render(createElement(SectionDialogue, {
-      sectionId: 'about',
-      dialogueData: mockDialogue,
-    }));
+    render(createElement(DialogueOverlay));
 
     act(() => {
       (globalThis as any).__scrollTriggerCallbacks['#about']?.onEnter?.();

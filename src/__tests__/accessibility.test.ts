@@ -33,11 +33,49 @@ vi.mock('gsap', () => ({
 // Mock gsap/ScrollTrigger
 vi.mock('gsap/ScrollTrigger', () => ({
   ScrollTrigger: {
-    create: vi.fn(),
+    create: vi.fn(() => ({ kill: vi.fn() })),
     update: vi.fn(),
     batch: vi.fn(),
   },
 }));
+
+// Mock next/dynamic
+vi.mock('next/dynamic', () => ({
+  default: () => {
+    const Stub = () => createElement('div', { 'data-testid': 'dynamic-stub' });
+    return Stub;
+  },
+}));
+
+// Mock next/image
+vi.mock('next/image', () => ({
+  default: (props: any) => createElement('img', { ...props, fill: undefined }),
+}));
+
+// Mock motion/react
+vi.mock('motion/react', () => {
+  const filterProps = (props: any) => {
+    const { initial, animate, exit, transition, whileHover, whileTap, ...rest } = props;
+    return rest;
+  };
+  return {
+    motion: {
+      div: ({ children, ...props }: any) => createElement('div', { ...filterProps(props), key: undefined }, children),
+      span: ({ children, ...props }: any) => createElement('span', { ...filterProps(props), key: undefined }, children),
+      nav: ({ children, ...props }: any) => createElement('nav', { ...filterProps(props), key: undefined }, children),
+      a: ({ children, ...props }: any) => createElement('a', { ...filterProps(props), key: undefined }, children),
+      button: ({ children, ...props }: any) => createElement('button', { ...filterProps(props), key: undefined }, children),
+      li: ({ children, ...props }: any) => createElement('li', { ...filterProps(props), key: undefined }, children),
+      p: ({ children, ...props }: any) => createElement('p', { ...filterProps(props), key: undefined }, children),
+      g: ({ children, ...props }: any) => createElement('g', { ...filterProps(props), key: undefined }, children),
+    },
+    AnimatePresence: ({ children }: any) => children,
+    useScroll: vi.fn(() => ({ scrollYProgress: { get: () => 0, on: vi.fn() } })),
+    useTransform: vi.fn(() => ({ get: () => 0, on: vi.fn() })),
+    useMotionValueEvent: vi.fn(),
+    useReducedMotion: vi.fn(() => false),
+  };
+});
 
 import Home from '@/app/page';
 
