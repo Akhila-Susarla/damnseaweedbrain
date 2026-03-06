@@ -82,7 +82,7 @@
 ### Animation & Transitions
 
 - [x] **ANIM-01**: GSAP ScrollTrigger for scroll-driven animations throughout
-- [ ] **ANIM-02**: Scene transitions between sections (fade, slide, page-turn effects)
+- [x] **ANIM-02**: Scene transitions between sections (fade, slide, page-turn effects)
 - [x] **ANIM-03**: Motion (framer-motion) for component lifecycle animations
 - [x] **ANIM-04**: Parallax depth effects on key sections
 - [x] **ANIM-05**: Reduced motion mode respecting `prefers-reduced-motion`
@@ -92,7 +92,7 @@
 - [x] **3D-01**: Research and source any available BSD 3D models/assets
 - [x] **3D-02**: Three.js / React Three Fiber integration for 3D elements
 - [x] **3D-03**: 3D card tilt effects on ability cards and case files
-- [ ] **3D-04**: 3D depth/parallax on hero and scene backgrounds where possible
+- [x] **3D-04**: 3D depth/parallax on hero and scene backgrounds where possible
 - [x] **3D-05**: Fallback to 2D if 3D assets unavailable or performance degrades
 
 ### Assets & Visuals
@@ -192,14 +192,14 @@
 | VN-05 | Phase 3 | Complete |
 | VN-06 | Phase 3 | Complete |
 | ANIM-01 | Phase 2 | Complete |
-| ANIM-02 | Phase 3 | Pending |
+| ANIM-02 | Phase 3 | Complete |
 | ANIM-03 | Phase 2 | Complete |
 | ANIM-04 | Phase 2 | Complete |
 | ANIM-05 | Phase 2 | Complete |
 | 3D-01 | Phase 3 | Complete |
 | 3D-02 | Phase 3 | Complete |
 | 3D-03 | Phase 3 | Complete |
-| 3D-04 | Phase 3 | Pending |
+| 3D-04 | Phase 3 | Complete |
 | 3D-05 | Phase 3 | Complete |
 | ASSET-01 | Phase 1 | Complete |
 | ASSET-02 | Phase 1 | Complete |

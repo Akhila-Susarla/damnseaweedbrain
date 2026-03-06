@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-03-PLAN.md
-last_updated: "2026-03-06T17:35:14Z"
-last_activity: 2026-03-06 -- Completed plan 03-03 (VN dialogue wiring)
+stopped_at: Completed 03-04-PLAN.md
+last_updated: "2026-03-06T17:49:31Z"
+last_activity: 2026-03-06 -- Completed plan 03-04 (Hero 3D particles & ink wash transitions)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 14
-  completed_plans: 12
-  percent: 86
+  completed_plans: 13
+  percent: 93
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 3 of 4 (BSD Experience Layer) -- IN PROGRESS
-Plan: 3 of 5 in current phase (03-03 complete)
+Plan: 4 of 5 in current phase (03-04 complete)
 Status: Executing Phase 3
-Last activity: 2026-03-06 -- Completed plan 03-03 (VN dialogue wiring)
+Last activity: 2026-03-06 -- Completed plan 03-04 (Hero 3D particles & ink wash transitions)
 
-Progress: [████████░░] 86%
+Progress: [█████████░] 93%
 
 ## Performance Metrics
 
@@ -58,6 +58,7 @@ Progress: [████████░░] 86%
 | Phase 03 P01 | 6min | 2 tasks | 15 files |
 | Phase 03 P02 | 5min | 2 tasks | 10 files |
 | Phase 03 P03 | 7min | 2 tasks | 8 files |
+| Phase 03 P04 | 21min | 2 tasks | 11 files |
 
 ## Accumulated Context
 
@@ -100,6 +101,10 @@ Recent decisions affecting current work:
 - [03-03]: HeroIntro uses 300ms delay before locking scroll to let page settle
 - [03-03]: SectionDialogues wrapper placed as sibling before content sections for clean separation
 - [03-03]: globalThis pattern for ScrollTrigger mock callbacks to avoid vitest hoisting issues
+- [03-04]: createElement approach for TypewriterText polymorphic as prop to avoid TS ElementType children inference error
+- [03-04]: Simplified TiltCard to div-only (removed polymorphic as prop) since only used as div
+- [03-04]: Fixed-position InkWashTransition overlay with clip-path animation instead of sprite sheets
+- [03-04]: ESLint test file override: allow @typescript-eslint/no-explicit-any in test files
 
 ### Pending Todos
 
@@ -112,6 +117,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T17:35:14Z
-Stopped at: Completed 03-03-PLAN.md
+Last session: 2026-03-06T17:49:31Z
+Stopped at: Completed 03-04-PLAN.md
 Resume file: None
