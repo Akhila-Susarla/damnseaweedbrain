@@ -64,13 +64,13 @@ export default function NavPanel() {
       {/* Desktop: Left side rail */}
       <nav
         ref={containerRef}
-        className="fixed left-0 top-0 z-50 hidden h-screen w-16 flex-col items-center justify-center gap-6 bg-midnight/90 backdrop-blur-sm tablet:flex desktop:w-20"
+        className="fixed left-0 top-0 z-50 hidden h-screen w-16 flex-col items-center justify-center gap-10 bg-midnight/90 backdrop-blur-sm tablet:flex desktop:w-20"
         aria-label="Section navigation"
       >
         {SECTIONS.map(({ id, label }) => {
           const isActive = currentSection === id;
           return (
-            <div key={id} className="relative flex items-center">
+            <div key={id} className="relative flex h-6 items-center">
               {/* Progress line */}
               {isActive && (
                 <div className="absolute -left-1 h-full w-0.5 overflow-hidden bg-parchment/10 desktop:-left-2">
@@ -88,9 +88,11 @@ export default function NavPanel() {
                 onClick={() => handleNavClick(id)}
                 aria-label={`Navigate to ${label}`}
                 className={cn(
-                  'origin-center -rotate-90 whitespace-nowrap font-mono text-[10px] uppercase tracking-widest transition-colors duration-200',
+                  'origin-center -rotate-90 whitespace-nowrap font-mono text-[10px] uppercase tracking-widest transition-all duration-200',
                   'hover:text-gold focus-visible:text-gold focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gold focus-visible:ring-offset-2 focus-visible:ring-offset-midnight',
-                  isActive ? 'text-gold' : 'text-parchment/50'
+                  isActive
+                    ? 'scale-110 text-gold drop-shadow-[0_0_6px_rgba(212,175,55,0.5)]'
+                    : 'text-parchment/50'
                 )}
               >
                 {label}
