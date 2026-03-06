@@ -29,11 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. Responsive layout shell adapts between desktop (1440px+) and mobile (375px) with visible breakpoint changes
   4. Performance budget tooling flags any asset over threshold; WebP pipeline converts and lazy-loads images
   5. WCAG AA contrast ratios pass on all theme color combinations (text on backgrounds)
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: TBD
-- [ ] 01-02: TBD
+- [ ] 01-01-PLAN.md -- Scaffold Next.js 15 project with BSD theme system, fonts, responsive shell, Zustand store, and Vitest infrastructure
+- [ ] 01-02-PLAN.md -- Parse resume into typed data files, create CSS/SVG textures, configure asset pipeline, validate WCAG AA contrast
 
 ### Phase 2: Content Scenes & Navigation
 **Goal**: All six portfolio sections (Landing, About, Abilities, Case Files, Intel, Contact) display real resume content with BSD styling, smooth scroll navigation, and scroll-triggered animations -- a complete, navigable portfolio
@@ -91,7 +91,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation & Theme System | 0/? | Not started | - |
+| 1. Foundation & Theme System | 0/2 | Planning complete | - |
 | 2. Content Scenes & Navigation | 0/? | Not started | - |
 | 3. BSD Experience Layer | 0/? | Not started | - |
 | 4. Polish & Launch | 0/? | Not started | - |
