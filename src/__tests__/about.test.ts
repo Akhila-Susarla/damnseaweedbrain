@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import { render, screen, cleanup } from '@testing-library/react';
 import { createElement } from 'react';
-import { usePortfolioStore } from '@/lib/store';
+
 
 // Mock gsap
 vi.mock('gsap', () => ({
