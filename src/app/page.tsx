@@ -5,7 +5,7 @@ import AbilitiesSection from "@/components/sections/AbilitiesSection";
 import CaseFilesSection from "@/components/sections/CaseFilesSection";
 import IntelSection from "@/components/sections/IntelSection";
 import SocialSection from "@/components/sections/SocialSection";
-import SectionDialogues from "@/components/vn/SectionDialogues";
+import SectionDialogueSlot from "@/components/vn/SectionDialogueSlot";
 import InkWashTransition from "@/components/transitions/InkWashTransition";
 
 export default function Home() {
@@ -13,15 +13,19 @@ export default function Home() {
     <Shell>
       <HeroSection />
       <InkWashTransition triggerSelector="#about" />
-      <SectionDialogues />
+      <SectionDialogueSlot sectionId="about" />
       <AboutSection />
       <InkWashTransition triggerSelector="#abilities" />
+      <SectionDialogueSlot sectionId="abilities" />
       <AbilitiesSection />
       <InkWashTransition triggerSelector="#case-files" />
+      <SectionDialogueSlot sectionId="case-files" />
       <CaseFilesSection />
       <InkWashTransition triggerSelector="#intel" />
+      <SectionDialogueSlot sectionId="intel" />
       <IntelSection />
       <InkWashTransition triggerSelector="#social" />
+      <SectionDialogueSlot sectionId="social" />
       <SocialSection />
     </Shell>
   );
