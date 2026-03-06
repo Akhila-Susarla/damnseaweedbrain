@@ -69,11 +69,14 @@ Plans:
   3. Animated scene transitions (fade, slide, page-turn) play between sections during scroll
   4. Ability cards and case files have 3D tilt effects on hover/interaction; hero section has 3D depth/parallax where feasible
   5. If 3D assets are unavailable or performance degrades, the site gracefully falls back to 2D without breaking the experience
-**Plans**: TBD
+**Plans**: 5 plans
 
 Plans:
-- [ ] 03-01: TBD
-- [ ] 03-02: TBD
+- [ ] 03-01-PLAN.md -- VN core system: dialogue types, useDialogue hook, character portrait, speech bubble, dialogue engine, JSON data files, Caveat font
+- [ ] 03-02-PLAN.md -- 3D foundation: install R3F, useTilt hook, WebGL detection, fallback provider, apply tilt to ability cards and case folders
+- [ ] 03-03-PLAN.md -- VN integration: hero intro with scroll lock, section transition dialogues via ScrollTrigger, skip/ESC controls
+- [ ] 03-04-PLAN.md -- 3D hero scene with floating particles, atmospheric environment, ink wash scroll transitions between sections
+- [ ] 03-05-PLAN.md -- Final assembly, integration verification, and visual checkpoint of complete BSD experience
 
 ### Phase 4: Polish & Launch
 **Goal**: The site meets performance budgets, has proper SEO/social sharing metadata, and is deployed to production on the damnseaweedbrain.com domain
@@ -97,5 +100,5 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 |-------|----------------|--------|-----------|
 | 1. Foundation & Theme System | 2/2 | Complete   | 2026-03-06 |
 | 2. Content Scenes & Navigation | 7/7 | Complete   | 2026-03-06 |
-| 3. BSD Experience Layer | 0/? | Not started | - |
+| 3. BSD Experience Layer | 0/5 | Not started | - |
 | 4. Polish & Launch | 0/? | Not started | - |
