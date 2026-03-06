@@ -13,7 +13,7 @@ This roadmap delivers a fully immersive BSD-themed portfolio in four phases. Pha
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Foundation & Theme System** - Next.js project, design tokens, asset pipeline, responsive shell (completed 2026-03-06)
-- [ ] **Phase 2: Content Scenes & Navigation** - All 6 sections with resume data, nav panel, scroll animations, accessibility
+- [x] **Phase 2: Content Scenes & Navigation** - All 6 sections with resume data, nav panel, scroll animations, accessibility (completed 2026-03-06)
 - [ ] **Phase 3: BSD Experience Layer** - Visual novel dialogue, 3D elements, scene transitions, immersive interactions
 - [ ] **Phase 4: Polish & Launch** - Performance optimization, OG images, SEO finalization, deployment
 
@@ -96,6 +96,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Theme System | 2/2 | Complete   | 2026-03-06 |
-| 2. Content Scenes & Navigation | 5/7 | In Progress|  |
+| 2. Content Scenes & Navigation | 7/7 | Complete   | 2026-03-06 |
 | 3. BSD Experience Layer | 0/? | Not started | - |
 | 4. Polish & Launch | 0/? | Not started | - |

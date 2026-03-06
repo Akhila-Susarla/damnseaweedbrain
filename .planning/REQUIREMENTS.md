@@ -108,8 +108,8 @@
 - [x] **SEO-01**: Semantic HTML with proper heading hierarchy
 - [ ] **SEO-02**: Meta tags and Open Graph data for social sharing
 - [x] **SEO-03**: WCAG AA contrast ratios on all text
-- [ ] **SEO-04**: Keyboard navigation for all interactive elements
-- [ ] **SEO-05**: Alt text and aria labels for visual elements
+- [x] **SEO-04**: Keyboard navigation for all interactive elements
+- [x] **SEO-05**: Alt text and aria labels for visual elements
 
 ## v2 Requirements
 
@@ -209,8 +209,8 @@
 | SEO-01 | Phase 2 | Complete |
 | SEO-02 | Phase 4 | Pending |
 | SEO-03 | Phase 1 | Complete |
-| SEO-04 | Phase 2 | Pending |
-| SEO-05 | Phase 2 | Pending |
+| SEO-04 | Phase 2 | Complete |
+| SEO-05 | Phase 2 | Complete |
 
 **Coverage:**
 - v1 requirements: 67 total
