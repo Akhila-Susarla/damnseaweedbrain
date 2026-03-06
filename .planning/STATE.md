@@ -10,8 +10,8 @@ progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 14
-  completed_plans: 10
-  percent: 71
+  completed_plans: 11
+  percent: 79
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 3 of 4 (BSD Experience Layer) -- IN PROGRESS
-Plan: 1 of 5 in current phase (03-01 complete)
+Plan: 2 of 5 in current phase (03-02 complete)
 Status: Executing Phase 3
-Last activity: 2026-03-06 -- Completed plan 03-01 (VN dialogue core)
+Last activity: 2026-03-06 -- Completed plan 03-02 (3D tilt & fallback infrastructure)
 
-Progress: [███████░░░] 71%
+Progress: [████████░░] 79%
 
 ## Performance Metrics
 
@@ -56,6 +56,7 @@ Progress: [███████░░░] 71%
 | Phase 02 P06 | 4min | 2 tasks | 3 files |
 | Phase 02 P07 | 12min | 2 tasks | 6 files |
 | Phase 03 P01 | 6min | 2 tasks | 15 files |
+| Phase 03 P02 | 5min | 2 tasks | 10 files |
 
 ## Accumulated Context
 
@@ -92,6 +93,9 @@ Recent decisions affecting current work:
 - [03-01]: SVG expression layers with motion/react AnimatePresence for portrait transitions
 - [03-01]: DialogueBox-specific GSAP typewriter (not TypewriterText) for click-to-complete support
 - [03-01]: Caveat font registered in layout.tsx + globals.css @theme for font-caveat utility
+- [03-02]: useState for tilt rotation (not useRef+CSS vars) for test observability; negligible perf cost
+- [03-02]: useSyncExternalStore for WebGL detection -- SSR-safe with cached singleton result
+- [03-02]: useTilt applied directly to existing elements (not TiltCard wrapper) to avoid nesting
 
 ### Pending Todos
 
@@ -104,6 +108,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T17:19:34.839Z
-Stopped at: Completed 03-01-PLAN.md
+Last session: 2026-03-06T17:25:37Z
+Stopped at: Completed 03-02-PLAN.md
 Resume file: None
