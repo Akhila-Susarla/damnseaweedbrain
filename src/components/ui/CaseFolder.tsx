@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/lib/utils';
 import { usePortfolioStore } from '@/lib/store';
+import { useTilt } from '@/hooks/useTilt';
 import type { CaseFile } from '@/data/types';
 import StampBadge from './StampBadge';
 
@@ -14,6 +15,7 @@ interface CaseFolderProps {
 export default function CaseFolder({ caseFile }: CaseFolderProps) {
   const [isOpen, setIsOpen] = useState(false);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const { ref: tiltRef, style: tiltStyle, handlers: tiltHandlers } = useTilt({ maxAngle: 10 });
 
   const springTransition = reducedMotion
     ? { duration: 0 }
@@ -25,10 +27,14 @@ export default function CaseFolder({ caseFile }: CaseFolderProps) {
 
   return (
     <div
+      ref={reducedMotion ? undefined : (tiltRef as React.Ref<HTMLDivElement>)}
       className={cn(
         'case-folder relative bg-midnight/60 border border-parchment/15 rounded-lg overflow-hidden',
         'opacity-0 translate-y-8'
       )}
+      style={reducedMotion ? undefined : tiltStyle}
+      onMouseMove={reducedMotion ? undefined : tiltHandlers.onMouseMove}
+      onMouseLeave={reducedMotion ? undefined : tiltHandlers.onMouseLeave}
     >
       {/* Folder cover */}
       <motion.div

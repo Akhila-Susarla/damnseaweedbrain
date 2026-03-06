@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
 import { cn } from '@/lib/utils';
+import { useTilt } from '@/hooks/useTilt';
 import type { Skill } from '@/data/types';
 
 const tierColors: Record<string, string> = {
@@ -20,6 +21,7 @@ interface AbilityCardProps {
 export default function AbilityCard({ skill, className }: AbilityCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const prefersReducedMotion = useReducedMotion();
+  const { ref: tiltRef, style: tiltStyle, handlers: tiltHandlers } = useTilt({ maxAngle: 12 });
 
   const toggle = () => setIsExpanded((prev) => !prev);
 
@@ -27,8 +29,14 @@ export default function AbilityCard({ skill, className }: AbilityCardProps) {
     ? { duration: 0 }
     : { duration: 0.25, ease: 'easeOut' as const };
 
+  const handleMouseLeave = useCallback(() => {
+    setIsExpanded(false);
+    tiltHandlers.onMouseLeave();
+  }, [tiltHandlers]);
+
   return (
     <button
+      ref={prefersReducedMotion ? undefined : (tiltRef as React.Ref<HTMLButtonElement>)}
       type="button"
       className={cn(
         'ability-card flex w-full flex-col rounded-lg border border-parchment/15 bg-midnight/60 p-4 text-left',
@@ -37,11 +45,13 @@ export default function AbilityCard({ skill, className }: AbilityCardProps) {
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/50',
         className
       )}
+      style={prefersReducedMotion ? undefined : tiltStyle}
       aria-expanded={isExpanded}
       aria-label={`${skill.name} - ${skill.tier} tier ability`}
       onClick={toggle}
       onMouseEnter={() => setIsExpanded(true)}
-      onMouseLeave={() => setIsExpanded(false)}
+      onMouseMove={prefersReducedMotion ? undefined : tiltHandlers.onMouseMove}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0 flex-1">

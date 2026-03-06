@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useSyncExternalStore } from 'react';
+import { useSyncExternalStore } from 'react';
 
 function checkWebGL(): boolean {
   try {
@@ -28,7 +28,8 @@ function getServerSnapshot(): boolean {
   return false;
 }
 
-function subscribe(_cb: () => void): () => void {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function subscribe(onStoreChange: () => void): () => void {
   // WebGL support doesn't change at runtime; no-op subscription
   return () => {};
 }
