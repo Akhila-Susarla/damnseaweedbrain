@@ -24,12 +24,31 @@ export default function HeroSection() {
         trigger: '#hero',
         start: 'top top',
         end: 'bottom top',
-        scrub: true,
+        scrub: 0.6,
       };
 
-      gsap.to('.parallax-bg', { y: -100, scrollTrigger: trigger });
-      gsap.to('.parallax-mid', { y: -50, scrollTrigger: { ...trigger } });
-      gsap.to('.parallax-fg', { y: 20, scrollTrigger: { ...trigger } });
+      // Background layer: farthest — slowest vertical drift, slight zoom
+      gsap.to('.parallax-bg', {
+        yPercent: -8,
+        scale: 1.08,
+        scrollTrigger: trigger,
+      });
+
+      // Midground layer: middle depth — moderate speed, fades as it rises
+      gsap.to('.parallax-mid', {
+        yPercent: -25,
+        scale: 1.04,
+        opacity: 0.1,
+        scrollTrigger: { ...trigger },
+      });
+
+      // Foreground layer: closest — fastest, drifts down + scales up dramatically
+      gsap.to('.parallax-fg', {
+        yPercent: 35,
+        scale: 1.25,
+        opacity: 0,
+        scrollTrigger: { ...trigger },
+      });
     },
     { scope: heroRef, dependencies: [reducedMotion] }
   );
@@ -41,8 +60,8 @@ export default function HeroSection() {
   return (
     <Section id="hero" depth={1} className="!py-0">
       <div ref={heroRef} className="relative min-h-screen overflow-hidden">
-        {/* Background layer: dark noir atmosphere */}
-        <div className="parallax-bg absolute inset-0 z-0">
+        {/* Background layer: dark noir atmosphere — farthest depth */}
+        <div className="parallax-bg absolute inset-0 z-0 will-change-transform" style={{ filter: 'blur(0.5px)' }}>
           <div
             className="absolute inset-0"
             style={{
@@ -55,7 +74,7 @@ export default function HeroSection() {
           />
           {/* Yokohama cityscape silhouette */}
           <div
-            className="absolute bottom-0 left-0 right-0 h-[30%] opacity-20"
+            className="absolute bottom-0 left-0 right-0 h-[30%] opacity-30"
             style={{
               background: `
                 linear-gradient(0deg, #0a0e1a 0%, transparent 100%),
@@ -73,8 +92,8 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Midground layer: Dazai character presence */}
-        <div className="parallax-mid absolute inset-0 z-[1] flex items-end justify-center">
+        {/* Midground layer: Dazai character presence — mid depth */}
+        <div className="parallax-mid absolute inset-0 z-[1] flex items-end justify-center will-change-transform">
           <div
             className="relative w-48 tablet:w-64 desktop:w-80 h-[60vh] mb-0 opacity-30"
             aria-hidden="true"
@@ -94,34 +113,34 @@ export default function HeroSection() {
           />
         </div>
 
-        {/* Foreground layer: floating decorative elements */}
-        <div className="parallax-fg absolute inset-0 z-[2] pointer-events-none" aria-hidden="true">
-          {/* Bandage strips */}
+        {/* Foreground layer: floating decorative elements — nearest depth */}
+        <div className="parallax-fg absolute inset-0 z-[2] pointer-events-none will-change-transform" aria-hidden="true">
+          {/* Bandage strips — slightly more visible for depth contrast */}
           <div
-            className="absolute top-[15%] left-[10%] w-24 h-1.5 bg-parchment/10 rounded-full rotate-[25deg]"
+            className="absolute top-[15%] left-[10%] w-28 h-1.5 bg-parchment/15 rounded-full rotate-[25deg]"
           />
           <div
-            className="absolute top-[40%] right-[15%] w-16 h-1 bg-parchment/8 rounded-full -rotate-[15deg]"
+            className="absolute top-[40%] right-[15%] w-20 h-1 bg-parchment/12 rounded-full -rotate-[15deg]"
           />
           <div
-            className="absolute bottom-[30%] left-[20%] w-20 h-1 bg-parchment/6 rounded-full rotate-[45deg]"
+            className="absolute bottom-[30%] left-[20%] w-24 h-1 bg-parchment/10 rounded-full rotate-[45deg]"
           />
 
-          {/* Faint kanji characters */}
-          <span className="absolute top-[25%] right-[10%] font-heading text-6xl text-parchment/[0.03] select-none">
+          {/* Faint kanji characters — bumped visibility for parallax perception */}
+          <span className="absolute top-[25%] right-[10%] font-heading text-6xl text-parchment/[0.06] select-none">
             探
           </span>
-          <span className="absolute top-[55%] left-[8%] font-heading text-5xl text-parchment/[0.04] select-none rotate-[-8deg]">
+          <span className="absolute top-[55%] left-[8%] font-heading text-5xl text-parchment/[0.07] select-none rotate-[-8deg]">
             偵
           </span>
-          <span className="absolute bottom-[25%] right-[20%] font-heading text-4xl text-parchment/[0.03] select-none rotate-[5deg]">
+          <span className="absolute bottom-[25%] right-[20%] font-heading text-4xl text-parchment/[0.05] select-none rotate-[5deg]">
             暗
           </span>
 
           {/* Subtle particle dots */}
-          <div className="absolute top-[20%] left-[50%] w-1 h-1 rounded-full bg-gold/20" />
-          <div className="absolute top-[60%] left-[70%] w-0.5 h-0.5 rounded-full bg-parchment/15" />
-          <div className="absolute top-[45%] left-[30%] w-1 h-1 rounded-full bg-teal/10" />
+          <div className="absolute top-[20%] left-[50%] w-1.5 h-1.5 rounded-full bg-gold/25" />
+          <div className="absolute top-[60%] left-[70%] w-1 h-1 rounded-full bg-parchment/20" />
+          <div className="absolute top-[45%] left-[30%] w-1.5 h-1.5 rounded-full bg-teal/15" />
         </div>
 
         {/* Content overlay */}
