@@ -10,7 +10,7 @@
 - [x] **FNDN-01**: Site built with Next.js 15 + React 19 + TypeScript
 - [x] **FNDN-02**: BSD dark noir theme system with design tokens (colors, typography, motifs)
 - [x] **FNDN-03**: Responsive layout — desktop-first with mobile breakpoints (375px minimum)
-- [ ] **FNDN-04**: Performance budget enforced — 1.5MB initial load, WebP images, lazy loading
+- [x] **FNDN-04**: Performance budget enforced — 1.5MB initial load, WebP images, lazy loading
 - [x] **FNDN-05**: Tailwind CSS v4 for styling with custom theme configuration
 - [x] **FNDN-06**: Zustand store for global state (dialogue, section, animation tracking)
 
@@ -97,17 +97,17 @@
 
 ### Assets & Visuals
 
-- [ ] **ASSET-01**: BSD-inspired custom visuals (original art, not copyrighted game rips)
-- [ ] **ASSET-02**: Bandage textures, paper/parchment backgrounds, classified stamps as SVG/CSS
+- [x] **ASSET-01**: BSD-inspired custom visuals (original art, not copyrighted game rips)
+- [x] **ASSET-02**: Bandage textures, paper/parchment backgrounds, classified stamps as SVG/CSS
 - [x] **ASSET-03**: Custom fonts (serif headings, clean body, monospace accents) in WOFF2
 - [ ] **ASSET-04**: BSD-themed OG image for social media sharing
-- [ ] **ASSET-05**: Optimized asset pipeline — WebP, lazy loading, responsive images
+- [x] **ASSET-05**: Optimized asset pipeline — WebP, lazy loading, responsive images
 
 ### SEO & Accessibility
 
 - [ ] **SEO-01**: Semantic HTML with proper heading hierarchy
 - [ ] **SEO-02**: Meta tags and Open Graph data for social sharing
-- [ ] **SEO-03**: WCAG AA contrast ratios on all text
+- [x] **SEO-03**: WCAG AA contrast ratios on all text
 - [ ] **SEO-04**: Keyboard navigation for all interactive elements
 - [ ] **SEO-05**: Alt text and aria labels for visual elements
 
@@ -147,7 +147,7 @@
 | FNDN-01 | Phase 1 | Complete |
 | FNDN-02 | Phase 1 | Complete |
 | FNDN-03 | Phase 1 | Complete |
-| FNDN-04 | Phase 1 | Pending |
+| FNDN-04 | Phase 1 | Complete |
 | FNDN-05 | Phase 1 | Complete |
 | FNDN-06 | Phase 1 | Complete |
 | NAV-01 | Phase 2 | Pending |
@@ -201,14 +201,14 @@
 | 3D-03 | Phase 3 | Pending |
 | 3D-04 | Phase 3 | Pending |
 | 3D-05 | Phase 3 | Pending |
-| ASSET-01 | Phase 1 | Pending |
-| ASSET-02 | Phase 1 | Pending |
+| ASSET-01 | Phase 1 | Complete |
+| ASSET-02 | Phase 1 | Complete |
 | ASSET-03 | Phase 1 | Complete |
 | ASSET-04 | Phase 4 | Pending |
-| ASSET-05 | Phase 1 | Pending |
+| ASSET-05 | Phase 1 | Complete |
 | SEO-01 | Phase 2 | Pending |
 | SEO-02 | Phase 4 | Pending |
-| SEO-03 | Phase 1 | Pending |
+| SEO-03 | Phase 1 | Complete |
 | SEO-04 | Phase 2 | Pending |
 | SEO-05 | Phase 2 | Pending |
 
