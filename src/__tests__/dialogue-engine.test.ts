@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
 import { useDialogue } from '@/hooks/useDialogue';
 import type { DialogueSequence } from '@/data/types';

@@ -16,6 +16,7 @@
   --font-heading: var(--font-playfair-display);
   --font-body: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
+  --font-caveat: var(--font-caveat);
 
   --breakpoint-mobile: 375px;
   --breakpoint-tablet: 768px;
