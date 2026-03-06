@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: in-progress
-stopped_at: Completed 02-01-PLAN.md
-last_updated: "2026-03-06T12:13:58Z"
-last_activity: 2026-03-06 -- Completed plan 02-01 (scroll & navigation infrastructure)
+stopped_at: Completed 02-03-PLAN.md
+last_updated: "2026-03-06T12:20:02Z"
+last_activity: 2026-03-06 -- Completed plan 02-03 (about & social sections)
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 9
-  completed_plans: 3
-  percent: 33
+  completed_plans: 5
+  percent: 55
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 2 of 4 (Content Scenes & Navigation)
-Plan: 1 of 7 in current phase (02-01 complete)
+Plan: 3 of 7 in current phase (02-03 complete)
 Status: In Progress
-Last activity: 2026-03-06 -- Completed plan 02-01 (scroll & navigation infrastructure)
+Last activity: 2026-03-06 -- Completed plan 02-03 (about & social sections)
 
-Progress: [###░░░░░░░] 33%
+Progress: [#####░░░░░] 55%
 
 ## Performance Metrics
 
@@ -44,10 +44,10 @@ Progress: [###░░░░░░░] 33%
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1. Foundation | 2/2 | 54min | 27min |
-| 2. Content Scenes | 1/7 | 7min | 7min |
+| 2. Content Scenes | 3/7 | 10min | 3min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (19min), 01-02 (35min), 02-01 (7min)
+- Last 5 plans: 01-01 (19min), 01-02 (35min), 02-01 (7min), 02-02 (?), 02-03 (3min)
 - Trend: accelerating
 
 *Updated after each plan completion*
@@ -71,6 +71,8 @@ Recent decisions affecting current work:
 - [02-01]: happy-dom instead of jsdom for vitest (jsdom v28 ESM incompatibility with Node 18)
 - [02-01]: ReactLenis root auto-sync with GSAP ScrollTrigger (manual fallback in comments)
 - [02-01]: NavPanel dual-nav-landmark pattern (desktop side rail + mobile bottom bar)
+- [02-03]: Achievements vs leadership highlights classified by keyword matching
+- [02-03]: Platform icons as monospace text tokens [LI] [GH] [@] for terminal aesthetic
 
 ### Pending Todos
 
@@ -83,6 +85,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T12:13:58Z
-Stopped at: Completed 02-01-PLAN.md
-Resume file: .planning/phases/02-content-scenes-navigation/02-01-SUMMARY.md
+Last session: 2026-03-06T12:20:02Z
+Stopped at: Completed 02-03-PLAN.md
+Resume file: .planning/phases/02-content-scenes-navigation/02-03-SUMMARY.md
