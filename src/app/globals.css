@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #0a0e1a;
+  --color-midnight-light: #111827;
+  --color-midnight-deep: #060a14;
+  --color-parchment: #e8e0d4;
+  --color-parchment-dim: #c4b8a8;
+  --color-gold: #d4af37;
+  --color-gold-muted: #c9a84c;
+  --color-teal: #2dd4bf;
+  --color-teal-muted: #5eead4;
+  --color-classified-red: #dc2626;
+
+  --font-heading: var(--font-playfair-display);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+}
+
+/* Section depth gradient variations */
+:root {
+  --section-depth-1: #0a0e1a;
+  --section-depth-2: #0c1020;
+  --section-depth-3: #080c16;
+  --section-depth-4: #060a14;
+}
+
+@layer base {
+  body {
+    @apply bg-midnight text-parchment font-body antialiased;
+  }
+}
