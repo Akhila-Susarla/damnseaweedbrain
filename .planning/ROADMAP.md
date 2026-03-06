@@ -48,12 +48,16 @@ Plans:
   6. Intel section displays all four work experiences (American Airlines, Autodesk x2, SRM) as classified mission dossiers with redacted text reveal animations and timeline progression
   7. Social links (LinkedIn, GitHub, Email) are styled as an Agency communication panel
   8. All interactive elements are keyboard-navigable, images have alt text, and reduced-motion mode disables animations when system preference is set
-**Plans**: TBD
+**Plans**: 7 plans
 
 Plans:
-- [ ] 02-01: TBD
-- [ ] 02-02: TBD
-- [ ] 02-03: TBD
+- [ ] 02-01-PLAN.md -- Install animation libs (Lenis, GSAP, Motion), smooth scroll provider, reduced motion hook, and BSD-styled navigation panel
+- [ ] 02-02-PLAN.md -- Hero section with 3-layer parallax, typewriter title, Dazai character placeholder, scroll indicator
+- [ ] 02-03-PLAN.md -- About section (character dossier with education data) and Social section (agency communication panel)
+- [ ] 02-04-PLAN.md -- Abilities section with RPG skill cards in category grid, tier badges, scroll reveals, hover interactions
+- [ ] 02-05-PLAN.md -- Case Files section with folder flip animation, stamp badges, expandable project details
+- [ ] 02-06-PLAN.md -- Intel section with vertical timeline, mission dossiers, redacted text reveal animations
+- [ ] 02-07-PLAN.md -- Page assembly, accessibility audit (keyboard nav, aria labels), SEO tests, visual verification
 
 ### Phase 3: BSD Experience Layer
 **Goal**: The portfolio transforms from a themed static site into an interactive BSD experience -- visual novel dialogues introduce visitors and narrate transitions, 3D elements add depth, and cinematic scene transitions tie everything together
@@ -92,6 +96,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation & Theme System | 2/2 | Complete   | 2026-03-06 |
-| 2. Content Scenes & Navigation | 0/? | Not started | - |
+| 2. Content Scenes & Navigation | 0/7 | Not started | - |
 | 3. BSD Experience Layer | 0/? | Not started | - |
 | 4. Polish & Launch | 0/? | Not started | - |
