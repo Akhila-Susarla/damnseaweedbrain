@@ -26,7 +26,7 @@
 - [x] **HERO-01**: Dazai character presence with introduction sequence
 - [x] **HERO-02**: Typewriter title reveal ("damnseaweedbrain" / character name)
 - [x] **HERO-03**: Multi-layer parallax scene with depth
-- [ ] **HERO-04**: Visual novel dialogue intro — Dazai introduces the visitor
+- [x] **HERO-04**: Visual novel dialogue intro — Dazai introduces the visitor
 - [x] **HERO-05**: Scroll-down indicator / call to explore
 
 ### About / Origin Story
@@ -75,8 +75,8 @@
 - [x] **VN-01**: Custom dialogue engine with typewriter text effect
 - [x] **VN-02**: Dazai character portrait with expression variants
 - [x] **VN-03**: Dialogue boxes styled as BSD speech bubbles
-- [ ] **VN-04**: All dialogues skippable — never gate portfolio content
-- [ ] **VN-05**: VN dialogues trigger at landing and section transitions
+- [x] **VN-04**: All dialogues skippable — never gate portfolio content
+- [x] **VN-05**: VN dialogues trigger at landing and section transitions
 - [x] **VN-06**: Dialogue data stored as JSON (easy to update content)
 
 ### Animation & Transitions
@@ -157,7 +157,7 @@
 | HERO-01 | Phase 2 | Complete |
 | HERO-02 | Phase 2 | Complete |
 | HERO-03 | Phase 2 | Complete |
-| HERO-04 | Phase 3 | Pending |
+| HERO-04 | Phase 3 | Complete |
 | HERO-05 | Phase 2 | Complete |
 | ABOUT-01 | Phase 2 | Complete |
 | ABOUT-02 | Phase 2 | Complete |
@@ -188,8 +188,8 @@
 | VN-01 | Phase 3 | Complete |
 | VN-02 | Phase 3 | Complete |
 | VN-03 | Phase 3 | Complete |
-| VN-04 | Phase 3 | Pending |
-| VN-05 | Phase 3 | Pending |
+| VN-04 | Phase 3 | Complete |
+| VN-05 | Phase 3 | Complete |
 | VN-06 | Phase 3 | Complete |
 | ANIM-01 | Phase 2 | Complete |
 | ANIM-02 | Phase 3 | Pending |

@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-stopped_at: Completed 03-01-PLAN.md
-last_updated: "2026-03-06T17:19:34.854Z"
-last_activity: 2026-03-06 -- Completed plan 03-01 (VN dialogue core)
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-03-06T17:35:14Z"
+last_activity: 2026-03-06 -- Completed plan 03-03 (VN dialogue wiring)
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 14
-  completed_plans: 11
-  percent: 79
+  completed_plans: 12
+  percent: 86
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 3 of 4 (BSD Experience Layer) -- IN PROGRESS
-Plan: 2 of 5 in current phase (03-02 complete)
+Plan: 3 of 5 in current phase (03-03 complete)
 Status: Executing Phase 3
-Last activity: 2026-03-06 -- Completed plan 03-02 (3D tilt & fallback infrastructure)
+Last activity: 2026-03-06 -- Completed plan 03-03 (VN dialogue wiring)
 
-Progress: [████████░░] 79%
+Progress: [████████░░] 86%
 
 ## Performance Metrics
 
@@ -57,6 +57,7 @@ Progress: [████████░░] 79%
 | Phase 02 P07 | 12min | 2 tasks | 6 files |
 | Phase 03 P01 | 6min | 2 tasks | 15 files |
 | Phase 03 P02 | 5min | 2 tasks | 10 files |
+| Phase 03 P03 | 7min | 2 tasks | 8 files |
 
 ## Accumulated Context
 
@@ -96,6 +97,9 @@ Recent decisions affecting current work:
 - [03-02]: useState for tilt rotation (not useRef+CSS vars) for test observability; negligible perf cost
 - [03-02]: useSyncExternalStore for WebGL detection -- SSR-safe with cached singleton result
 - [03-02]: useTilt applied directly to existing elements (not TiltCard wrapper) to avoid nesting
+- [03-03]: HeroIntro uses 300ms delay before locking scroll to let page settle
+- [03-03]: SectionDialogues wrapper placed as sibling before content sections for clean separation
+- [03-03]: globalThis pattern for ScrollTrigger mock callbacks to avoid vitest hoisting issues
 
 ### Pending Todos
 
@@ -108,6 +112,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T17:25:37Z
-Stopped at: Completed 03-02-PLAN.md
+Last session: 2026-03-06T17:35:14Z
+Stopped at: Completed 03-03-PLAN.md
 Resume file: None
