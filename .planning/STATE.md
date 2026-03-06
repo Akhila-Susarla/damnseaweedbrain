@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: in-progress
-stopped_at: Completed 02-03-PLAN.md
-last_updated: "2026-03-06T12:20:02Z"
-last_activity: 2026-03-06 -- Completed plan 02-03 (about & social sections)
+status: executing
+stopped_at: Completed 02-05-PLAN.md
+last_updated: "2026-03-06T12:22:09Z"
+last_activity: 2026-03-06 -- Completed plan 02-05 (case files section)
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 9
-  completed_plans: 5
+  completed_plans: 7
   percent: 55
 ---
 
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-06)
 ## Current Position
 
 Phase: 2 of 4 (Content Scenes & Navigation)
-Plan: 3 of 7 in current phase (02-03 complete)
+Plan: 5 of 7 in current phase (02-05 complete)
 Status: In Progress
-Last activity: 2026-03-06 -- Completed plan 02-03 (about & social sections)
+Last activity: 2026-03-06 -- Completed plan 02-05 (case files section)
 
-Progress: [#####░░░░░] 55%
+Progress: [████████░░] 78%
 
 ## Performance Metrics
 
@@ -51,6 +51,8 @@ Progress: [#####░░░░░] 55%
 - Trend: accelerating
 
 *Updated after each plan completion*
+| Phase 02 P04 | 5min | 2 tasks | 3 files |
+| Phase 02 P05 | 5min | 2 tasks | 4 files |
 
 ## Accumulated Context
 
@@ -73,6 +75,8 @@ Recent decisions affecting current work:
 - [02-01]: NavPanel dual-nav-landmark pattern (desktop side rail + mobile bottom bar)
 - [02-03]: Achievements vs leadership highlights classified by keyword matching
 - [02-03]: Platform icons as monospace text tokens [LI] [GH] [@] for terminal aesthetic
+- [Phase 02-04]: ScrollTrigger.batch instead of individual triggers for 32 cards -- better performance
+- [Phase 02-04]: Combined hover and click for card detail expansion (desktop/mobile)
 
 ### Pending Todos
 
@@ -85,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-06T12:20:02Z
-Stopped at: Completed 02-03-PLAN.md
-Resume file: .planning/phases/02-content-scenes-navigation/02-03-SUMMARY.md
+Last session: 2026-03-06T12:23:18.239Z
+Stopped at: Completed 02-04-PLAN.md
+Resume file: None

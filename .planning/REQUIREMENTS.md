@@ -38,11 +38,11 @@
 
 ### Abilities (Skills)
 
-- [ ] **ABIL-01**: All resume skills displayed as RPG supernatural ability cards
-- [ ] **ABIL-02**: Power level ratings/meters for each skill
-- [ ] **ABIL-03**: Ability categories: Languages, Data Science/ML, Tools & Frameworks, Cloud
-- [ ] **ABIL-04**: Animated card reveals on scroll (GSAP)
-- [ ] **ABIL-05**: Hover/click interactions on cards showing detail
+- [x] **ABIL-01**: All resume skills displayed as RPG supernatural ability cards
+- [x] **ABIL-02**: Power level ratings/meters for each skill
+- [x] **ABIL-03**: Ability categories: Languages, Data Science/ML, Tools & Frameworks, Cloud
+- [x] **ABIL-04**: Animated card reveals on scroll (GSAP)
+- [x] **ABIL-05**: Hover/click interactions on cards showing detail
 
 ### Case Files (Projects)
 
@@ -163,11 +163,11 @@
 | ABOUT-02 | Phase 2 | Complete |
 | ABOUT-03 | Phase 2 | Complete |
 | ABOUT-04 | Phase 2 | Complete |
-| ABIL-01 | Phase 2 | Pending |
-| ABIL-02 | Phase 2 | Pending |
-| ABIL-03 | Phase 2 | Pending |
-| ABIL-04 | Phase 2 | Pending |
-| ABIL-05 | Phase 2 | Pending |
+| ABIL-01 | Phase 2 | Complete |
+| ABIL-02 | Phase 2 | Complete |
+| ABIL-03 | Phase 2 | Complete |
+| ABIL-04 | Phase 2 | Complete |
+| ABIL-05 | Phase 2 | Complete |
 | CASE-01 | Phase 2 | Pending |
 | CASE-02 | Phase 2 | Pending |
 | CASE-03 | Phase 2 | Pending |
