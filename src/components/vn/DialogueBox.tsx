@@ -1,7 +1,8 @@
 'use client';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useState } from 'react';
 import gsap from 'gsap';
+import { motion } from 'motion/react';
 import { usePortfolioStore } from '@/lib/store';
 
 interface DialogueBoxProps {
@@ -15,6 +16,7 @@ export default function DialogueBox({ text, isTyping, onComplete, className = ''
   const textRef = useRef<HTMLParagraphElement>(null);
   const timelineRef = useRef<gsap.core.Timeline | null>(null);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const [showHint, setShowHint] = useState(false);
 
   const completeTyping = useCallback(() => {
     if (timelineRef.current) {
@@ -26,18 +28,20 @@ export default function DialogueBox({ text, isTyping, onComplete, className = ''
     const el = textRef.current;
     if (!el) return;
 
-    // If reduced motion or not typing, show full text immediately
+    setShowHint(false);
+
     if (reducedMotion || !isTyping) {
       el.textContent = text;
+      setShowHint(true);
       onComplete?.();
       return;
     }
 
-    // Create typewriter animation
     el.textContent = '';
     const chars = text.split('');
     const tl = gsap.timeline({
       onComplete: () => {
+        setShowHint(true);
         onComplete?.();
       },
     });
@@ -67,32 +71,46 @@ export default function DialogueBox({ text, isTyping, onComplete, className = ''
 
   return (
     <div
-      className={`relative cursor-pointer select-none ${className}`}
+      className={`relative cursor-pointer select-none flex-1 min-w-0 ${className}`}
       onClick={handleClick}
       role="log"
       aria-live="polite"
     >
-      {/* Dazai name label */}
-      <span className="block font-mono text-xs text-parchment/40 mb-1 tracking-wider">
-        DAZAI
-      </span>
+      {/* Name plate — case file label style */}
+      <div className="flex items-center gap-2 mb-2">
+        <span className="inline-block px-2.5 py-0.5 font-mono text-[10px] tracking-[0.2em] uppercase text-gold border border-gold/30 bg-gold/5">
+          Dazai
+        </span>
+        <div className="flex-1 h-px bg-gradient-to-r from-gold/20 to-transparent" />
+      </div>
 
-      {/* Handwritten-note speech bubble */}
-      <div
-        className="font-caveat text-lg md:text-xl leading-relaxed text-parchment/90"
-        style={{
-          background: 'rgba(196, 184, 168, 0.08)',
-          border: '1.5px solid rgba(196, 184, 168, 0.25)',
-          borderRadius: '4px 12px 12px 4px',
-          padding: '1rem 1.25rem',
-          transform: 'rotate(-0.5deg)',
-          boxShadow:
-            'inset 0 0 0 1px rgba(196, 184, 168, 0.05), 2px 2px 8px rgba(0, 0, 0, 0.3)',
-        }}
+      {/* Dialogue text */}
+      <p
+        ref={textRef}
+        className="font-caveat text-xl md:text-2xl leading-relaxed text-parchment/90 min-h-[2em]"
+        aria-label={text}
       >
-        <p ref={textRef} aria-label={text}>
-          {reducedMotion || !isTyping ? text : ''}
-        </p>
+        {reducedMotion || !isTyping ? text : ''}
+      </p>
+
+      {/* Click to continue hint */}
+      <div className="flex justify-end mt-2 h-5">
+        {showHint && !isTyping && (
+          <motion.span
+            className="font-mono text-[10px] tracking-wider text-parchment/40 flex items-center gap-1.5"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+          >
+            click to continue
+            <motion.span
+              animate={{ y: [0, 3, 0] }}
+              transition={{ repeat: Infinity, duration: 1.2, ease: 'easeInOut' }}
+            >
+              ▼
+            </motion.span>
+          </motion.span>
+        )}
       </div>
     </div>
   );

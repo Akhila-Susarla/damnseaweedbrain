@@ -43,6 +43,11 @@ vi.mock('next/dynamic', () => ({
   },
 }));
 
+// Mock next/image
+vi.mock('next/image', () => ({
+  default: (props: any) => createElement('img', { ...props, fill: undefined }),
+}));
+
 // Mock motion/react -- filter out non-DOM props
 vi.mock('motion/react', () => {
   const filterProps = (props: any) => {
@@ -80,9 +85,9 @@ describe('HeroIntro integration', () => {
 
   it('renders HeroIntro within HeroSection', async () => {
     render(createElement(HeroSection));
-    // HeroIntro renders after a 300ms delay
+    // HeroIntro renders after an 800ms delay
     await act(async () => {
-      vi.advanceTimersByTime(350);
+      vi.advanceTimersByTime(850);
     });
 
     const introEl = screen.queryByTestId('hero-intro');
@@ -92,7 +97,7 @@ describe('HeroIntro integration', () => {
   it('renders dialogue region within HeroIntro', async () => {
     render(createElement(HeroSection));
     await act(async () => {
-      vi.advanceTimersByTime(350);
+      vi.advanceTimersByTime(850);
     });
 
     const dialogue = screen.queryByRole('region', { name: /dialogue/i });

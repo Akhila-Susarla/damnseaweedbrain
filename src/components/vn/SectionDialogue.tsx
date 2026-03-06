@@ -25,7 +25,6 @@ export default function SectionDialogue({ sectionId, dialogueData, className = '
   useEffect(() => {
     if (hasPlayed) return;
 
-    // Create ScrollTrigger to detect section entry
     triggerRef.current = ScrollTrigger.create({
       trigger: `#${sectionId}`,
       start: 'top 80%',
@@ -42,7 +41,6 @@ export default function SectionDialogue({ sectionId, dialogueData, className = '
 
   const handleComplete = () => {
     setIsVisible(false);
-    // Small delay for exit animation before removing
     setTimeout(() => {
       setHasPlayed(true);
     }, 300);
@@ -54,7 +52,7 @@ export default function SectionDialogue({ sectionId, dialogueData, className = '
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className={`w-full max-w-md mx-auto mb-4 ${className}`}
+          className={`w-full max-w-lg mx-auto mb-4 ${className}`}
           initial={reducedMotion ? false : { opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={reducedMotion ? undefined : { opacity: 0, y: -4 }}
@@ -64,7 +62,7 @@ export default function SectionDialogue({ sectionId, dialogueData, className = '
           <DialogueEngine
             sequence={dialogueData}
             onComplete={handleComplete}
-            className="[&_[data-testid=character-portrait]]:w-16 [&_[data-testid=character-portrait]]:h-24"
+            compact
           />
         </motion.div>
       )}

@@ -18,25 +18,22 @@ export default function HeroIntro() {
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
   const lenisRef = useRef(lenis);
 
-  // Keep ref in sync so cleanup always has latest lenis instance
   useEffect(() => {
     lenisRef.current = lenis;
   }, [lenis]);
 
-  // On mount: lock scroll, show dialogue
+  // On mount: lock scroll, show dialogue after brief delay
   useEffect(() => {
     if (hasPlayed) return;
 
-    // Small delay to let page settle before locking
     const timer = setTimeout(() => {
       lenisRef.current?.stop();
       setDialogueActive(true);
       setIsVisible(true);
-    }, 300);
+    }, 800);
 
     return () => {
       clearTimeout(timer);
-      // Safety: always unlock scroll if component unmounts unexpectedly
       lenisRef.current?.start();
       setDialogueActive(false);
     };
@@ -45,7 +42,6 @@ export default function HeroIntro() {
   const handleComplete = useCallback(() => {
     lenisRef.current?.start();
     setDialogueActive(false);
-    // Animate out, then mark as played
     setIsVisible(false);
     const timer = setTimeout(() => {
       setHasPlayed(true);
@@ -58,19 +54,31 @@ export default function HeroIntro() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.div
-          className="w-full max-w-lg mx-auto mt-6"
-          initial={reducedMotion ? false : { opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={reducedMotion ? undefined : { opacity: 0, y: -8 }}
-          transition={{ duration: reducedMotion ? 0 : 0.35 }}
-          data-testid="hero-intro"
-        >
-          <DialogueEngine
-            sequence={heroSequence}
-            onComplete={handleComplete}
+        <>
+          {/* Subtle dark vignette overlay to focus attention on dialogue */}
+          <motion.div
+            className="fixed inset-0 z-40 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.5 }}
+            style={{
+              background: 'linear-gradient(to top, rgba(10,14,26,0.7) 0%, rgba(10,14,26,0.2) 40%, transparent 60%)',
+            }}
           />
-        </motion.div>
+          <motion.div
+            initial={reducedMotion ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reducedMotion ? 0 : 0.35 }}
+            data-testid="hero-intro"
+          >
+            <DialogueEngine
+              sequence={heroSequence}
+              onComplete={handleComplete}
+            />
+          </motion.div>
+        </>
       )}
     </AnimatePresence>
   );
