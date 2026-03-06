@@ -55,13 +55,13 @@
 
 ### Intel (Experience)
 
-- [ ] **INTL-01**: American Airlines internship as mission dossier
-- [ ] **INTL-02**: Autodesk Data Scientist role as mission dossier
-- [ ] **INTL-03**: Autodesk ML Engineer Intern role as mission dossier
-- [ ] **INTL-04**: SRM Research Intern role as mission dossier
-- [ ] **INTL-05**: Mission dossier format — classified document style with stamps
-- [ ] **INTL-06**: Redacted text reveal animations on scroll
-- [ ] **INTL-07**: Timeline progression between roles
+- [x] **INTL-01**: American Airlines internship as mission dossier
+- [x] **INTL-02**: Autodesk Data Scientist role as mission dossier
+- [x] **INTL-03**: Autodesk ML Engineer Intern role as mission dossier
+- [x] **INTL-04**: SRM Research Intern role as mission dossier
+- [x] **INTL-05**: Mission dossier format — classified document style with stamps
+- [x] **INTL-06**: Redacted text reveal animations on scroll
+- [x] **INTL-07**: Timeline progression between roles
 
 ### Contact / Social
 
@@ -174,13 +174,13 @@
 | CASE-04 | Phase 2 | Complete |
 | CASE-05 | Phase 2 | Complete |
 | CASE-06 | Phase 2 | Complete |
-| INTL-01 | Phase 2 | Pending |
-| INTL-02 | Phase 2 | Pending |
-| INTL-03 | Phase 2 | Pending |
-| INTL-04 | Phase 2 | Pending |
-| INTL-05 | Phase 2 | Pending |
-| INTL-06 | Phase 2 | Pending |
-| INTL-07 | Phase 2 | Pending |
+| INTL-01 | Phase 2 | Complete |
+| INTL-02 | Phase 2 | Complete |
+| INTL-03 | Phase 2 | Complete |
+| INTL-04 | Phase 2 | Complete |
+| INTL-05 | Phase 2 | Complete |
+| INTL-06 | Phase 2 | Complete |
+| INTL-07 | Phase 2 | Complete |
 | SOCL-01 | Phase 2 | Complete |
 | SOCL-02 | Phase 2 | Complete |
 | SOCL-03 | Phase 2 | Complete |
