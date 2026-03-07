@@ -59,33 +59,36 @@ export default function DialogueEngine({ sequence, onComplete, className = '' }:
       <motion.div
         key={currentLine.id}
         className={`fixed inset-x-0 bottom-0 z-50 pointer-events-auto ${className}`}
-        initial={reducedMotion ? false : { opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={reducedMotion ? undefined : { opacity: 0, y: 10 }}
+        initial={reducedMotion ? false : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={reducedMotion ? undefined : { opacity: 0 }}
         transition={{ duration: reducedMotion ? 0 : 0.3 }}
+        style={{ willChange: 'opacity' }}
         onClick={handleClick}
         role="region"
         aria-label="Dialogue"
       >
-        <div className="relative max-w-4xl mx-auto px-4 pb-6 pt-2">
-          <div className="flex items-end gap-4">
-            {/* Character portrait — rises from the panel */}
-            <CharacterPortrait
-              expression={currentLine.expression}
-              className="w-28 h-44 sm:w-36 sm:h-56 md:w-44 md:h-64 -mb-6 relative z-10"
-            />
+        <div className="max-w-4xl mx-auto px-4 pb-6">
+          <div
+            className="flex items-start gap-3 sm:gap-4 px-4 py-3 sm:px-5 sm:py-4 rounded-sm"
+            style={{
+              background: 'linear-gradient(135deg, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.82) 100%)',
+              border: '1px solid rgba(212,175,55,0.15)',
+              borderBottom: '2px solid rgba(212,175,55,0.2)',
+              backdropFilter: 'blur(16px)',
+              boxShadow: '0 -8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212,175,55,0.08)',
+            }}
+          >
+            {/* Character portrait — inside the panel */}
+            <div className="w-[72px] h-[100px] sm:w-[100px] sm:h-[144px] md:w-[115px] md:h-[158px] flex-shrink-0 relative overflow-hidden">
+              <CharacterPortrait
+                expression={currentLine.expression}
+                className="absolute inset-0 w-[200%] h-[200%] -translate-x-[25%] -translate-y-[25%]"
+              />
+            </div>
 
-            {/* Text panel */}
-            <div
-              className="flex-1 min-w-0 px-5 py-4 sm:px-6 sm:py-5 rounded-sm"
-              style={{
-                background: 'linear-gradient(135deg, rgba(10,14,26,0.92) 0%, rgba(10,14,26,0.82) 100%)',
-                border: '1px solid rgba(212,175,55,0.15)',
-                borderBottom: '2px solid rgba(212,175,55,0.2)',
-                backdropFilter: 'blur(16px)',
-                boxShadow: '0 -8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(212,175,55,0.08)',
-              }}
-            >
+            {/* Text content */}
+            <div className="flex-1 min-w-0">
               <DialogueBox
                 text={currentLine.text}
                 isTyping={isTyping}

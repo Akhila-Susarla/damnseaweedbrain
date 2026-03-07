@@ -79,6 +79,7 @@ export default function DialogueOverlay() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: reducedMotion ? 0 : 0.3 }}
+          style={{ willChange: 'opacity' }}
           data-testid={`section-dialogue-${activeDialogue.sectionId}`}
         >
           {/* Subtle vignette to draw attention to dialogue */}

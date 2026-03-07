@@ -16,15 +16,16 @@ export default function CharacterPortrait({ expression, className = '' }: Charac
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
 
   return (
-    <div className={`relative flex-shrink-0 ${className}`} aria-hidden="true">
+    <div className={`flex-shrink-0 ${className}`} aria-hidden="true">
       <AnimatePresence mode="wait">
         <motion.div
           key={expression}
-          className="relative w-full h-full"
+          className="w-full h-full"
           initial={reducedMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={reducedMotion ? undefined : { opacity: 0 }}
           transition={{ duration: reducedMotion ? 0 : 0.3 }}
+          style={{ willChange: 'opacity' }}
         >
           <DazaiSprite expression={expression} className="w-full h-full" />
         </motion.div>

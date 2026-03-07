@@ -63,6 +63,7 @@ export default function HeroIntro() {
             exit={{ opacity: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.5 }}
             style={{
+              willChange: 'opacity',
               background: 'linear-gradient(to top, rgba(10,14,26,0.7) 0%, rgba(10,14,26,0.2) 40%, transparent 60%)',
             }}
           />
@@ -71,6 +72,7 @@ export default function HeroIntro() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: reducedMotion ? 0 : 0.35 }}
+            style={{ willChange: 'opacity' }}
             data-testid="hero-intro"
           >
             <DialogueEngine

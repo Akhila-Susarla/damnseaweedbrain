@@ -23,6 +23,14 @@ const expressionMap: Record<DazaiExpression, { spriteId: string; label: string }
   mysterious: { spriteId: '100114', label: 'Idle' },
 };
 
+/**
+ * Default canvas buffer size — set on initial render to prevent layout shift
+ * when the LWF sprite loads and sets canvas.width/height asynchronously.
+ * The CSS w-full/h-full controls display size; these only set the drawing buffer.
+ */
+const DEFAULT_CANVAS_WIDTH = 300;
+const DEFAULT_CANVAS_HEIGHT = 300;
+
 let lwfScriptLoaded = false;
 let lwfScriptLoading = false;
 const lwfLoadCallbacks: (() => void)[] = [];
@@ -105,13 +113,22 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
         onload: (lwf: any) => {
           if (cancelled) return;
 
-          // Size canvas to fit sprite
-          const scale = 2.5;
-          canvas.width = lwf.width * scale;
-          canvas.height = lwf.height * scale;
+          // Use a large internal canvas so the sprite renders at high detail.
+          // CSS w-full/h-full on the canvas element will scale it to fit the
+          // container, which acts like object-fit:fill — acceptable here
+          // because we fill the canvas proportionally with the sprite.
+          const scale = 3;
+          const spriteW = lwf.width * scale;
+          const spriteH = lwf.height * scale;
+          // Canvas aspect ratio matches the sprite's own aspect ratio
+          canvas.width = spriteW;
+          canvas.height = spriteH;
           lwf.setFrameRate(30);
-          lwf.rootMovie.x = (canvas.width - lwf.width) / 2;
-          lwf.rootMovie.y = (canvas.height - lwf.height) / 2;
+
+          // Position sprite in canvas — nudge right & down to compensate
+          // for empty space baked into the LWF animation frames
+          lwf.rootMovie.x = (spriteW - lwf.width) / 2 + lwf.width * 0.1;
+          lwf.rootMovie.y = (spriteH - lwf.height) / 2 + lwf.height * 0.12;
 
           // Play idle animation
           try {
@@ -161,7 +178,9 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
     <div className={`relative ${className}`} aria-hidden="true">
       <canvas
         ref={canvasRef}
-        className="w-full h-full object-contain"
+        width={DEFAULT_CANVAS_WIDTH}
+        height={DEFAULT_CANVAS_HEIGHT}
+        className="w-full h-full"
         style={{ imageRendering: 'auto' }}
       />
     </div>
