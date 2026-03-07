@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import { usePortfolioStore } from '@/lib/store';
 import type { DazaiExpression } from '@/data/types';
 
@@ -64,6 +64,7 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
   const lastTimeRef = useRef<number>(0);
   const currentSpriteRef = useRef<string>('');
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const [spriteReady, setSpriteReady] = useState(false);
 
   const config = expressionMap[expression];
 
@@ -88,6 +89,7 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
     }
 
     cleanup();
+    setSpriteReady(false);
 
     if (reducedMotion) return;
 
@@ -140,6 +142,7 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
           lwfRef.current = lwf;
           currentSpriteRef.current = config.spriteId;
           lastTimeRef.current = performance.now();
+          setSpriteReady(true);
 
           const animate = (now: number) => {
             if (cancelled) return;
@@ -181,7 +184,11 @@ export default function DazaiSprite({ expression, className = '' }: DazaiSpriteP
         width={DEFAULT_CANVAS_WIDTH}
         height={DEFAULT_CANVAS_HEIGHT}
         className="w-full h-full"
-        style={{ imageRendering: 'auto' }}
+        style={{
+          imageRendering: 'auto',
+          opacity: spriteReady ? 1 : 0,
+          transition: 'none',
+        }}
       />
     </div>
   );

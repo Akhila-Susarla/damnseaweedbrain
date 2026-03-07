@@ -1,9 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import { AnimatePresence, motion } from 'motion/react';
 import { useDialogue } from '@/hooks/useDialogue';
-import { usePortfolioStore } from '@/lib/store';
 import CharacterPortrait from './CharacterPortrait';
 import DialogueBox from './DialogueBox';
 import type { DialogueSequence } from '@/data/types';
@@ -16,7 +14,6 @@ interface DialogueEngineProps {
 
 export default function DialogueEngine({ sequence, onComplete, className = '' }: DialogueEngineProps) {
   const { currentLine, advance, skip, isComplete } = useDialogue(sequence);
-  const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
   const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
@@ -55,15 +52,8 @@ export default function DialogueEngine({ sequence, onComplete, className = '' }:
   if (isComplete || !currentLine) return null;
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={currentLine.id}
+      <div
         className={`fixed inset-x-0 bottom-0 z-50 pointer-events-auto ${className}`}
-        initial={reducedMotion ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={reducedMotion ? undefined : { opacity: 0 }}
-        transition={{ duration: reducedMotion ? 0 : 0.3 }}
-        style={{ willChange: 'opacity' }}
         onClick={handleClick}
         role="region"
         aria-label="Dialogue"
@@ -102,7 +92,6 @@ export default function DialogueEngine({ sequence, onComplete, className = '' }:
         <div className="absolute top-2 right-4 font-mono text-[9px] tracking-wider text-parchment/25">
           ESC to skip
         </div>
-      </motion.div>
-    </AnimatePresence>
+      </div>
   );
 }

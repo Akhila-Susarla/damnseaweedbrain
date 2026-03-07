@@ -26,7 +26,7 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "w-full py-16 tablet:py-24 desktop:py-32",
+        "w-full py-20 tablet:py-28 desktop:py-36",
         depth && depthStyles[depth],
         className
       )}
