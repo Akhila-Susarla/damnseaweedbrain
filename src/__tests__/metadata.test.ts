@@ -22,7 +22,7 @@ describe('Layout metadata', () => {
   });
 
   it('has description mentioning Data Scientist', () => {
-    expect(layoutSource).toMatch(/description.*[Dd]ata [Ss]cient/);
+    expect(layoutSource).toMatch(/description[\s\S]*?Data Scientist/);
   });
 
   it('has openGraph with type website and url', () => {

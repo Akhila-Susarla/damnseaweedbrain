@@ -29,9 +29,37 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "DamnSeaweedBrain",
+  metadataBase: new URL("https://damnseaweedbrain.com"),
+  title: "Akhila Susarla | Data Scientist",
   description:
-    "A BSD-themed data science portfolio -- where detective agency case files meet machine learning.",
+    "Data Scientist portfolio of Akhila Susarla -- uncovering insights from data with the precision of a detective agency investigation.",
+  keywords: [
+    "Data Scientist",
+    "Machine Learning",
+    "Portfolio",
+    "Akhila Susarla",
+    "Python",
+    "NLP",
+  ],
+  authors: [{ name: "Akhila Susarla" }],
+  openGraph: {
+    title: "Akhila Susarla | Data Scientist",
+    description:
+      "Data Scientist portfolio of Akhila Susarla -- uncovering insights from data with the precision of a detective agency investigation.",
+    url: "/",
+    siteName: "DamnSeaweedBrain",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Akhila Susarla | Data Scientist",
+    description:
+      "Data Scientist portfolio of Akhila Susarla -- uncovering insights from data with the precision of a detective agency investigation.",
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
