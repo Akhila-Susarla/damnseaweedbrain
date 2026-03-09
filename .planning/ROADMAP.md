@@ -86,10 +86,11 @@ Plans:
   1. Initial page load is under 1.5MB with all assets optimized (WebP, font subsetting, lazy loading verified)
   2. Sharing the site URL on LinkedIn/Twitter shows a BSD-themed OG image with correct title and description
   3. Site is live on damnseaweedbrain.com with pre-rendered HTML serving correct meta tags to crawlers
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: TBD
+- [ ] 04-01-PLAN.md -- SEO metadata, OG image generation, JSON-LD structured data, sitemap, and robots.txt
+- [ ] 04-02-PLAN.md -- Production build verification, Lighthouse performance audit, and deployment to Vercel
 
 ## Progress
 
@@ -101,4 +102,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Foundation & Theme System | 2/2 | Complete   | 2026-03-06 |
 | 2. Content Scenes & Navigation | 7/7 | Complete   | 2026-03-06 |
 | 3. BSD Experience Layer | 5/5 | Complete   | 2026-03-07 |
-| 4. Polish & Launch | 0/? | Not started | - |
+| 4. Polish & Launch | 0/2 | Not started | - |
