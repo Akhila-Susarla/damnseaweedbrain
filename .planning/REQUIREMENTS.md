@@ -100,13 +100,13 @@
 - [x] **ASSET-01**: BSD-inspired custom visuals (original art, not copyrighted game rips)
 - [x] **ASSET-02**: Bandage textures, paper/parchment backgrounds, classified stamps as SVG/CSS
 - [x] **ASSET-03**: Custom fonts (serif headings, clean body, monospace accents) in WOFF2
-- [ ] **ASSET-04**: BSD-themed OG image for social media sharing
+- [x] **ASSET-04**: BSD-themed OG image for social media sharing
 - [x] **ASSET-05**: Optimized asset pipeline — WebP, lazy loading, responsive images
 
 ### SEO & Accessibility
 
 - [x] **SEO-01**: Semantic HTML with proper heading hierarchy
-- [ ] **SEO-02**: Meta tags and Open Graph data for social sharing
+- [x] **SEO-02**: Meta tags and Open Graph data for social sharing
 - [x] **SEO-03**: WCAG AA contrast ratios on all text
 - [x] **SEO-04**: Keyboard navigation for all interactive elements
 - [x] **SEO-05**: Alt text and aria labels for visual elements
@@ -204,10 +204,10 @@
 | ASSET-01 | Phase 1 | Complete |
 | ASSET-02 | Phase 1 | Complete |
 | ASSET-03 | Phase 1 | Complete |
-| ASSET-04 | Phase 4 | Pending |
+| ASSET-04 | Phase 4 | Complete |
 | ASSET-05 | Phase 1 | Complete |
 | SEO-01 | Phase 2 | Complete |
-| SEO-02 | Phase 4 | Pending |
+| SEO-02 | Phase 4 | Complete |
 | SEO-03 | Phase 1 | Complete |
 | SEO-04 | Phase 2 | Complete |
 | SEO-05 | Phase 2 | Complete |
