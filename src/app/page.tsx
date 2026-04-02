@@ -1,11 +1,11 @@
 import Shell from "@/components/layout/Shell";
 import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import AbilitiesSection from "@/components/sections/AbilitiesSection";
-import CaseFilesSection from "@/components/sections/CaseFilesSection";
-import IntelSection from "@/components/sections/IntelSection";
+import WhatIDoSection from "@/components/sections/WhatIDoSection";
+import SkillsSection from "@/components/sections/SkillsSection";
+import ExperienceSection from "@/components/sections/ExperienceSection";
+import ProjectsSection from "@/components/sections/ProjectsSection";
+import EducationSection from "@/components/sections/EducationSection";
 import SocialSection from "@/components/sections/SocialSection";
-import DialogueOverlay from "@/components/vn/DialogueOverlay";
 import InkWashTransition from "@/components/transitions/InkWashTransition";
 import { socialLinks } from "@/data/social";
 
@@ -13,7 +13,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Akhila Susarla",
-  jobTitle: "Data Scientist",
+  jobTitle: "AI/ML Engineer",
   url: "https://damnseaweedbrain.com",
   sameAs: socialLinks
     .filter((link) => link.platform !== "Email")
@@ -23,7 +23,7 @@ const personJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "DamnSeaweedBrain",
+  name: "Akhila Susarla — Portfolio",
   url: "https://damnseaweedbrain.com",
 };
 
@@ -44,18 +44,18 @@ export default function Home() {
       />
       <Shell>
         <HeroSection />
-        <InkWashTransition triggerSelector="#about" />
-        <AboutSection />
-        <InkWashTransition triggerSelector="#abilities" />
-        <AbilitiesSection />
-        <InkWashTransition triggerSelector="#case-files" />
-        <CaseFilesSection />
-        <InkWashTransition triggerSelector="#intel" />
-        <IntelSection />
+        <InkWashTransition triggerSelector="#what-i-do" />
+        <WhatIDoSection />
+        <InkWashTransition triggerSelector="#skills" />
+        <SkillsSection />
+        <InkWashTransition triggerSelector="#experience" />
+        <ExperienceSection />
+        <InkWashTransition triggerSelector="#projects" />
+        <ProjectsSection />
+        <InkWashTransition triggerSelector="#education" />
+        <EducationSection />
         <InkWashTransition triggerSelector="#social" />
         <SocialSection />
-        {/* Single fixed VN overlay -- scroll triggers activate dialogues */}
-        <DialogueOverlay />
       </Shell>
     </>
   );

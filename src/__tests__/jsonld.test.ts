@@ -20,10 +20,12 @@ vi.mock('gsap', () => ({
     registerPlugin: vi.fn(),
     to: vi.fn(),
     from: vi.fn(),
+    fromTo: vi.fn(),
     set: vi.fn(),
     timeline: vi.fn(() => ({
       to: vi.fn().mockReturnThis(),
       from: vi.fn().mockReturnThis(),
+      fromTo: vi.fn().mockReturnThis(),
       kill: vi.fn(),
     })),
     utils: { toArray: vi.fn(() => []) },
@@ -96,7 +98,7 @@ describe('JSON-LD structured data', () => {
     expect(person).toBeDefined();
     expect(person['@context']).toBe('https://schema.org');
     expect(person.name).toBe('Akhila Susarla');
-    expect(person.jobTitle).toBe('Data Scientist');
+    expect(person.jobTitle).toBe('AI/ML Engineer');
     expect(person.sameAs).toContain('https://linkedin.com/in/akhila-susarla-1803b41b6/');
     expect(person.sameAs).toContain('https://github.com/akhilasusarla');
   });
@@ -108,7 +110,7 @@ describe('JSON-LD structured data', () => {
     const website = jsonLds.find((j) => j['@type'] === 'WebSite');
     expect(website).toBeDefined();
     expect(website['@context']).toBe('https://schema.org');
-    expect(website.name).toBe('DamnSeaweedBrain');
+    expect(website.name).toBe('Akhila Susarla \u2014 Portfolio');
     expect(website.url).toBe('https://damnseaweedbrain.com');
   });
 });

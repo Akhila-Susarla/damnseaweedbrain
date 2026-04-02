@@ -131,7 +131,7 @@ export default function InkWashTransition({
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundColor: '#0a0e1a',
+            backgroundColor: '#0c0c0c',
             opacity: 0,
             filter: `blur(${4 + i * 2}px)`,
             clipPath: tendrilPaths[i].start,

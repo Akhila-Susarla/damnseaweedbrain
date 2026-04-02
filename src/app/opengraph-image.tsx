@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-export const alt = 'Akhila Susarla - Data Scientist Portfolio';
+export const alt = 'Akhila Susarla - AI/ML Engineer Portfolio';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -24,7 +24,7 @@ export default async function OGImage() {
           justifyContent: 'center',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #0a0e1a 0%, #111827 100%)',
+          background: 'linear-gradient(135deg, #0c0c0c 0%, #161616 100%)',
           fontFamily: 'Inter',
         }}
       >
@@ -37,7 +37,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             height: '4px',
-            background: '#d4af37',
+            background: '#f3701e',
           }}
         />
 
@@ -50,7 +50,7 @@ export default async function OGImage() {
             left: 0,
             right: 0,
             height: '4px',
-            background: '#d4af37',
+            background: '#f3701e',
           }}
         />
 
@@ -63,8 +63,8 @@ export default async function OGImage() {
             left: '20px',
             width: '60px',
             height: '60px',
-            borderTop: '2px solid #d4af37',
-            borderLeft: '2px solid #d4af37',
+            borderTop: '2px solid #f3701e',
+            borderLeft: '2px solid #f3701e',
           }}
         />
         <div
@@ -75,8 +75,8 @@ export default async function OGImage() {
             right: '20px',
             width: '60px',
             height: '60px',
-            borderTop: '2px solid #d4af37',
-            borderRight: '2px solid #d4af37',
+            borderTop: '2px solid #f3701e',
+            borderRight: '2px solid #f3701e',
           }}
         />
         <div
@@ -87,8 +87,8 @@ export default async function OGImage() {
             left: '20px',
             width: '60px',
             height: '60px',
-            borderBottom: '2px solid #d4af37',
-            borderLeft: '2px solid #d4af37',
+            borderBottom: '2px solid #f3701e',
+            borderLeft: '2px solid #f3701e',
           }}
         />
         <div
@@ -99,8 +99,8 @@ export default async function OGImage() {
             right: '20px',
             width: '60px',
             height: '60px',
-            borderBottom: '2px solid #d4af37',
-            borderRight: '2px solid #d4af37',
+            borderBottom: '2px solid #f3701e',
+            borderRight: '2px solid #f3701e',
           }}
         />
 
@@ -118,7 +118,7 @@ export default async function OGImage() {
               display: 'flex',
               fontSize: '72px',
               fontFamily: 'Playfair Display',
-              color: '#e8e0d4',
+              color: '#e8d8c9',
               marginBottom: '16px',
               letterSpacing: '-1px',
             }}
@@ -132,7 +132,7 @@ export default async function OGImage() {
               display: 'flex',
               width: '200px',
               height: '2px',
-              background: '#d4af37',
+              background: '#f3701e',
               marginBottom: '24px',
             }}
           />
@@ -141,12 +141,12 @@ export default async function OGImage() {
             style={{
               display: 'flex',
               fontSize: '32px',
-              color: '#d4af37',
+              color: '#f3701e',
               fontFamily: 'Inter',
               letterSpacing: '2px',
             }}
           >
-            Data Scientist | Armed Detective Agency
+            AI/ML Engineer | Data Scientist
           </div>
         </div>
 
@@ -157,7 +157,7 @@ export default async function OGImage() {
             position: 'absolute',
             bottom: '30px',
             fontSize: '18px',
-            color: '#e8e0d4',
+            color: '#e8d8c9',
             opacity: 0.6,
             fontFamily: 'Inter',
           }}

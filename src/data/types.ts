@@ -1,43 +1,43 @@
-/** Skill tier rating system (anime RPG-style) */
-export type SkillTier = 'S' | 'A' | 'B' | 'C';
-
 /** Skill category groupings */
 export type SkillCategory =
   | 'Languages'
-  | 'Data Science/ML'
+  | 'AI & GenAI'
+  | 'Data Science / ML'
   | 'Tools & Frameworks'
-  | 'Cloud';
+  | 'Cloud & DevOps';
 
-/** Case file status indicators */
-export type CaseStatus = 'Solved' | 'Active' | 'Classified';
+/** Project status indicators */
+export type ProjectStatus = 'Published' | 'Deployed' | 'Prototype' | 'Completed';
 
-/** Individual skill with tier rating and optional BSD flavor */
+/** Experience status */
+export type ExperienceStatus = 'Current' | 'Completed';
+
+/** Individual skill */
 export interface Skill {
   name: string;
-  tier: SkillTier;
   category: SkillCategory;
-  kanjiName?: string;
-  description?: string;
 }
 
-/** Project case file */
-export interface CaseFile {
+/** Project entry */
+export interface Project {
   id: string;
   title: string;
-  status: CaseStatus;
+  status: ProjectStatus;
   description: string;
   technologies: string[];
   links?: { label: string; url: string }[];
   highlights: string[];
+  metrics?: string[];
 }
 
-/** Work experience as an intel dossier */
-export interface IntelDossier {
+/** Work experience entry */
+export interface Experience {
   id: string;
   organization: string;
+  location: string;
   role: string;
   period: string;
-  status: CaseStatus;
+  status: ExperienceStatus;
   highlights: string[];
   technologies: string[];
 }
@@ -45,9 +45,11 @@ export interface IntelDossier {
 /** Education entry */
 export interface Education {
   institution: string;
+  location: string;
   degree: string;
   gpa?: string;
   period: string;
+  status: 'In Progress' | 'Completed';
   highlights: string[];
 }
 
@@ -58,27 +60,9 @@ export interface SocialLink {
   label: string;
 }
 
-/** Dazai expression variants for character portrait */
-export type DazaiExpression =
-  | 'neutral'
-  | 'smirk'
-  | 'laugh'
-  | 'serious'
-  | 'annoyed'
-  | 'mysterious';
-
-/** Single line of VN dialogue */
-export interface DialogueLine {
-  id: string;
-  character: 'dazai';
-  expression: DazaiExpression;
-  text: string;
-}
-
-/** A complete dialogue sequence (intro or transition) */
-export interface DialogueSequence {
-  id: string;
-  section: string;
-  type: 'intro' | 'transition';
-  lines: DialogueLine[];
+/** What I Do specialty card */
+export interface Specialty {
+  title: string;
+  description: string;
+  technologies: string[];
 }

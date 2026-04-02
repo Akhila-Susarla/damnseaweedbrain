@@ -1,71 +1,70 @@
 import { describe, it, expect } from 'vitest';
 import { skills } from '@/data/skills';
-import { caseFiles } from '@/data/projects';
-import { intelDossiers } from '@/data/experience';
+import { projects } from '@/data/projects';
+import { experiences } from '@/data/experience';
 import { education } from '@/data/education';
 import { socialLinks } from '@/data/social';
+import { specialties } from '@/data/whatido';
 
-const validTiers = ['S', 'A', 'B', 'C'] as const;
 const validCategories = [
   'Languages',
-  'Data Science/ML',
+  'AI & GenAI',
+  'Data Science / ML',
   'Tools & Frameworks',
-  'Cloud',
+  'Cloud & DevOps',
 ] as const;
-const validStatuses = ['Solved', 'Active', 'Classified'] as const;
+
+const validProjectStatuses = ['Published', 'Deployed', 'Prototype', 'Completed'] as const;
+const validExperienceStatuses = ['Current', 'Completed'] as const;
 
 describe('Skills data', () => {
   it('has at least 10 skills', () => {
     expect(skills.length).toBeGreaterThanOrEqual(10);
   });
 
-  it('every skill has name, tier, and category', () => {
+  it('every skill has name and category', () => {
     for (const skill of skills) {
       expect(skill.name).toBeTruthy();
-      expect(validTiers).toContain(skill.tier);
       expect(validCategories).toContain(skill.category);
     }
   });
 
-  it('has skills in all 4 categories', () => {
+  it('has skills in all 5 categories', () => {
     const categories = new Set(skills.map((s) => s.category));
     for (const cat of validCategories) {
       expect(categories.has(cat)).toBe(true);
     }
   });
-
-  it('has at least one S-tier skill', () => {
-    expect(skills.some((s) => s.tier === 'S')).toBe(true);
-  });
 });
 
-describe('Case files data', () => {
-  it('has exactly 3 case files', () => {
-    expect(caseFiles).toHaveLength(3);
+describe('Projects data', () => {
+  it('has at least 3 projects', () => {
+    expect(projects.length).toBeGreaterThanOrEqual(3);
   });
 
-  it('every case file has required fields', () => {
-    for (const cf of caseFiles) {
-      expect(cf.id).toBeTruthy();
-      expect(cf.title).toBeTruthy();
-      expect(validStatuses).toContain(cf.status);
-      expect(cf.description).toBeTruthy();
-      expect(cf.technologies.length).toBeGreaterThan(0);
+  it('every project has required fields', () => {
+    for (const p of projects) {
+      expect(p.id).toBeTruthy();
+      expect(p.title).toBeTruthy();
+      expect(validProjectStatuses).toContain(p.status);
+      expect(p.description).toBeTruthy();
+      expect(p.technologies.length).toBeGreaterThan(0);
     }
   });
 });
 
-describe('Intel dossiers data', () => {
-  it('has exactly 4 dossiers', () => {
-    expect(intelDossiers).toHaveLength(4);
+describe('Experience data', () => {
+  it('has at least 4 experiences', () => {
+    expect(experiences.length).toBeGreaterThanOrEqual(4);
   });
 
-  it('every dossier has required fields', () => {
-    for (const d of intelDossiers) {
-      expect(d.organization).toBeTruthy();
-      expect(d.role).toBeTruthy();
-      expect(d.period).toBeTruthy();
-      expect(d.highlights.length).toBeGreaterThan(0);
+  it('every experience has required fields', () => {
+    for (const e of experiences) {
+      expect(e.organization).toBeTruthy();
+      expect(e.role).toBeTruthy();
+      expect(e.period).toBeTruthy();
+      expect(validExperienceStatuses).toContain(e.status);
+      expect(e.highlights.length).toBeGreaterThan(0);
     }
   });
 });
@@ -80,6 +79,7 @@ describe('Education data', () => {
       expect(e.institution).toBeTruthy();
       expect(e.degree).toBeTruthy();
       expect(e.period).toBeTruthy();
+      expect(e.location).toBeTruthy();
     }
   });
 
@@ -108,5 +108,19 @@ describe('Social links data', () => {
     expect(platforms).toContain('LinkedIn');
     expect(platforms).toContain('GitHub');
     expect(platforms).toContain('Email');
+  });
+});
+
+describe('Specialties data', () => {
+  it('has exactly 4 specialties', () => {
+    expect(specialties).toHaveLength(4);
+  });
+
+  it('every specialty has required fields', () => {
+    for (const s of specialties) {
+      expect(s.title).toBeTruthy();
+      expect(s.description).toBeTruthy();
+      expect(s.technologies.length).toBeGreaterThan(0);
+    }
   });
 });

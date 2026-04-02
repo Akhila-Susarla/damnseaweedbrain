@@ -20,10 +20,12 @@ vi.mock('gsap', () => ({
     registerPlugin: vi.fn(),
     to: vi.fn(),
     from: vi.fn(),
+    fromTo: vi.fn(),
     set: vi.fn(),
     timeline: vi.fn(() => ({
       to: vi.fn().mockReturnThis(),
       from: vi.fn().mockReturnThis(),
+      fromTo: vi.fn().mockReturnThis(),
       kill: vi.fn(),
     })),
     utils: { toArray: vi.fn(() => []) },
@@ -144,10 +146,9 @@ describe('Accessibility', () => {
 
   it('expandable elements have aria-expanded attribute', () => {
     const { container } = render(createElement(Home));
-    // CaseFolder buttons and AbilityCard buttons are expandable
+    // ExperienceCard buttons are expandable
     const expandableButtons = container.querySelectorAll('[aria-expanded]');
-    // We expect at least the case folder buttons to have aria-expanded
-    // (3 case files + ability cards that toggle detail)
+    // We expect at least the experience cards to have aria-expanded
     expect(expandableButtons.length).toBeGreaterThanOrEqual(1);
   });
 });

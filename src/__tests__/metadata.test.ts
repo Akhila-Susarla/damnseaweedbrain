@@ -15,10 +15,10 @@ describe('Layout metadata', () => {
     expect(layoutSource).toContain('damnseaweedbrain.com');
   });
 
-  it('has title containing Akhila Susarla and Data Scientist', () => {
+  it('has title containing Akhila Susarla and AI/ML Engineer', () => {
     // Match the title field value
     expect(layoutSource).toMatch(/title.*Akhila Susarla/);
-    expect(layoutSource).toMatch(/title.*Data Scientist/);
+    expect(layoutSource).toMatch(/title.*AI\/ML Engineer/);
   });
 
   it('has description mentioning Data Scientist', () => {

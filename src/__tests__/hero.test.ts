@@ -3,87 +3,62 @@ import { render, screen, cleanup } from '@testing-library/react';
 import { createElement } from 'react';
 import { usePortfolioStore } from '@/lib/store';
 
-// Mock lenis/react
 vi.mock('lenis/react', () => ({
   useLenis: vi.fn(() => null),
   ReactLenis: ({ children }: { children: React.ReactNode }) => children,
 }));
 
-// Mock @gsap/react
-vi.mock('@gsap/react', () => ({
-  useGSAP: vi.fn(),
-}));
+vi.mock('@gsap/react', () => ({ useGSAP: vi.fn() }));
 
-// Mock gsap
 vi.mock('gsap', () => ({
   default: {
-    registerPlugin: vi.fn(),
-    to: vi.fn(),
-    timeline: vi.fn(() => ({
-      to: vi.fn().mockReturnThis(),
-      kill: vi.fn(),
-    })),
+    registerPlugin: vi.fn(), to: vi.fn(), set: vi.fn(), fromTo: vi.fn(),
+    timeline: vi.fn(() => ({ fromTo: vi.fn().mockReturnThis(), to: vi.fn().mockReturnThis(), kill: vi.fn() })),
   },
 }));
 
-// Mock gsap/ScrollTrigger
-vi.mock('gsap/ScrollTrigger', () => ({
-  ScrollTrigger: {
-    create: vi.fn(),
-    update: vi.fn(),
-  },
-}));
+vi.mock('gsap/ScrollTrigger', () => ({ ScrollTrigger: { create: vi.fn(), update: vi.fn() } }));
 
-// Import after mocks
 import HeroSection from '@/components/sections/HeroSection';
 
 describe('HeroSection', () => {
-  beforeEach(() => {
-    usePortfolioStore.setState({ currentSection: 'hero', reducedMotion: true });
-  });
+  beforeEach(() => { usePortfolioStore.setState({ currentSection: 'hero', reducedMotion: true }); });
+  afterEach(() => { cleanup(); });
 
-  afterEach(() => {
-    cleanup();
-  });
-
-  it('renders three parallax layer elements', () => {
+  it('renders parallax background', () => {
     const { container } = render(createElement(HeroSection));
-
-    const bg = container.querySelector('.parallax-bg');
-    const mid = container.querySelector('.parallax-mid');
-    const fg = container.querySelector('.parallax-fg');
-
-    expect(bg).toBeTruthy();
-    expect(mid).toBeTruthy();
-    expect(fg).toBeTruthy();
+    expect(container.querySelector('.hero-bg-effects')).toBeTruthy();
   });
 
-  it('character placeholder element exists in midground layer', () => {
+  it('scroll-down indicator button exists', () => {
     render(createElement(HeroSection));
-
-    const placeholder = screen.getByTestId('character-placeholder');
-    expect(placeholder).toBeTruthy();
-  });
-
-  it('scroll-down indicator button exists with correct aria-label', () => {
-    render(createElement(HeroSection));
-
     const scrollBtn = screen.getByLabelText('Scroll down to explore');
     expect(scrollBtn).toBeTruthy();
-    expect(scrollBtn.tagName.toLowerCase()).toBe('button');
   });
 
-  it('h1 heading element exists', () => {
+  it('h1 heading with name exists', () => {
     render(createElement(HeroSection));
-
     const heading = screen.getByRole('heading', { level: 1 });
     expect(heading).toBeTruthy();
+    expect(heading.textContent).toContain('Akhila');
+    expect(heading.textContent).toContain('Susarla');
   });
 
-  it('subtitle text "Data Scientist | ML Engineer" is present', () => {
+  it('subtitle is present', () => {
     render(createElement(HeroSection));
+    expect(screen.getByText(/AI\/ML Engineer/)).toBeTruthy();
+  });
 
-    const subtitle = screen.getByText('Data Scientist | ML Engineer');
-    expect(subtitle).toBeTruthy();
+  it('renders stat cards', () => {
+    const { container } = render(createElement(HeroSection));
+    const stats = container.querySelectorAll('.hero-stat');
+    expect(stats.length).toBe(4);
+  });
+
+  it('renders CTA buttons', () => {
+    render(createElement(HeroSection));
+    expect(screen.getByText('Get in Touch')).toBeTruthy();
+    expect(screen.getByText('LinkedIn')).toBeTruthy();
+    expect(screen.getByText('GitHub')).toBeTruthy();
   });
 });

@@ -34,7 +34,7 @@ describe("Theme Tokens (globals.css)", () => {
 
   describe("font tokens", () => {
     const requiredFonts = [
-      { token: "--font-heading", variable: "--font-playfair-display" },
+      { token: "--font-heading", variable: "--font-bodoni" },
       { token: "--font-body", variable: "--font-inter" },
       { token: "--font-mono", variable: "--font-jetbrains-mono" },
     ];

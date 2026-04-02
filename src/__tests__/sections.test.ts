@@ -3,56 +3,33 @@ import { render, cleanup } from '@testing-library/react';
 import { createElement } from 'react';
 import { usePortfolioStore } from '@/lib/store';
 
-// Mock lenis/react
 vi.mock('lenis/react', () => ({
   useLenis: vi.fn(() => null),
   ReactLenis: ({ children }: { children: React.ReactNode }) => children,
 }));
 
-// Mock @gsap/react
-vi.mock('@gsap/react', () => ({
-  useGSAP: vi.fn(),
-}));
+vi.mock('@gsap/react', () => ({ useGSAP: vi.fn() }));
 
-// Mock gsap
 vi.mock('gsap', () => ({
   default: {
-    registerPlugin: vi.fn(),
-    to: vi.fn(),
-    from: vi.fn(),
-    set: vi.fn(),
-    timeline: vi.fn(() => ({
-      to: vi.fn().mockReturnThis(),
-      from: vi.fn().mockReturnThis(),
-      kill: vi.fn(),
-    })),
+    registerPlugin: vi.fn(), to: vi.fn(), from: vi.fn(), set: vi.fn(), fromTo: vi.fn(),
+    timeline: vi.fn(() => ({ to: vi.fn().mockReturnThis(), from: vi.fn().mockReturnThis(), fromTo: vi.fn().mockReturnThis(), kill: vi.fn() })),
     utils: { toArray: vi.fn(() => []) },
   },
 }));
 
-// Mock gsap/ScrollTrigger
 vi.mock('gsap/ScrollTrigger', () => ({
-  ScrollTrigger: {
-    create: vi.fn(() => ({ kill: vi.fn() })),
-    update: vi.fn(),
-    batch: vi.fn(),
-  },
+  ScrollTrigger: { create: vi.fn(() => ({ kill: vi.fn() })), update: vi.fn(), batch: vi.fn() },
 }));
 
-// Mock next/dynamic
 vi.mock('next/dynamic', () => ({
-  default: () => {
-    const Stub = () => createElement('div', { 'data-testid': 'dynamic-stub' });
-    return Stub;
-  },
+  default: () => { const Stub = () => createElement('div', { 'data-testid': 'dynamic-stub' }); return Stub; },
 }));
 
-// Mock next/image
 vi.mock('next/image', () => ({
   default: (props: any) => createElement('img', { ...props, fill: undefined }),
 }));
 
-// Mock motion/react
 vi.mock('motion/react', () => {
   const filterProps = (props: any) => {
     const { initial, animate, exit, transition, whileHover, whileTap, ...rest } = props;
@@ -77,22 +54,15 @@ vi.mock('motion/react', () => {
   };
 });
 
-// Import page component after mocks
 import Home from '@/app/page';
 
 describe('Page section assembly', () => {
-  beforeEach(() => {
-    usePortfolioStore.setState({ currentSection: 'hero', reducedMotion: true });
-  });
+  beforeEach(() => { usePortfolioStore.setState({ currentSection: 'hero', reducedMotion: true }); });
+  afterEach(() => { cleanup(); });
 
-  afterEach(() => {
-    cleanup();
-  });
-
-  it('renders all 6 section elements with correct IDs', () => {
+  it('renders all 7 section elements with correct IDs', () => {
     const { container } = render(createElement(Home));
-
-    const expectedIds = ['hero', 'about', 'abilities', 'case-files', 'intel', 'social'];
+    const expectedIds = ['hero', 'what-i-do', 'skills', 'experience', 'projects', 'education', 'social'];
     for (const id of expectedIds) {
       const el = container.querySelector(`#${id}`);
       expect(el, `Section #${id} should exist`).toBeTruthy();
@@ -101,13 +71,9 @@ describe('Page section assembly', () => {
 
   it('sections appear in correct DOM order', () => {
     const { container } = render(createElement(Home));
-
-    const expectedOrder = ['hero', 'about', 'abilities', 'case-files', 'intel', 'social'];
+    const expectedOrder = ['hero', 'what-i-do', 'skills', 'experience', 'projects', 'education', 'social'];
     const allSections = container.querySelectorAll('[id]');
-    const sectionIds = Array.from(allSections)
-      .map((el) => el.id)
-      .filter((id) => expectedOrder.includes(id));
-
+    const sectionIds = Array.from(allSections).map((el) => el.id).filter((id) => expectedOrder.includes(id));
     expect(sectionIds).toEqual(expectedOrder);
   });
 });

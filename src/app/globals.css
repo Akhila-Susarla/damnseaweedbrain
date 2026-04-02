@@ -2,21 +2,33 @@
 @import "../styles/textures.css";
 
 @theme {
-  --color-midnight: #0a0e1a;
-  --color-midnight-light: #111827;
-  --color-midnight-deep: #060a14;
-  --color-parchment: #e8e0d4;
-  --color-parchment-dim: #c4b8a8;
-  --color-gold: #d4af37;
-  --color-gold-muted: #c9a84c;
-  --color-teal: #2dd4bf;
-  --color-teal-muted: #5eead4;
+  /* Core palette — BRIGHTER American retro */
+  --color-base: #0c0c0c;
+  --color-base-light: #161616;
+  --color-base-deep: #080808;
+  --color-cream: #f5ebe0;
+  --color-cream-dim: #ddd0c0;
+  --color-slate: #6b85ad;
+  --color-slate-light: #8ba3cb;
+  --color-orange: #ff8533;
+  --color-orange-muted: #e6762e;
+
+  /* Legacy aliases */
+  --color-midnight: #0c0c0c;
+  --color-midnight-light: #161616;
+  --color-midnight-deep: #080808;
+  --color-parchment: #f5ebe0;
+  --color-parchment-dim: #ddd0c0;
+  --color-gold: #ff8533;
+  --color-gold-muted: #e6762e;
+  --color-teal: #6b85ad;
+  --color-teal-muted: #8ba3cb;
   --color-classified-red: #ef4444;
 
-  --font-heading: var(--font-playfair-display);
+  --font-heading: var(--font-bodoni);
   --font-body: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
-  --font-caveat: var(--font-caveat);
+  --font-nav: var(--font-space);
 
   --breakpoint-mobile: 375px;
   --breakpoint-tablet: 768px;
@@ -24,6 +36,9 @@
   --breakpoint-wide: 1440px;
 
   --animate-bounce-gentle: bounce-gentle 2s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 1.5s ease-in-out infinite;
+  --animate-fade-in: fade-in 0.8s ease-out forwards;
+  --animate-slide-up: slide-up 0.6s ease-out forwards;
 }
 
 @keyframes bounce-gentle {
@@ -31,16 +46,52 @@
   50% { transform: translateY(8px); }
 }
 
-/* Section depth gradient variations */
-:root {
-  --section-depth-1: #0a0e1a;
-  --section-depth-2: #0c1020;
-  --section-depth-3: #080c16;
-  --section-depth-4: #060a14;
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px 3px rgba(255,133,51,0.5), 0 0 25px 10px rgba(255,133,51,0.25), 0 0 80px 20px rgba(255,133,51,0.1); }
+  50% { box-shadow: 0 0 12px 5px rgba(255,133,51,0.7), 0 0 35px 15px rgba(255,133,51,0.35), 0 0 100px 30px rgba(255,133,51,0.15); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections are transparent — warped grid shows through */
+
+/* Base font size bump */
+html {
+  font-size: 17px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0c0c0c; }
+::-webkit-scrollbar-thumb { background: #6b85ad; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #ff8533; }
+
+/* Selection */
+::selection {
+  background: rgba(255, 133, 51, 0.35);
+  color: #f5ebe0;
 }
 
 @layer base {
   body {
-    @apply bg-midnight text-parchment font-body antialiased;
+    @apply bg-base text-cream font-body antialiased;
   }
+}
+
+/* Custom cursor override */
+a, button, [role="button"] {
+  cursor: none;
+}
+
+/* Font utility */
+.font-nav {
+  font-family: var(--font-nav);
 }
