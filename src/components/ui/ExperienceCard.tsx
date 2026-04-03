@@ -22,10 +22,10 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
   return (
     <div
       className={cn(
-        'experience-card group rounded-xl border bg-base-light/50 backdrop-blur-sm transition-all duration-300',
+        'experience-card group rounded-xl border bg-base/30 backdrop-blur-sm transition-all duration-300',
         isCurrent
-          ? 'border-orange/20 hover:border-orange/40 hover:shadow-[0_0_30px_rgba(243,112,30,0.06)]'
-          : 'border-cream/8 hover:border-cream/15'
+          ? 'border-orange/20 hover:border-orange/50 hover:shadow-[0_0_30px_rgba(255,133,51,0.12)]'
+          : 'border-cream/8 hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.12)]'
       )}
     >
       <button

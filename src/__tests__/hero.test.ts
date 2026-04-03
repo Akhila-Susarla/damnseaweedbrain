@@ -58,7 +58,7 @@ describe('HeroSection', () => {
   it('renders CTA buttons', () => {
     render(createElement(HeroSection));
     expect(screen.getByText('Get in Touch')).toBeTruthy();
-    expect(screen.getByText('LinkedIn')).toBeTruthy();
-    expect(screen.getByText('GitHub')).toBeTruthy();
+    expect(screen.getAllByText('LinkedIn').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('GitHub').length).toBeGreaterThanOrEqual(1);
   });
 });

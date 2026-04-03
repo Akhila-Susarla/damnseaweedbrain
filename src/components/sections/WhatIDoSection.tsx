@@ -12,10 +12,10 @@ import { usePortfolioStore } from '@/lib/store';
 gsap.registerPlugin(ScrollTrigger);
 
 const cardAccents = [
-  'hover:border-orange/30 hover:shadow-[0_0_25px_rgba(243,112,30,0.08)]',
-  'hover:border-slate/40 hover:shadow-[0_0_25px_rgba(75,96,127,0.1)]',
-  'hover:border-slate/40 hover:shadow-[0_0_25px_rgba(75,96,127,0.1)]',
-  'hover:border-orange/30 hover:shadow-[0_0_25px_rgba(243,112,30,0.08)]',
+  'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]',
+  'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]',
+  'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]',
+  'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]',
 ];
 
 export default function WhatIDoSection() {

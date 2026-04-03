@@ -1,10 +1,13 @@
 'use client';
 
 import { cn } from '@/lib/utils';
+import { useTilt } from '@/hooks/useTilt';
+import { usePortfolioStore } from '@/lib/store';
 import type { Project } from '@/data/types';
 
 interface ProjectCardProps {
   project: Project;
+  glowColor?: 'orange' | 'blue';
 }
 
 const statusStyles: Record<string, string> = {
@@ -14,12 +17,25 @@ const statusStyles: Record<string, string> = {
   Completed: 'bg-cream/5 text-cream/50',
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+const glowStyles = {
+  orange: 'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]',
+  blue: 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]',
+};
+
+export default function ProjectCard({ project, glowColor = 'orange' }: ProjectCardProps) {
+  const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const { ref: tiltRef, style: tiltStyle, handlers: tiltHandlers } = useTilt({ maxAngle: 8 });
+
   return (
     <div
+      ref={reducedMotion ? undefined : (tiltRef as React.Ref<HTMLDivElement>)}
+      style={reducedMotion ? undefined : tiltStyle}
+      onMouseMove={reducedMotion ? undefined : tiltHandlers.onMouseMove}
+      onMouseLeave={reducedMotion ? undefined : tiltHandlers.onMouseLeave}
       className={cn(
-        'project-card group flex flex-col rounded-xl border border-cream/8 bg-base-light/50 backdrop-blur-sm p-6',
-        'transition-all duration-300 hover:border-orange/20 hover:shadow-[0_0_30px_rgba(243,112,30,0.05)]'
+        'project-card group flex flex-col rounded-xl border border-cream/8 bg-base/30 backdrop-blur-sm p-6',
+        'transition-all duration-300',
+        glowStyles[glowColor]
       )}
     >
       {/* Header */}

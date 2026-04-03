@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { usePortfolioStore } from '@/lib/store';
 import Section from '@/components/layout/Section';
 import ExperienceCard from '@/components/ui/ExperienceCard';
+import TiltCard from '@/components/ui/TiltCard';
 import { experiences } from '@/data/experience';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -92,13 +93,17 @@ export default function ExperienceSection() {
               <div key={exp.id} className="exp-row grid grid-cols-1 gap-4 pl-6 tablet:grid-cols-[25%_75%] tablet:gap-0 tablet:pl-0">
                 {/* Left: Date card */}
                 <div className="flex items-start tablet:pr-8 tablet:text-right">
-                  <div className="rounded-xl border border-slate/20 bg-base/30 backdrop-blur-md px-5 py-4 tablet:ml-auto">
-                    <p className="font-nav text-sm font-semibold uppercase tracking-wider text-slate-light">
-                      {exp.period}
-                    </p>
-                    <p className="mt-1.5 font-nav text-xs text-slate/80">
-                      {exp.location}
-                    </p>
+                  <div className="tablet:ml-auto">
+                    <TiltCard maxAngle={8}>
+                      <div className="rounded-xl border border-slate/20 bg-base/30 backdrop-blur-md px-5 py-4 transition-all duration-300 hover:border-slate/35 hover:shadow-[0_0_20px_rgba(107,133,173,0.08)]">
+                        <p className="font-nav text-sm font-semibold uppercase tracking-wider text-slate-light">
+                          {exp.period}
+                        </p>
+                        <p className="mt-1.5 font-nav text-xs text-slate/80">
+                          {exp.location}
+                        </p>
+                      </div>
+                    </TiltCard>
                   </div>
                 </div>
 

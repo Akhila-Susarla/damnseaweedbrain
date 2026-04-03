@@ -5,6 +5,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import Section from '@/components/layout/Section';
+import { cn } from '@/lib/utils';
 import { education } from '@/data/education';
 import { usePortfolioStore } from '@/lib/store';
 
@@ -47,10 +48,17 @@ export default function EducationSection() {
         </div>
 
         <div className="space-y-5">
-          {education.map((entry) => (
+          {education.map((entry) => {
+            const isInProgress = entry.status === 'In Progress';
+            return (
             <div
               key={entry.institution}
-              className="education-entry rounded-xl border border-cream/8 bg-base-light/50 backdrop-blur-sm p-6 transition-all duration-300 hover:border-cream/15 tablet:p-8"
+              className={cn(
+                'education-entry rounded-xl border border-cream/8 bg-base/30 backdrop-blur-sm p-6 transition-all duration-300 tablet:p-8',
+                isInProgress
+                  ? 'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]'
+                  : 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]'
+              )}
             >
               <div className="flex flex-col gap-4 tablet:flex-row tablet:items-start tablet:justify-between">
                 <div className="flex-1">
@@ -90,7 +98,7 @@ export default function EducationSection() {
                 </ul>
               )}
             </div>
-          ))}
+          ); })}
         </div>
       </div>
     </Section>

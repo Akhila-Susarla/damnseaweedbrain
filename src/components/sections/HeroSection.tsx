@@ -102,12 +102,14 @@ export default function HeroSection() {
                       </svg>
                     </a>
                     <a href="https://linkedin.com/in/akhila-susarla-1803b41b6/" target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 py-3 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 hover:text-orange cursor-none">
-                      LinkedIn
+                      className="group relative h-12 overflow-hidden rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 cursor-none">
+                      <span className="flex h-full items-center transition-transform duration-300 group-hover:-translate-y-full">LinkedIn</span>
+                      <span className="absolute inset-0 flex items-center justify-center translate-y-full text-orange transition-transform duration-300 group-hover:translate-y-0">LinkedIn</span>
                     </a>
                     <a href="https://github.com/Akhila-Susarla" target="_blank" rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 py-3 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 hover:text-orange cursor-none">
-                      GitHub
+                      className="group relative h-12 overflow-hidden rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 cursor-none">
+                      <span className="flex h-full items-center transition-transform duration-300 group-hover:-translate-y-full">GitHub</span>
+                      <span className="absolute inset-0 flex items-center justify-center translate-y-full text-orange transition-transform duration-300 group-hover:translate-y-0">GitHub</span>
                     </a>
                   </div>
                 </div>

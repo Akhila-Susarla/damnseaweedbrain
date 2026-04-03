@@ -77,18 +77,14 @@ export default function NavPanel() {
   return (
     <>
       {/* ===== TOP BAR ===== */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center px-6 tablet:px-10 desktop:px-16">
-        {/* Left: Logo — fixed 80px wide to align exactly above sidebar social icons */}
-        <div className="flex-shrink-0 desktop:w-20">
-          <button
-            onClick={() => handleNavClick('hero')}
-            className="mx-auto block font-heading text-2xl tracking-wide text-cream transition-colors duration-300 hover:text-orange cursor-none"
-          >
-            AS<span className="text-orange">.</span>
-          </button>
-        </div>
-        <div className="flex-1" />
-
+      <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between px-4 tablet:px-10 desktop:px-16">
+        {/* Left: Logo — pinned to top-left corner */}
+        <button
+          onClick={() => handleNavClick('hero')}
+          className="font-heading text-2xl tracking-wide text-cream transition-colors duration-300 hover:text-orange cursor-none"
+        >
+          AS<span className="text-orange">.</span>
+        </button>
         {/* Center: current section indicator */}
         <div className="hidden absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 tablet:block">
           <span className="font-nav text-sm uppercase tracking-[0.25em] text-orange/80">
@@ -145,9 +141,16 @@ export default function NavPanel() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="group flex h-11 w-11 items-center justify-center rounded-full text-slate-light transition-all duration-300 hover:text-orange hover:shadow-[0_0_20px_rgba(255,133,51,0.25)] cursor-none"
+              className="group relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-full border border-slate/20 bg-base/30 backdrop-blur-md text-slate-light transition-all duration-300 hover:border-orange/40 hover:shadow-[0_0_20px_rgba(255,133,51,0.25)] cursor-none"
             >
-              <Icon />
+              {/* Default icon */}
+              <span className="transition-transform duration-300 group-hover:-translate-y-10 group-hover:opacity-0">
+                <Icon />
+              </span>
+              {/* Hover icon — orange */}
+              <span className="absolute inset-0 flex items-center justify-center translate-y-10 opacity-0 text-orange transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <Icon />
+              </span>
             </a>
           ))}
         </div>

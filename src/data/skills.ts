@@ -29,13 +29,13 @@ export const skills: Skill[] = [
   { name: 'Statistical Modeling', category: 'Data Science / ML' },
   { name: 'EDA', category: 'Data Science / ML' },
   { name: 'Time-Series Forecasting', category: 'Data Science / ML' },
-  { name: 'NLP', category: 'Data Science / ML' },
   { name: 'Clustering & Segmentation', category: 'Data Science / ML' },
-  { name: 'PCA', category: 'Data Science / ML' },
-  { name: 'LDA', category: 'Data Science / ML' },
   { name: 'Anomaly Detection', category: 'Data Science / ML' },
   { name: 'Model Evaluation', category: 'Data Science / ML' },
   { name: 'Cross-Validation', category: 'Data Science / ML' },
+  { name: 'NLP', category: 'Data Science / ML' },
+  { name: 'LDA', category: 'Data Science / ML' },
+  { name: 'PCA', category: 'Data Science / ML' },
 
   // --- Tools & Frameworks ---
   { name: 'Git', category: 'Tools & Frameworks' },

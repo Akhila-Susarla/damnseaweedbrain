@@ -45,8 +45,8 @@ export default function ProjectsSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 tablet:grid-cols-2">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, i) => (
+            <ProjectCard key={project.id} project={project} glowColor={[0, 3].includes(i) ? 'orange' : 'blue'} />
           ))}
         </div>
       </div>
