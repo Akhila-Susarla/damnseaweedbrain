@@ -94,13 +94,14 @@ export default function HeroSection() {
                     Building production-grade conversational AI systems, ML pipelines, and data-driven solutions. Currently engineering voice bots handling 10,000+ daily interactions at Copart.
                   </p>
                   <div className="hero-cta flex flex-wrap gap-4">
-                    <a href="mailto:akhilasusarla@gmail.com"
+                    <button
+                      onClick={() => lenis?.scrollTo('#social', { duration: 1.2 })}
                       className="group inline-flex items-center gap-2 rounded-full bg-orange px-7 py-3 font-nav text-sm font-semibold uppercase tracking-wider text-base transition-all duration-300 hover:bg-orange-muted hover:shadow-[0_0_35px_rgba(255,133,51,0.35)] cursor-none">
                       Get in Touch
                       <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
-                    </a>
+                    </button>
                     <a href="https://linkedin.com/in/akhila-susarla-1803b41b6/" target="_blank" rel="noopener noreferrer"
                       className="group relative h-12 overflow-hidden rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 cursor-none">
                       <span className="flex h-full items-center transition-transform duration-300 group-hover:-translate-y-full">LinkedIn</span>
@@ -119,16 +120,16 @@ export default function HeroSection() {
               <div className="hero-text-content">
                 <div className="grid grid-cols-2 gap-5 tablet:gap-6">
                   <div className="hero-stat rounded-2xl border border-orange/10 bg-base/30 backdrop-blur-md p-6 transition-all duration-300 hover:border-orange/25 hover:bg-base/40">
-                    <p className="font-heading text-4xl font-bold text-orange tablet:text-5xl">4+</p>
+                    <p className="font-heading text-4xl font-bold text-orange tablet:text-5xl">3+</p>
                     <p className="mt-2 font-nav text-xs uppercase tracking-wider text-cream/50">Years Experience</p>
                   </div>
                   <div className="hero-stat rounded-2xl border border-slate/15 bg-base/30 backdrop-blur-md p-6 transition-all duration-300 hover:border-slate/30 hover:bg-base/40">
-                    <p className="font-heading text-4xl font-bold text-slate-light tablet:text-5xl">10K+</p>
-                    <p className="mt-2 font-nav text-xs uppercase tracking-wider text-slate/80">Daily AI Interactions</p>
+                    <p className="font-heading text-4xl font-bold text-slate-light tablet:text-5xl">&lt;2s</p>
+                    <p className="mt-2 font-nav text-xs uppercase tracking-wider text-slate/80">Response Latency</p>
                   </div>
                   <div className="hero-stat rounded-2xl border border-slate/15 bg-base/30 backdrop-blur-md p-6 transition-all duration-300 hover:border-slate/30 hover:bg-base/40">
-                    <p className="font-heading text-4xl font-bold text-slate-light tablet:text-5xl">95%</p>
-                    <p className="mt-2 font-nav text-xs uppercase tracking-wider text-slate/80">Voice Recognition</p>
+                    <p className="font-heading text-4xl font-bold text-slate-light tablet:text-5xl">LoRA</p>
+                    <p className="mt-2 font-nav text-xs uppercase tracking-wider text-slate/80">LLM Fine-tuning</p>
                   </div>
                   <div className="hero-stat rounded-2xl border border-orange/10 bg-base/30 backdrop-blur-md p-6 transition-all duration-300 hover:border-orange/25 hover:bg-base/40">
                     <p className="font-heading text-4xl font-bold text-orange tablet:text-5xl">3.78</p>

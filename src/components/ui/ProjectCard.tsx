@@ -62,7 +62,7 @@ export default function ProjectCard({ project, glowColor = 'orange' }: ProjectCa
       {project.metrics && project.metrics.length > 0 && (
         <div className="mb-4 flex flex-wrap gap-2">
           {project.metrics.map((metric) => (
-            <span key={metric} className="rounded-full border border-orange/20 bg-orange/5 px-2.5 py-0.5 font-nav text-[10px] text-orange/70">
+            <span key={metric} className="rounded-full border border-orange/20 bg-orange/5 px-3 py-1 font-nav text-[11px] text-orange/70">
               {metric}
             </span>
           ))}
@@ -72,7 +72,7 @@ export default function ProjectCard({ project, glowColor = 'orange' }: ProjectCa
       {/* Technologies */}
       <div className="mb-4 flex flex-wrap gap-1.5">
         {project.technologies.map((tech) => (
-          <span key={tech} className="rounded-full border border-cream/8 bg-cream/3 px-2 py-0.5 font-nav text-[10px] text-cream/40">
+          <span key={tech} className="rounded-full border border-cream/8 bg-cream/3 px-3 py-1 font-nav text-[11px] text-cream/45">
             {tech}
           </span>
         ))}

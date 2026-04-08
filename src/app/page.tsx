@@ -6,6 +6,7 @@ import ExperienceSection from "@/components/sections/ExperienceSection";
 import ProjectsSection from "@/components/sections/ProjectsSection";
 import EducationSection from "@/components/sections/EducationSection";
 import SocialSection from "@/components/sections/SocialSection";
+import ArtSection from "@/components/sections/ArtSection";
 import InkWashTransition from "@/components/transitions/InkWashTransition";
 import { socialLinks } from "@/data/social";
 
@@ -56,6 +57,8 @@ export default function Home() {
         <EducationSection />
         <InkWashTransition triggerSelector="#social" />
         <SocialSection />
+        <InkWashTransition triggerSelector="#art" />
+        <ArtSection />
       </Shell>
     </>
   );

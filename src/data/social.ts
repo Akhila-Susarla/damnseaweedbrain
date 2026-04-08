@@ -12,6 +12,11 @@ export const socialLinks: SocialLink[] = [
     label: 'akhilasusarla',
   },
   {
+    platform: 'Instagram',
+    url: 'https://www.instagram.com/_the_weird_alien__/',
+    label: '_the_weird_alien__',
+  },
+  {
     platform: 'Email',
     url: 'mailto:akhilasusarla@gmail.com',
     label: 'akhilasusarla@gmail.com',

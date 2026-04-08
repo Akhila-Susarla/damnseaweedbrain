@@ -64,9 +64,18 @@ const st = {
 
 export default function SkillsSection() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const leaveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
   const grouped = groupByCategory(skills);
   const [activeNode, setActiveNode] = useState<string | null>(null);
+
+  const handleEnter = (id: string) => {
+    if (leaveTimer.current) { clearTimeout(leaveTimer.current); leaveTimer.current = null; }
+    setActiveNode(id);
+  };
+  const handleLeave = () => {
+    leaveTimer.current = setTimeout(() => setActiveNode(null), 150);
+  };
 
   useGSAP(() => {
     gsap.set('.skill-col', { opacity: 1, y: 0 });
@@ -92,7 +101,7 @@ export default function SkillsSection() {
         </div>
 
         {/* Wrapper for hover reset */}
-        <div onMouseLeave={() => setActiveNode(null)}>
+        <div onMouseLeave={handleLeave}>
 
         {/* === GLOBES ROW === */}
         <div className="grid grid-cols-2 gap-x-2 tablet:grid-cols-3 desktop:grid-cols-5 desktop:gap-x-4 mb-8">
@@ -104,7 +113,7 @@ export default function SkillsSection() {
               <div
                 key={node.id}
                 className="skill-col flex flex-col items-center"
-                onMouseEnter={() => setActiveNode(node.id)}
+                onMouseEnter={() => handleEnter(node.id)}
               >
                 <motion.div
                   animate={isActive ? { scale: 1.12 } : { scale: 1 }}
@@ -137,11 +146,11 @@ export default function SkillsSection() {
         </div>
 
         {/* === SKILLS AREA BELOW GLOBES === */}
-        <div className="relative min-h-[180px]">
-          {/* DEFAULT: all columns of chips visible */}
+        <div className="relative">
+          {/* DEFAULT: all columns of chips — hidden via visibility so it still occupies space */}
           <div className={cn(
-            'grid grid-cols-2 gap-x-2 gap-y-6 tablet:grid-cols-3 desktop:grid-cols-5 desktop:gap-x-4 transition-all duration-300',
-            activeNode ? 'opacity-0 pointer-events-none absolute inset-0' : 'opacity-100'
+            'grid grid-cols-2 gap-x-2 gap-y-6 tablet:grid-cols-3 desktop:grid-cols-5 desktop:gap-x-4 transition-opacity duration-300',
+            activeNode ? 'opacity-0' : 'opacity-100'
           )}>
             {nodes.map((node) => {
               const accent = st[node.accent];
@@ -159,7 +168,7 @@ export default function SkillsSection() {
                           'inline-block whitespace-nowrap rounded-full border bg-base/40 backdrop-blur-sm px-3.5 py-1.5 font-nav text-[12px] font-semibold transition-all duration-300 cursor-none',
                           accent.chipBright, accent.chipHover
                         )}
-                        onMouseEnter={() => setActiveNode(node.id)}
+                        onMouseEnter={() => handleEnter(node.id)}
                       >
                         {sk.name}
                       </span>
@@ -185,7 +194,7 @@ export default function SkillsSection() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -6 }}
                   transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-                  className="relative"
+                  className="absolute inset-0 z-10"
                 >
                   {/* Glowing connector line — bright and tall */}
                   <div

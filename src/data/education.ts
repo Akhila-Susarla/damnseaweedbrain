@@ -4,7 +4,7 @@ export const education: Education[] = [
   {
     institution: 'The University of Texas at Dallas',
     location: 'Dallas, TX, USA',
-    degree: "Master's in Computer Science",
+    degree: "Master's in Computer Science — Specialization in Data Science",
     gpa: '3.78/4.0',
     period: 'August 2024 - May 2026',
     status: 'In Progress',
@@ -15,7 +15,7 @@ export const education: Education[] = [
   {
     institution: 'SRM University, Amaravati',
     location: 'Amaravati, India',
-    degree: "Bachelor's in Computer Science AI/ML",
+    degree: "Bachelor's in Computer Science — Specialization in AI/ML",
     gpa: '3.64/4.0',
     period: 'August 2019 - May 2023',
     status: 'Completed',

@@ -24,12 +24,10 @@ describe('NavPanel', () => {
     expect(buttons.length).toBeGreaterThanOrEqual(7);
   });
 
-  it('renders section labels in navigation', () => {
+  it('renders Resume and Contact buttons in top bar', () => {
     render(createElement(NavPanel));
-    // Top bar has About, Work, Contact
-    ['About', 'Work', 'Contact'].forEach((label) => {
-      expect(screen.getAllByText(label).length).toBeGreaterThanOrEqual(1);
-    });
+    expect(screen.getAllByText('Resume').length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('Contact').length).toBeGreaterThanOrEqual(1);
   });
 
   it('buttons have aria-labels', () => {

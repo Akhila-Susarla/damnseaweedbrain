@@ -2,27 +2,27 @@
 @import "../styles/textures.css";
 
 @theme {
-  /* Core palette — BRIGHTER American retro */
-  --color-base: #0c0c0c;
-  --color-base-light: #161616;
-  --color-base-deep: #080808;
-  --color-cream: #f5ebe0;
-  --color-cream-dim: #ddd0c0;
-  --color-slate: #6b85ad;
-  --color-slate-light: #8ba3cb;
-  --color-orange: #ff8533;
-  --color-orange-muted: #e6762e;
+  /* Core palette — 10% brighter for readability */
+  --color-base: #111111;
+  --color-base-light: #1c1c1c;
+  --color-base-deep: #0d0d0d;
+  --color-cream: #faf2e8;
+  --color-cream-dim: #e8ddd0;
+  --color-slate: #7b95bd;
+  --color-slate-light: #9bb3db;
+  --color-orange: #ff9244;
+  --color-orange-muted: #f08038;
 
   /* Legacy aliases */
-  --color-midnight: #0c0c0c;
-  --color-midnight-light: #161616;
-  --color-midnight-deep: #080808;
-  --color-parchment: #f5ebe0;
-  --color-parchment-dim: #ddd0c0;
-  --color-gold: #ff8533;
-  --color-gold-muted: #e6762e;
-  --color-teal: #6b85ad;
-  --color-teal-muted: #8ba3cb;
+  --color-midnight: #111111;
+  --color-midnight-light: #1c1c1c;
+  --color-midnight-deep: #0d0d0d;
+  --color-parchment: #faf2e8;
+  --color-parchment-dim: #e8ddd0;
+  --color-gold: #ff9244;
+  --color-gold-muted: #f08038;
+  --color-teal: #7b95bd;
+  --color-teal-muted: #9bb3db;
   --color-classified-red: #ef4444;
 
   --font-heading: var(--font-bodoni);

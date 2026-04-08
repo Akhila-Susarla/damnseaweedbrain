@@ -6,70 +6,104 @@ export const projects: Project[] = [
     title: 'Real-time NER Radar',
     status: 'Deployed',
     description:
-      'Designed and implemented a real-time pipeline streaming Reddit r/news comments, performing NLTK NER extraction, aggregating entity counts, and visualizing trends in Kibana.',
+      'Built a large-scale real-time data pipeline processing Reddit comments through Apache Kafka and PySpark to extract named entities and visualize trending topics in Kibana, demonstrating expertise in distributed stream processing and NLP at scale.',
     technologies: [
       'Apache Kafka', 'PySpark', 'NLTK', 'Elasticsearch', 'Kibana', 'Logstash', 'Reddit API',
     ],
     links: [
-      { label: 'GitHub', url: 'https://github.com/Akhila-Susarla' },
+      { label: 'GitHub', url: 'https://github.com/Akhila-Susarla/Real-time-NER-Insights' },
     ],
     highlights: [
-      'Real-time streaming pipeline from Reddit r/news',
-      'NER extraction with entity count aggregation',
-      'Visualized trends via Kibana dashboards at 15/30/45/60-minute intervals',
+      'End-to-end streaming pipeline: Reddit API → Kafka → PySpark → Elasticsearch → Kibana',
+      'NLTK-based NER extraction surfacing entity frequency trends in real-time dashboards',
+      'Captured and analyzed data at 15/30/45/60-minute intervals over a 1.5-hour run',
     ],
-    metrics: ['1.5hr Pipeline Run', 'Real-time NER', 'US Politics Focus Revealed'],
+    metrics: ['Real-time Streaming', 'NER at Scale', 'Kibana Dashboards'],
   },
   {
     id: 'proj-002',
     title: 'Influence Maximization in Complex Networks',
     status: 'Published',
     description:
-      'Co-authored and presented a research paper on influence maximization in complex networks at FICTA 2023, published by Springer. Focused on identifying the most influential subsets across various markets.',
-    technologies: ['Python', 'Graph Theory', 'Network Analysis'],
+      'Co-authored a Springer-published research paper presenting algorithmic solutions for identifying the most influential nodes in complex networks — a core challenge in viral marketing, epidemic control, and social network analysis.',
+    technologies: ['Python', 'Graph Theory', 'Network Analysis', 'Greedy Algorithms'],
     links: [
-      { label: 'Research Paper', url: '' },
+      { label: 'Research Paper', url: 'https://link.springer.com/chapter/10.1007/978-981-99-6706-3_10' },
     ],
     highlights: [
-      'Published at FICTA 2023 by Springer',
-      'Identified most influential subsets across various markets',
-      'Co-authored research on complex network analysis',
+      'Solved the NP-hard seed selection problem for maximizing information spread across heterogeneous networks',
+      'Benchmarked greedy and heuristic approaches against centrality-based methods on real-world social graph datasets',
+      'Demonstrated scalable influence prediction applicable to viral marketing, public health campaigns, and recommendation systems',
     ],
-    metrics: ['Springer Published', 'FICTA 2023'],
+    metrics: ['Springer Published', 'FICTA 2023', 'NP-Hard Optimization'],
   },
   {
     id: 'proj-003',
     title: 'CorroSight',
     status: 'Deployed',
     description:
-      'Developed an analytics-driven chatbot interface integrating conversational AI with robust backend data processing, enabling users to query complex datasets using natural language and receive actionable insights.',
-    technologies: ['Python', 'Conversational AI', 'NLP', 'Analytics', 'Data Processing'],
+      'Built an AI-powered pipeline integrity platform that automates alignment of In-Line Inspection data across 15+ years and multiple vendors, predicting corrosion degradation and generating prioritized repair schedules from fragmented datasets.',
+    technologies: ['Python', 'FastAPI', 'Angular', 'xAI Grok', 'Hungarian Algorithm', 'NLP'],
     links: [
-      { label: 'GitHub', url: 'https://github.com/Akhila-Susarla' },
+      { label: 'Devpost', url: 'https://devpost.com/software/corrosight' },
     ],
     highlights: [
-      'Natural language querying of complex datasets',
-      'Scalable analytics dashboard with interactive bot',
-      'Streamlined data accessibility and user engagement',
+      'Processes raw inspection data into functional digital twins in under 10 seconds',
+      'Hungarian Algorithm-based optimal defect matching with 1,603 ground-truth anchors',
+      'Integrated xAI Grok for AI-driven risk simulation and natural language querying',
     ],
-    metrics: ['Conversational AI', 'Real-time Insights'],
+    metrics: ['Digital Twin in <10s', '59+ Event Types', 'AI Risk Simulation'],
   },
   {
     id: 'proj-004',
     title: 'UniWay — Campus Navigation & Analytics',
     status: 'Prototype',
     description:
-      'Delivered an analytics-driven campus navigation and facility management product prototype for CBRE, integrating analytics for clients and a reward mechanism emphasizing user engagement and intuitive UI/UX.',
-    technologies: ['Figma', 'Analytics', 'UI/UX Design'],
+      'Designed and prototyped an intelligent campus navigation and space-booking platform solving real scheduling conflicts through real-time room availability tracking and interactive campus mapping, built in a 24-hour hackathon.',
+    technologies: ['Figma', 'Analytics', 'UI/UX Design', 'Product Strategy'],
     links: [
-      { label: 'Figma Prototype', url: '' },
-      { label: 'Devpost', url: '' },
+      { label: 'Figma', url: 'https://www.figma.com/design/BtAH4NvZiUAqZQM4O8W7cJ/Uni-Way?node-id=0-1&p=f' },
+      { label: 'Devpost', url: 'https://devpost.com/software/uniway-pd8vun' },
     ],
     highlights: [
-      'Secured 2nd Runner-Up at UXperience The First Draft',
-      'Analytics-driven campus navigation for CBRE',
-      'Integrated reward mechanism for user engagement',
+      'Secured 2nd Runner-Up at UXperience The First Draft hackathon for CBRE',
+      'Real-time room availability tracking and interactive campus mapping for hundreds of daily users',
+      'Combined engineering rigor with intuitive UX — learned Figma from scratch in the hackathon',
     ],
-    metrics: ['2nd Runner-Up', 'CBRE Partnership'],
+    metrics: ['2nd Runner-Up', 'CBRE Partnership', '24hr Hackathon'],
+  },
+  {
+    id: 'proj-005',
+    title: 'Sentiment Analysis on Social Media Data',
+    status: 'Completed',
+    description:
+      'Developed a multi-model sentiment analysis framework comparing TF-IDF, Word2Vec, GloVe, and LSTM approaches against fine-tuned BERT, achieving 81.56% accuracy on US airline tweet sentiment classification.',
+    technologies: ['Python', 'BERT', 'LSTM', 'TF-IDF', 'Word2Vec', 'GloVe', 'scikit-learn'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Akhila-Susarla/Sentiment-Analysis-on-Social-Media-Data' },
+    ],
+    highlights: [
+      'Rigorous comparison across 5 embedding/model architectures for production-grade sentiment systems',
+      'Fine-tuned BERT achieving 81.56% accuracy on multi-class airline sentiment classification',
+      'End-to-end NLP pipeline: data preprocessing, tokenization, feature extraction, and model evaluation',
+    ],
+    metrics: ['81.56% Accuracy', 'BERT Fine-tuned', '5 Model Comparison'],
+  },
+  {
+    id: 'proj-006',
+    title: 'Mushroom Species Classifier',
+    status: 'Completed',
+    description:
+      'Built a deep learning image classifier using transfer learning with EfficientNetB0 to identify 9 mushroom genera from ~6,700 web-scraped images, tackling real-world class imbalance and noisy data through a two-phase training strategy.',
+    technologies: ['Python', 'TensorFlow', 'Keras', 'EfficientNetB0', 'Transfer Learning'],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/Akhila-Susarla/mushroom-species-classifier' },
+    ],
+    highlights: [
+      'Two-phase training: frozen feature extraction then fine-tuning with partially unfrozen layers',
+      'Advanced augmentation pipeline (rotation, shifts, zoom, brightness) to handle class imbalance (311–1,563 samples/class)',
+      'Custom classification head with dropout, batch normalization, and learning rate scheduling',
+    ],
+    metrics: ['9 Genera', '6,700 Images', 'EfficientNetB0'],
   },
 ];
