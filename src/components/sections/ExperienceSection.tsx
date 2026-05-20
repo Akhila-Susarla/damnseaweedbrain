@@ -113,8 +113,8 @@ export default function ExperienceSection() {
                 <div className="flex items-start tablet:pr-10 tablet:text-right">
                   <div className="tablet:ml-auto tablet:mr-6">
                     <TiltCard maxAngle={8}>
-                      <div className="rounded-xl border border-slate/20 bg-base/30 px-4 py-3 backdrop-blur-md transition-all duration-300 hover:border-slate/35 hover:shadow-[0_0_20px_rgba(107,133,173,0.08)] mobile:px-5 mobile:py-4">
-                        <p className="whitespace-nowrap font-nav text-[10px] font-semibold uppercase leading-none tracking-[0.1em] text-slate-light mobile:text-[11px] tablet:text-[12px]">
+                      <div className="rounded-xl border border-slate/20 bg-base/30 px-5 py-4 backdrop-blur-md transition-all duration-300 hover:border-slate/35 hover:shadow-[0_0_20px_rgba(107,133,173,0.08)]">
+                        <p className="font-nav text-[14px] font-semibold uppercase tracking-wider text-slate-light">
                           {exp.period}
                         </p>
                       </div>

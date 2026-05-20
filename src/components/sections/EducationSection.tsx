@@ -58,7 +58,7 @@ export default function EducationSection() {
               >
                 <div className="flex flex-col gap-4 tablet:flex-row tablet:items-start tablet:justify-between">
                   <div className="flex-1">
-                    <h3 className="font-heading text-[1.6rem] font-bold leading-tight text-cream mobile:text-[1.75rem] tablet:text-[2.1rem]">
+                    <h3 className="font-heading text-xl font-bold text-cream tablet:text-2xl">
                       {entry.institution}
                     </h3>
                     <p className="mt-1.5 text-[14px] text-cream/70 mobile:text-[15px] tablet:text-[16px]">
@@ -70,14 +70,6 @@ export default function EducationSection() {
                   </div>
 
                   <div className="flex flex-col items-start gap-2 tablet:items-end">
-                    <span
-                      className={cn(
-                        'rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider mobile:text-xs tablet:text-sm',
-                        statusClass
-                      )}
-                    >
-                      {entry.status}
-                    </span>
                     <p className="font-nav text-[14px] text-slate-light/70 mobile:text-[15px] tablet:text-[16px]">
                       {entry.period}
                     </p>
@@ -86,10 +78,13 @@ export default function EducationSection() {
                         className={cn(
                           'rounded-full bg-orange/10 px-4 py-1 font-heading text-[1rem] font-bold text-orange mobile:text-[1.05rem] tablet:text-[1.1rem]'
                         )}
-                      >
-                        {entry.gpa}
-                      </span>
-                    )}
+                        >
+                          {entry.gpa}
+                        </span>
+                      )}
+                    <span className={cn('rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider', statusClass)}>
+                      {entry.status}
+                    </span>
                   </div>
                 </div>
 

@@ -37,7 +37,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
       >
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            <h3 className="font-heading text-[1.45rem] font-bold leading-tight text-cream mobile:text-[1.6rem] tablet:text-[1.8rem]">
+            <h3 className="truncate font-heading text-xl font-bold text-cream">
               {experience.organization}
             </h3>
             <span className="whitespace-nowrap font-nav text-[13px] text-slate/80 mobile:text-sm tablet:text-[15px]">
@@ -55,10 +55,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             {experience.status}
           </span>
         </div>
-        <p
-          className="mt-2 font-nav text-[15px] font-semibold leading-snug mobile:text-base tablet:text-[17px]"
-          style={{ color: '#faf2e8' }}
-        >
+        <p className="mt-1.5 font-nav text-base text-slate-light">
           {experience.role}
         </p>
 
