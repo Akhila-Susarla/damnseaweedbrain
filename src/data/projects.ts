@@ -2,6 +2,26 @@ import type { Project } from './types';
 
 export const projects: Project[] = [
   {
+    id: 'proj-007',
+    title: 'InvestIQ',
+    status: 'Deployed',
+    description:
+      'Built a beginner-friendly portfolio management platform for a Goldman Sachs / UTD JSOM hackathon, pairing seeded Supabase data, scenario-based rebalancing, and Kuber AI guidance across a web app, floating widget, and Chrome extension. Placed in the top 5 at the May 2026 competition.',
+    technologies: [
+      'Next.js 16', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Recharts', 'Plasmo', 'Groq', 'ElevenLabs',
+    ],
+    links: [
+      { label: 'GitHub', url: 'https://github.com/prasannawarad/InvestIQ' },
+    ],
+    highlights: [
+      'Placed in the top 5 at the UTD JSOM x Goldman Sachs Hackathon (May 2026)',
+      'Shipped Kuber across three surfaces: the web app, floating chat widget, and Chrome extension overlay',
+      'Engine-backed /rebalance flow computes before/after allocations, trade rationale, tax cost, fees, and goal impact',
+      'Combined Supabase Auth, seeded portfolio data, and deterministic discovery ranking into one demo-ready monorepo',
+    ],
+    metrics: ['Top 5 Finalist', 'Hackathon Project', 'AI Agent Kuber', 'Web + Extension'],
+  },
+  {
     id: 'proj-001',
     title: 'Real-time NER Radar',
     status: 'Deployed',

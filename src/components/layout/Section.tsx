@@ -16,7 +16,7 @@ export default function Section({
     <section
       id={id}
       className={cn(
-        "w-full py-12 tablet:py-16 desktop:py-20",
+        "w-full py-8 mobile:py-10 tablet:py-16 desktop:py-20",
         className
       )}
     >

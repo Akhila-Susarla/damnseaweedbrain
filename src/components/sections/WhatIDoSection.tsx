@@ -52,11 +52,11 @@ export default function WhatIDoSection() {
   return (
     <Section id="what-i-do" depth={2}>
       <div ref={containerRef} className="mx-auto max-w-6xl px-4 tablet:px-8">
-        <div className="mb-12 flex items-center gap-4">
-          <h2 className="font-heading text-3xl text-cream tablet:text-4xl desktop:text-5xl">
+        <div className="mb-10 flex items-center gap-4">
+          <h2 className="font-heading text-2xl text-cream mobile:text-3xl tablet:text-4xl desktop:text-5xl">
             What I Do
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent" />
+          <div className="hidden h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent mobile:block" />
         </div>
 
         <div className="grid grid-cols-1 gap-5 tablet:grid-cols-2 desktop:grid-cols-4">

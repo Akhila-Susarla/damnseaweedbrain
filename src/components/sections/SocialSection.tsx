@@ -78,37 +78,39 @@ export default function SocialSection() {
   return (
     <Section id="social" depth={4}>
       <div ref={containerRef} className="mx-auto max-w-[900px] px-4">
-        <div className="mb-12 flex items-center gap-4">
-          <h2 className="font-heading text-3xl tracking-wide text-cream tablet:text-4xl desktop:text-5xl">
+        <div className="mb-10 flex items-center gap-4">
+          <h2 className="font-heading text-2xl tracking-wide text-cream mobile:text-3xl tablet:text-4xl desktop:text-5xl">
             Get in Touch
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-slate/25 to-transparent" />
+          <div className="hidden h-px flex-1 bg-gradient-to-r from-slate/25 to-transparent mobile:block" />
         </div>
 
-        <div className="grid grid-cols-1 gap-6 tablet:grid-cols-2">
+        <div className="grid grid-cols-1 gap-5 tablet:grid-cols-2">
           {/* Left: Direct contact — blue accent */}
-          <div className="rounded-xl border border-slate/20 bg-slate/[0.04] backdrop-blur-sm p-6 tablet:p-8">
-            <p className="mb-6 text-sm text-cream/50">
+          <div className="rounded-xl border border-slate/20 bg-slate/[0.04] p-5 backdrop-blur-sm mobile:p-6 tablet:p-8">
+            <p className="mb-5 text-sm text-cream/50 mobile:mb-6">
               Interested in working together? Feel free to reach out.
             </p>
 
             {/* Email — clipboard copy */}
-            <div className="contact-item mb-4">
+            <div className="contact-item mb-3 mobile:mb-4">
               <button
                 onClick={handleCopyEmail}
-                className="group flex w-full items-center gap-4 rounded-lg border border-slate/20 bg-slate/5 p-4 text-left transition-all duration-300 hover:border-orange/30 hover:bg-slate/10 cursor-none"
+                className="group flex w-full flex-col gap-3 rounded-lg border border-slate/20 bg-slate/5 p-3 text-left transition-all duration-300 hover:border-orange/30 hover:bg-slate/10 mobile:p-4 tablet:flex-row tablet:items-center tablet:gap-4 cursor-none"
               >
-                <span className="flex h-10 w-10 items-center justify-center rounded-full border border-slate/25 text-slate-light transition-all duration-300 group-hover:border-orange/40 group-hover:bg-orange/10 group-hover:text-orange">
-                  {/* Gmail / mail icon */}
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </span>
-                <span className="flex flex-col">
-                  <span className="font-nav text-[10px] uppercase tracking-widest text-slate/70">Email</span>
-                  <span className="text-sm text-cream/70">{EMAIL}</span>
-                </span>
-                <span className="ml-auto rounded-full border border-slate/15 bg-slate/5 px-3 py-1 font-nav text-[10px] uppercase tracking-wider text-slate-light transition-all duration-300 group-hover:border-orange/30 group-hover:text-orange">
+                <div className="flex w-full items-center gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-slate/25 text-slate-light transition-all duration-300 group-hover:border-orange/40 group-hover:bg-orange/10 group-hover:text-orange">
+                    {/* Gmail / mail icon */}
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </span>
+                  <span className="flex min-w-0 flex-1 flex-col">
+                    <span className="font-nav text-[10px] uppercase tracking-widest text-slate/70">Email</span>
+                    <span className="break-all text-xs leading-snug text-cream/70 mobile:break-normal mobile:text-sm">{EMAIL}</span>
+                  </span>
+                </div>
+                <span className="self-end rounded-full border border-slate/15 bg-slate/5 px-3 py-1 font-nav text-[10px] uppercase tracking-wider text-slate-light transition-all duration-300 group-hover:border-orange/30 group-hover:text-orange tablet:ml-auto tablet:self-center">
                   {copied ? 'Copied!' : 'Copy'}
                 </span>
               </button>
@@ -122,14 +124,14 @@ export default function SocialSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Contact via ${link.platform}`}
-                  className="group flex items-center gap-4 rounded-lg border border-transparent p-4 text-cream/70 transition-all duration-300 hover:border-slate/15 hover:bg-slate/5 hover:text-orange"
+                  className="group flex items-center gap-3 rounded-lg border border-transparent p-3 text-cream/70 transition-all duration-300 hover:border-slate/15 hover:bg-slate/5 hover:text-orange mobile:gap-4 mobile:p-4"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-slate/25 text-slate-light transition-all duration-300 group-hover:border-orange/40 group-hover:bg-orange/10 group-hover:text-orange">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-slate/25 text-slate-light transition-all duration-300 group-hover:border-orange/40 group-hover:bg-orange/10 group-hover:text-orange mobile:h-10 mobile:w-10">
                     <link.Icon />
                   </span>
                   <span className="flex flex-col">
                     <span className="font-nav text-[10px] uppercase tracking-widest text-slate/70">{link.platform}</span>
-                    <span className="text-sm">{link.label}</span>
+                    <span className="text-xs mobile:text-sm">{link.label}</span>
                   </span>
                   <svg className="ml-auto h-4 w-4 text-cream/20 transition-all duration-300 group-hover:translate-x-1 group-hover:text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -140,25 +142,25 @@ export default function SocialSection() {
           </div>
 
           {/* Right: Custom form — orange accent */}
-          <div className="rounded-xl border border-orange/15 bg-orange/[0.02] backdrop-blur-sm p-6 tablet:p-8">
+          <div className="rounded-xl border border-orange/15 bg-orange/[0.02] p-5 backdrop-blur-sm mobile:p-6 tablet:p-8">
             <h3 className="mb-2 font-nav text-sm font-semibold uppercase tracking-wider text-orange">
               Send a Message
             </h3>
-            <p className="mb-6 text-sm text-cream/40">
+            <p className="mb-5 text-sm text-cream/40 mobile:mb-6">
               Drop me a note and I&apos;ll get back to you.
             </p>
 
             {formState === 'sent' ? (
-              <div className="flex flex-col items-center justify-center py-12 text-center">
-                <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-orange/10 text-orange">
-                  <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                  </svg>
+                <div className="flex flex-col items-center justify-center py-10 text-center mobile:py-12">
+                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-orange/10 text-orange">
+                    <svg className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <p className="font-nav text-sm font-semibold text-orange">Message sent!</p>
+                  <p className="mt-1 text-sm text-cream/40">I&apos;ll get back to you soon.</p>
                 </div>
-                <p className="font-nav text-sm font-semibold text-orange">Message sent!</p>
-                <p className="mt-1 text-sm text-cream/40">I&apos;ll get back to you soon.</p>
-              </div>
-            ) : (
+              ) : (
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input
