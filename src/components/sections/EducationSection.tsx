@@ -41,18 +41,19 @@ export default function EducationSection() {
         <div className="space-y-4 mobile:space-y-5">
           {education.map((entry) => {
             const isUtd = entry.institution === 'The University of Texas at Dallas';
-            const isOrangeAccent = entry.status === 'In Progress' && !isUtd;
-            const isBlueAccent = isUtd;
+            const accentClass = isUtd
+              ? 'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]'
+              : 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]';
+            const highlightDotClass = isUtd ? 'before:bg-orange/40' : 'before:bg-slate-light/50';
+            const statusClass = isUtd
+              ? 'bg-slate/15 text-slate-light'
+              : 'bg-cream/5 text-cream/40';
             return (
               <div
                 key={entry.institution}
                 className={cn(
                   'education-entry rounded-xl border border-cream/8 bg-base/30 p-5 backdrop-blur-sm transition-all duration-300 mobile:p-6 tablet:p-8',
-                  isOrangeAccent
-                    ? 'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]'
-                    : isBlueAccent
-                      ? 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]'
-                      : 'hover:border-cream/15 hover:shadow-[0_0_20px_rgba(255,255,255,0.06)]'
+                  accentClass
                 )}
               >
                 <div className="tablet:hidden">
@@ -66,18 +67,14 @@ export default function EducationSection() {
                     {entry.gpa && (
                       <span
                         className={cn(
-                          'rounded-full px-4 py-1 font-heading text-base font-bold mobile:text-lg',
-                          isBlueAccent ? 'bg-slate/10 text-slate-light' : 'bg-orange/10 text-orange'
+                          'rounded-full bg-orange/10 px-4 py-1 font-heading text-base font-bold text-orange mobile:text-lg'
                         )}
                       >
                         {entry.gpa}
                       </span>
                     )}
                     <span
-                      className={cn(
-                        'ml-auto rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider',
-                        isBlueAccent ? 'bg-slate/15 text-slate-light' : isOrangeAccent ? 'bg-orange/15 text-orange' : 'bg-cream/5 text-cream/40'
-                      )}
+                      className={cn('ml-auto rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider', statusClass)}
                     >
                       {entry.status}
                     </span>
@@ -98,18 +95,14 @@ export default function EducationSection() {
                     {entry.gpa && (
                       <span
                         className={cn(
-                          'rounded-full px-4 py-1 font-heading text-base font-bold mobile:text-lg',
-                          isBlueAccent ? 'bg-slate/10 text-slate-light' : 'bg-orange/10 text-orange'
+                          'rounded-full bg-orange/10 px-4 py-1 font-heading text-base font-bold text-orange mobile:text-lg'
                         )}
                       >
                         {entry.gpa}
                       </span>
                     )}
                     <span
-                      className={cn(
-                        'rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider',
-                        isBlueAccent ? 'bg-slate/15 text-slate-light' : isOrangeAccent ? 'bg-orange/15 text-orange' : 'bg-cream/5 text-cream/40'
-                      )}
+                      className={cn('rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider', statusClass)}
                     >
                       {entry.status}
                     </span>
@@ -119,7 +112,7 @@ export default function EducationSection() {
                 {entry.highlights.length > 0 && (
                   <ul className="mt-4 space-y-1.5 border-t border-cream/5 pt-4">
                     {entry.highlights.map((highlight) => (
-                      <li key={highlight} className="relative pl-3 text-[13px] text-cream/55 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-orange/40 mobile:text-sm">
+                      <li key={highlight} className={cn('relative pl-3 text-[13px] text-cream/55 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full mobile:text-sm', highlightDotClass)}>
                         {highlight}
                       </li>
                     ))}
