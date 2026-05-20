@@ -56,56 +56,40 @@ export default function EducationSection() {
                   accentClass
                 )}
               >
-                <div className="tablet:hidden">
-                  <h3 className="font-heading text-lg font-bold leading-tight text-cream mobile:text-xl">
-                    {entry.institution}
-                  </h3>
-                  <p className="mt-1 text-sm text-cream/70 mobile:text-base">{entry.degree}</p>
-                  <p className="mt-0.5 font-nav text-xs text-cream/40">{entry.location}</p>
-                  <p className="mt-1.5 font-nav text-xs text-cream/40">{entry.period}</p>
-                  <div className="mt-3 flex items-center justify-between gap-3">
-                    {entry.gpa && (
-                      <span
-                        className={cn(
-                          'rounded-full bg-orange/10 px-4 py-1 font-heading text-base font-bold text-orange mobile:text-lg'
-                        )}
-                      >
-                        {entry.gpa}
-                      </span>
-                    )}
-                    <span
-                      className={cn('ml-auto rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider', statusClass)}
-                    >
-                      {entry.status}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="hidden flex-col gap-4 tablet:flex tablet:flex-row tablet:items-start tablet:justify-between">
+                <div className="flex flex-col gap-4 tablet:flex-row tablet:items-start tablet:justify-between">
                   <div className="flex-1">
-                    <h3 className="font-heading text-lg font-bold text-cream mobile:text-xl tablet:text-2xl">
+                    <h3 className="font-heading text-[1.6rem] font-bold leading-tight text-cream mobile:text-[1.75rem] tablet:text-[2.1rem]">
                       {entry.institution}
                     </h3>
-                    <p className="mt-1.5 text-sm text-cream/70 mobile:text-base">{entry.degree}</p>
-                    <p className="mt-0.5 font-nav text-xs text-cream/40">{entry.location}</p>
+                    <p className="mt-1.5 text-[14px] text-cream/70 mobile:text-[15px] tablet:text-[16px]">
+                      {entry.degree}
+                    </p>
+                    <p className="mt-2 font-nav text-[14px] text-slate-light/80 mobile:text-[15px] tablet:text-[16px]">
+                      {entry.location}
+                    </p>
                   </div>
 
-                  <div className="flex items-center gap-3 tablet:flex-col tablet:items-end tablet:gap-2">
-                    <p className="font-nav text-xs text-cream/40">{entry.period}</p>
+                  <div className="flex flex-col items-start gap-2 tablet:items-end">
+                    <span
+                      className={cn(
+                        'rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider mobile:text-xs tablet:text-sm',
+                        statusClass
+                      )}
+                    >
+                      {entry.status}
+                    </span>
+                    <p className="font-nav text-[14px] text-slate-light/70 mobile:text-[15px] tablet:text-[16px]">
+                      {entry.period}
+                    </p>
                     {entry.gpa && (
                       <span
                         className={cn(
-                          'rounded-full bg-orange/10 px-4 py-1 font-heading text-base font-bold text-orange mobile:text-lg'
+                          'rounded-full bg-orange/10 px-4 py-1 font-heading text-[1rem] font-bold text-orange mobile:text-[1.05rem] tablet:text-[1.1rem]'
                         )}
                       >
                         {entry.gpa}
                       </span>
                     )}
-                    <span
-                      className={cn('rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider', statusClass)}
-                    >
-                      {entry.status}
-                    </span>
                   </div>
                 </div>
 

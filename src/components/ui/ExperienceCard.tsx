@@ -35,31 +35,18 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
         aria-expanded={isExpanded}
         aria-label={`${experience.organization} - ${experience.role}`}
       >
-        <div className="tablet:hidden">
-          <h3 className="max-w-full font-heading text-lg font-bold leading-tight text-cream mobile:text-xl">
-            {experience.organization}
-          </h3>
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h3 className="font-heading text-[1.45rem] font-bold leading-tight text-cream mobile:text-[1.6rem] tablet:text-[1.8rem]">
+              {experience.organization}
+            </h3>
+            <span className="whitespace-nowrap font-nav text-[13px] text-slate/80 mobile:text-sm tablet:text-[15px]">
+              {experience.location}
+            </span>
+          </div>
           <span
             className={cn(
-              'mt-2 inline-flex rounded-full px-3 py-1 font-nav text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm mobile:text-xs',
-              isCurrent
-                ? 'bg-orange/15 text-orange'
-                : 'bg-slate/15 text-slate-light'
-            )}
-          >
-            {experience.status}
-          </span>
-          <p className="mt-2 inline-flex rounded-full border border-slate/15 bg-slate/10 px-3 py-1 font-nav text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-light/90">
-            {experience.role}
-          </p>
-        </div>
-        <div className="hidden items-center gap-3 tablet:flex">
-          <h3 className="truncate font-heading text-lg font-bold text-cream mobile:text-xl">
-            {experience.organization}
-          </h3>
-          <span
-            className={cn(
-              'flex-shrink-0 rounded-full px-3 py-1 font-nav text-xs font-bold uppercase tracking-wider backdrop-blur-sm',
+              'flex-shrink-0 rounded-full px-3 py-1 text-right font-nav text-xs font-bold uppercase tracking-wider backdrop-blur-sm',
               isCurrent
                 ? 'bg-orange/15 text-orange'
                 : 'bg-slate/15 text-slate-light'
@@ -68,7 +55,10 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             {experience.status}
           </span>
         </div>
-        <p className="hidden tablet:block mt-1.5 font-nav text-sm text-slate-light mobile:text-base">
+        <p
+          className="mt-2 font-nav text-[15px] font-semibold leading-snug mobile:text-base tablet:text-[17px]"
+          style={{ color: '#faf2e8' }}
+        >
           {experience.role}
         </p>
 

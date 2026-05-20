@@ -31,14 +31,14 @@ export default function HeroSection() {
 
       tl.fromTo('.hero-greeting', { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.2)
       .fromTo('.hero-name', { opacity: 0, y: 60, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power3.out' }, 0.3)
-      .fromTo('.hero-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.7)
+      .fromTo('.hero-title', { y: 20 }, { y: 0, duration: 0.6, ease: 'power3.out' }, 0.45)
       .fromTo('.hero-about', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, 0.9)
       .fromTo('.hero-cta', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, 1.1)
       .fromTo('.hero-stat', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, 1.2);
 
-      // Only fade the text content on scroll, NOT the blur backdrop
+      // Keep the text readable; only shift it slightly on scroll.
       gsap.to('.hero-text-content', {
-        yPercent: 20, opacity: 0,
+        yPercent: 20,
         scrollTrigger: { trigger: '#hero', start: 'top top', end: '70% top', scrub: 0.6 },
       });
       gsap.to('.hero-bg-effects', {
@@ -87,10 +87,14 @@ export default function HeroSection() {
                     <br />
                     <span className="text-orange drop-shadow-[0_0_35px_rgba(255,133,51,0.25)]">Susarla</span>
                   </h1>
-                  <p className="hero-title mb-3 font-nav text-[11px] tracking-wider text-slate-light mobile:mb-4 mobile:text-base tablet:mb-7 tablet:text-lg">
-                    AI/ML Engineer <span className="text-orange">&bull;</span> Data Scientist
+                  <p
+                    className="hero-title mb-3 font-nav text-[11px] font-semibold tracking-wider mobile:mb-4 mobile:text-base tablet:mb-7 tablet:text-lg"
+                    style={{ color: '#93c5fd' }}
+                  >
+                    AI/ML Engineer • Data Scientist
                   </p>
-                  <p className="hero-about mb-5 max-w-[18rem] text-[13px] leading-snug text-cream/65 mobile:mb-7 mobile:max-w-lg mobile:text-base mobile:leading-relaxed tablet:mb-9">
+                  <p className="hero-about mb-5 max-w-[18rem] text-[13px] leading-snug mobile:mb-7 mobile:max-w-lg mobile:text-base mobile:leading-relaxed tablet:mb-9"
+                    style={{ color: '#ffffff' }}>
                     Building production-grade conversational AI systems, ML pipelines, and data-driven solutions. Currently engineering voice bots handling 10,000+ daily interactions at Copart.
                   </p>
                   <div className="hero-cta flex flex-col gap-2 mobile:flex-row mobile:flex-wrap mobile:gap-3">

@@ -138,7 +138,6 @@ export default function NavPanel() {
               </button>
             );
           })}
-
           <div className="border-t border-cream/5 px-3 py-3 tablet:hidden">
             <a
               href={RESUME_URL}

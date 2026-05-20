@@ -108,17 +108,14 @@ export default function ExperienceSection() {
           {/* Entries */}
           <div className="space-y-6 tablet:space-y-8">
             {experiences.map((exp) => (
-              <div key={exp.id} className="exp-row grid grid-cols-1 gap-4 pl-6 mobile:pl-7 tablet:grid-cols-[25%_75%] tablet:gap-0 tablet:pl-0">
+              <div key={exp.id} className="exp-row grid grid-cols-1 gap-4 pl-6 mobile:pl-7 tablet:grid-cols-[24%_76%] tablet:gap-0 tablet:pl-0">
                 {/* Left: Date card */}
-                <div className="flex items-start tablet:pr-8 tablet:text-right">
-                  <div className="tablet:ml-auto">
+                <div className="flex items-start tablet:pr-10 tablet:text-right">
+                  <div className="tablet:ml-auto tablet:mr-6">
                     <TiltCard maxAngle={8}>
                       <div className="rounded-xl border border-slate/20 bg-base/30 px-4 py-3 backdrop-blur-md transition-all duration-300 hover:border-slate/35 hover:shadow-[0_0_20px_rgba(107,133,173,0.08)] mobile:px-5 mobile:py-4">
-                        <p className="font-nav text-sm font-semibold uppercase tracking-wider text-slate-light">
+                        <p className="whitespace-nowrap font-nav text-[10px] font-semibold uppercase leading-none tracking-[0.1em] text-slate-light mobile:text-[11px] tablet:text-[12px]">
                           {exp.period}
-                        </p>
-                        <p className="mt-1.5 font-nav text-xs text-slate/80">
-                          {exp.location}
                         </p>
                       </div>
                     </TiltCard>
