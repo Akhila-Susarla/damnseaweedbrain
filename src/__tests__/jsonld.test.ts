@@ -99,8 +99,8 @@ describe('JSON-LD structured data', () => {
     expect(person['@context']).toBe('https://schema.org');
     expect(person.name).toBe('Akhila Susarla');
     expect(person.jobTitle).toBe('AI/ML Engineer');
-    expect(person.sameAs).toContain('https://linkedin.com/in/akhila-susarla-1803b41b6/');
-    expect(person.sameAs).toContain('https://github.com/akhilasusarla');
+    expect(person.sameAs).toContain('https://www.linkedin.com/in/akhila-susarla-1803b41b6/');
+    expect(person.sameAs).toContain('https://github.com/Akhila-Susarla');
   });
 
   it('renders WebSite JSON-LD with correct schema', () => {

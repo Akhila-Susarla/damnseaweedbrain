@@ -8,6 +8,7 @@ import { useGSAP } from '@gsap/react';
 import { useLenis } from 'lenis/react';
 import Section from '@/components/layout/Section';
 import { usePortfolioStore } from '@/lib/store';
+import { GITHUB_URL, LINKEDIN_URL } from '@/data/social';
 
 const Scene3D = dynamic(() => import('@/components/three/Scene3D'), { ssr: false });
 
@@ -105,12 +106,12 @@ export default function HeroSection() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </button>
-                    <a href="https://linkedin.com/in/akhila-susarla-1803b41b6/" target="_blank" rel="noopener noreferrer"
+                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer"
                       className="group relative h-12 overflow-hidden rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 cursor-none">
                       <span className="flex h-full items-center transition-transform duration-300 group-hover:-translate-y-full">LinkedIn</span>
                       <span className="absolute inset-0 flex items-center justify-center translate-y-full text-orange transition-transform duration-300 group-hover:translate-y-0">LinkedIn</span>
                     </a>
-                    <a href="https://github.com/Akhila-Susarla" target="_blank" rel="noopener noreferrer"
+                    <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer"
                       className="group relative h-12 overflow-hidden rounded-full border border-slate/30 bg-base/30 backdrop-blur-md px-7 font-nav text-sm uppercase tracking-wider text-slate-light transition-all duration-300 hover:border-orange/40 cursor-none">
                       <span className="flex h-full items-center transition-transform duration-300 group-hover:-translate-y-full">GitHub</span>
                       <span className="absolute inset-0 flex items-center justify-center translate-y-full text-orange transition-transform duration-300 group-hover:translate-y-0">GitHub</span>

@@ -6,6 +6,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Section from '@/components/layout/Section';
 import { usePortfolioStore } from '@/lib/store';
+import { GITHUB_URL, LINKEDIN_URL } from '@/data/social';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,8 +21,8 @@ function GitHubSmall() {
 }
 
 const contactLinks = [
-  { platform: 'LinkedIn', label: 'Akhila Susarla', url: 'https://linkedin.com/in/akhila-susarla-1803b41b6/', Icon: LinkedInSmall },
-  { platform: 'GitHub', label: 'akhilasusarla', url: 'https://github.com/akhilasusarla', Icon: GitHubSmall },
+  { platform: 'LinkedIn', label: 'Akhila Susarla', url: LINKEDIN_URL, Icon: LinkedInSmall },
+  { platform: 'GitHub', label: 'akhilasusarla', url: GITHUB_URL, Icon: GitHubSmall },
 ];
 
 export default function SocialSection() {

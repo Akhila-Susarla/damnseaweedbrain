@@ -109,6 +109,14 @@ describe('Social links data', () => {
     expect(platforms).toContain('GitHub');
     expect(platforms).toContain('Email');
   });
+
+  it('uses the canonical LinkedIn and GitHub URLs', () => {
+    const linkedIn = socialLinks.find((l) => l.platform === 'LinkedIn');
+    const gitHub = socialLinks.find((l) => l.platform === 'GitHub');
+
+    expect(linkedIn?.url).toBe('https://www.linkedin.com/in/akhila-susarla-1803b41b6/');
+    expect(gitHub?.url).toBe('https://github.com/Akhila-Susarla');
+  });
 });
 
 describe('Specialties data', () => {

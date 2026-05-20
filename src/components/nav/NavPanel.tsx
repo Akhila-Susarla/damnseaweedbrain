@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import { useLenis } from 'lenis/react';
 import { usePortfolioStore } from '@/lib/store';
 import { cn } from '@/lib/utils';
+import { GITHUB_URL, INSTAGRAM_URL, LINKEDIN_URL } from '@/data/social';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,10 +32,29 @@ function InstagramIcon() {
   return (<svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>);
 }
 
+function MenuIcon({ open }: { open: boolean }) {
+  if (open) {
+    return (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" className="h-6 w-6">
+        <path d="M6 6l12 12" />
+        <path d="M18 6L6 18" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.4} strokeLinecap="round" className="h-6 w-6">
+      <path d="M4 7h16" />
+      <path d="M4 12h16" />
+      <path d="M4 17h16" />
+    </svg>
+  );
+}
+
 const SOCIAL_LINKS = [
-  { href: 'https://github.com/Akhila-Susarla', label: 'GitHub', Icon: GitHubIcon },
-  { href: 'https://linkedin.com/in/akhila-susarla-1803b41b6/', label: 'LinkedIn', Icon: LinkedInIcon },
-  { href: 'https://www.instagram.com/_the_weird_alien__/', label: 'Instagram', Icon: InstagramIcon },
+  { href: GITHUB_URL, label: 'GitHub', Icon: GitHubIcon },
+  { href: LINKEDIN_URL, label: 'LinkedIn', Icon: LinkedInIcon },
+  { href: INSTAGRAM_URL, label: 'Instagram', Icon: InstagramIcon },
 ];
 
 const RESUME_URL = 'https://docs.google.com/document/d/1beGXEJKMs0gkoX9cKPiDFvZZBHI5y_xOuGnvRRI68jw/edit?usp=sharing';
@@ -82,12 +102,17 @@ export default function NavPanel() {
         {/* Left: Hamburger menu */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-lg transition-all duration-300 hover:bg-cream/5 mobile:h-10 mobile:w-10 cursor-none"
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          className={cn(
+            'flex h-11 w-11 items-center justify-center rounded-full border transition-all duration-300 mobile:h-10 mobile:w-10 cursor-none',
+            menuOpen
+              ? 'border-orange/30 bg-orange/10 text-orange shadow-[0_0_18px_rgba(255,133,51,0.18)]'
+              : 'border-cream/10 bg-base/30 text-cream/70 hover:bg-cream/5'
+          )}
           aria-label="Toggle menu"
         >
-          <span className={cn('h-[2px] w-5 bg-cream/70 transition-all duration-300 origin-center', menuOpen && 'translate-y-[3.5px] rotate-45')} />
-          <span className={cn('h-[2px] w-5 bg-cream/70 transition-all duration-300', menuOpen && 'scale-0 opacity-0')} />
-          <span className={cn('h-[2px] w-5 bg-cream/70 transition-all duration-300 origin-center', menuOpen && '-translate-y-[3.5px] -rotate-45')} />
+          <MenuIcon open={menuOpen} />
         </button>
 
         {/* Right: Resume + Contact buttons */}
@@ -116,7 +141,7 @@ export default function NavPanel() {
       <div className={cn(
         'fixed left-3 right-3 top-16 z-50 max-h-[calc(100svh-5rem)] overflow-y-auto rounded-2xl border border-cream/10 bg-base/95 backdrop-blur-xl transition-all duration-300 tablet:left-4 tablet:right-auto tablet:w-56',
         menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
-      )}>
+      )} id="mobile-menu">
         <nav className="py-2" aria-label="Section navigation">
           {SECTIONS.map(({ id, label }) => {
             const isActive = currentSection === id;
