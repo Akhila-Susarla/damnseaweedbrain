@@ -77,7 +77,7 @@ export const experiences: Experience[] = [
   {
     id: 'exp-005',
     organization: 'SRM University',
-    location: 'Amaravati, India',
+    location: 'Amaravati, AP, India',
     role: 'Research Intern',
     period: 'June 2021 - August 2021',
     status: 'Completed',

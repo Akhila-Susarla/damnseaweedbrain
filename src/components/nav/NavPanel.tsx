@@ -37,7 +37,7 @@ const SOCIAL_LINKS = [
   { href: 'https://www.instagram.com/_the_weird_alien__/', label: 'Instagram', Icon: InstagramIcon },
 ];
 
-const RESUME_URL = 'https://docs.google.com/document/d/13OgdbqL917UhsUIBBB5iZMF4eFM5QWo5FZL10u61FP8/edit?usp=sharing';
+const RESUME_URL = 'https://docs.google.com/document/d/1beGXEJKMs0gkoX9cKPiDFvZZBHI5y_xOuGnvRRI68jw/edit?usp=sharing';
 
 export default function NavPanel() {
   const containerRef = useRef<HTMLElement>(null);
@@ -78,11 +78,11 @@ export default function NavPanel() {
   return (
     <>
       {/* ===== TOP BAR ===== */}
-      <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between px-2 tablet:px-6 desktop:px-3">
+      <header className="fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between px-3 mobile:px-4 tablet:px-6 desktop:px-3">
         {/* Left: Hamburger menu */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-lg transition-all duration-300 hover:bg-cream/5 cursor-none"
+          className="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-lg transition-all duration-300 hover:bg-cream/5 mobile:h-10 mobile:w-10 cursor-none"
           aria-label="Toggle menu"
         >
           <span className={cn('h-[2px] w-5 bg-cream/70 transition-all duration-300 origin-center', menuOpen && 'translate-y-[3.5px] rotate-45')} />
@@ -114,7 +114,7 @@ export default function NavPanel() {
 
       {/* ===== DROPDOWN MENU ===== */}
       <div className={cn(
-        'fixed top-16 left-4 z-50 w-56 rounded-xl border border-cream/10 bg-base/90 backdrop-blur-xl transition-all duration-300 overflow-hidden',
+        'fixed left-3 right-3 top-16 z-50 max-h-[calc(100svh-5rem)] overflow-y-auto rounded-2xl border border-cream/10 bg-base/95 backdrop-blur-xl transition-all duration-300 tablet:left-4 tablet:right-auto tablet:w-56',
         menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
       )}>
         <nav className="py-2" aria-label="Section navigation">
@@ -126,7 +126,7 @@ export default function NavPanel() {
                 key={id}
                 onClick={() => handleNavClick(id)}
                 className={cn(
-                  'w-full px-5 py-3 text-left font-nav text-sm uppercase tracking-wider transition-all duration-200 cursor-none',
+                  'w-full px-5 py-4 text-left font-nav text-sm uppercase tracking-wider transition-all duration-200 cursor-none tablet:py-3',
                   isActive
                     ? isArt
                       ? 'text-slate-light bg-slate/5'
@@ -138,6 +138,25 @@ export default function NavPanel() {
               </button>
             );
           })}
+
+          <div className="border-t border-cream/5 px-3 py-3 tablet:hidden">
+            <a
+              href={RESUME_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-2 flex h-11 items-center justify-center rounded-lg border border-cream/15 bg-cream/5 font-nav text-xs uppercase tracking-wider text-cream transition-colors hover:border-orange/40 hover:text-orange"
+            >
+              Resume
+            </a>
+            <button
+              type="button"
+              onClick={() => handleNavClick('social')}
+              aria-label="Navigate to Contact"
+              className="flex h-11 w-full items-center justify-center rounded-lg border border-orange/40 bg-orange/10 font-nav text-xs uppercase tracking-wider text-orange transition-colors hover:bg-orange/15"
+            >
+              Contact
+            </button>
+          </div>
         </nav>
       </div>
 
@@ -171,7 +190,7 @@ export default function NavPanel() {
       </aside>
 
       {/* ===== MOBILE BOTTOM BAR ===== */}
-      <nav className="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around bg-base/95 px-2 py-3 backdrop-blur-md border-t border-slate/10 tablet:hidden" aria-label="Section navigation">
+      <nav className="fixed bottom-0 left-0 z-50 flex w-full items-center justify-around border-t border-slate/10 bg-base/95 px-2 pb-[calc(0.75rem+env(safe-area-inset-bottom))] pt-2 backdrop-blur-md tablet:hidden" aria-label="Section navigation">
         {SECTIONS.filter(({ id }) => !['what-i-do', 'art'].includes(id)).map(({ id, label }) => {
           const isActive = currentSection === id;
           return (

@@ -60,9 +60,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${bodoniModa.variable} ${inter.variable} ${syne.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-base text-cream font-body antialiased cursor-none">
+      <body
+        suppressHydrationWarning
+        className="bg-base text-cream font-body antialiased cursor-none"
+      >
         <SmoothScroll>
           <CursorSpotlight />
           <NavPanel />

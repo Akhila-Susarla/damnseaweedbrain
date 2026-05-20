@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { usePortfolioStore } from '@/lib/store';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 /**
  * Full-viewport warped checkered background.
@@ -11,6 +12,7 @@ import { usePortfolioStore } from '@/lib/store';
 export default function WarpedGrid() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const isMobileViewport = useMediaQuery('(max-width: 767px)');
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -29,8 +31,8 @@ export default function WarpedGrid() {
     resize();
     window.addEventListener('resize', resize);
 
-    const CELL = 55; // grid cell size
-    const LINE_COLOR = 'rgba(245, 235, 224, 0.32)'; // cream lines — clearly visible
+    const CELL = isMobileViewport ? 72 : 55; // larger cells on mobile reduce visual noise
+    const LINE_COLOR = isMobileViewport ? 'rgba(245, 235, 224, 0.24)' : 'rgba(245, 235, 224, 0.32)'; // cream lines — clearly visible
     const LINE_WIDTH = 1;
 
     const draw = () => {
@@ -49,14 +51,15 @@ export default function WarpedGrid() {
       // Warp function — displaces grid points with sine waves
       const warp = (x: number, y: number): [number, number] => {
         const t = reducedMotion ? 0 : time;
+        const scale = isMobileViewport ? 0.7 : 1;
         const dx =
-          Math.sin((y / 120) + t * 0.3) * 14 +
+          (Math.sin((y / 120) + t * 0.3) * 14 +
           Math.sin((y / 200) + t * 0.15) * 8 +
-          Math.cos((x / 300) + t * 0.2) * 6;
+          Math.cos((x / 300) + t * 0.2) * 6) * scale;
         const dy =
-          Math.cos((x / 120) + t * 0.25) * 14 +
+          (Math.cos((x / 120) + t * 0.25) * 14 +
           Math.cos((x / 200) + t * 0.1) * 8 +
-          Math.sin((y / 300) + t * 0.18) * 6;
+          Math.sin((y / 300) + t * 0.18) * 6) * scale;
         return [x + dx, y + dy];
       };
 
@@ -87,7 +90,7 @@ export default function WarpedGrid() {
       }
 
       if (!reducedMotion) {
-        time += 0.008; // slow flow speed
+        time += isMobileViewport ? 0.004 : 0.008; // slower flow speed on mobile
       }
       animId = requestAnimationFrame(draw);
     };
@@ -98,7 +101,7 @@ export default function WarpedGrid() {
       cancelAnimationFrame(animId);
       window.removeEventListener('resize', resize);
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, isMobileViewport]);
 
   return (
     <canvas

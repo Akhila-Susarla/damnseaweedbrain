@@ -41,17 +41,17 @@ export default function ArtSection() {
     <Section id="art" depth={3}>
       <div ref={containerRef} className="mx-auto max-w-5xl px-4 tablet:px-6">
         <div className="mb-6 flex items-center gap-4">
-          <h2 className="font-heading text-3xl text-cream tablet:text-4xl desktop:text-5xl">
+          <h2 className="font-heading text-2xl text-cream mobile:text-3xl tablet:text-4xl desktop:text-5xl">
             Art & Illustration
           </h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent" />
+          <div className="hidden h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent mobile:block" />
         </div>
-        <p className="mb-10 text-base text-cream/50">
+        <p className="mb-8 text-sm text-cream/50 mobile:mb-10 mobile:text-base">
           When I&apos;m not engineering AI systems, I draw. Check out my art page on Instagram.
         </p>
 
         {/* Rectangular grid — 3 columns, aspect 3:4 for portrait images */}
-        <div className="grid grid-cols-2 gap-3 tablet:grid-cols-3 tablet:gap-4">
+        <div className="grid grid-cols-1 gap-3 mobile:grid-cols-2 tablet:grid-cols-3 tablet:gap-4">
           {artPreviews.map((item, i) => (
             <a
               key={i}
@@ -87,7 +87,7 @@ export default function ArtSection() {
             href={INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative h-12 overflow-hidden rounded-full border border-slate/25 bg-base/40 px-8 font-nav text-sm font-medium uppercase tracking-wider backdrop-blur-md transition-all duration-400 cursor-none hover:border-slate-light/40"
+            className="group relative flex h-12 w-full max-w-sm items-center justify-center overflow-hidden rounded-full border border-slate/25 bg-base/40 px-8 font-nav text-sm font-medium uppercase tracking-wider backdrop-blur-md transition-all duration-400 cursor-none hover:border-slate-light/40 mobile:w-auto"
           >
             <span className="flex h-full items-center justify-center text-cream transition-transform duration-300 group-hover:-translate-y-full">
               @silvers_.rayleigh_ &rarr;

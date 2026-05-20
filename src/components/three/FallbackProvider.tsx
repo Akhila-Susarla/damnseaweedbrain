@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useMemo } from 'react';
 import { useWebGLSupport } from '@/hooks/useWebGLSupport';
+import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { usePortfolioStore } from '@/lib/store';
 
 interface ThreeDQuality {
@@ -29,6 +30,7 @@ export default function FallbackProvider({ children }: FallbackProviderProps) {
   const qualityLevel = usePortfolioStore((s) => s.qualityLevel);
   const setQualityLevel = usePortfolioStore((s) => s.setQualityLevel);
   const reducedMotion = usePortfolioStore((s) => s.reducedMotion);
+  const isMobileViewport = useMediaQuery('(max-width: 767px)');
 
   // Auto-degrade if no WebGL
   useEffect(() => {
@@ -42,9 +44,9 @@ export default function FallbackProvider({ children }: FallbackProviderProps) {
       qualityLevel,
       webglSupported,
       shouldRender3D:
-        webglSupported && qualityLevel !== 'off' && !reducedMotion,
+        webglSupported && qualityLevel !== 'off' && !reducedMotion && !isMobileViewport,
     }),
-    [qualityLevel, webglSupported, reducedMotion]
+    [qualityLevel, webglSupported, reducedMotion, isMobileViewport]
   );
 
   return (

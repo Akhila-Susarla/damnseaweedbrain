@@ -30,13 +30,31 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
     >
       <button
         type="button"
-        className="w-full cursor-pointer p-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:ring-inset rounded-xl tablet:p-6"
+        className="w-full cursor-pointer rounded-xl p-4 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange/50 focus-visible:ring-inset mobile:p-5 tablet:p-6"
         onClick={() => setIsExpanded(!isExpanded)}
         aria-expanded={isExpanded}
         aria-label={`${experience.organization} - ${experience.role}`}
       >
-        <div className="flex items-center gap-3">
-          <h3 className="font-heading text-xl font-bold text-cream truncate">
+        <div className="tablet:hidden">
+          <h3 className="max-w-full font-heading text-lg font-bold leading-tight text-cream mobile:text-xl">
+            {experience.organization}
+          </h3>
+          <span
+            className={cn(
+              'mt-2 inline-flex rounded-full px-3 py-1 font-nav text-[10px] font-bold uppercase tracking-wider backdrop-blur-sm mobile:text-xs',
+              isCurrent
+                ? 'bg-orange/15 text-orange'
+                : 'bg-slate/15 text-slate-light'
+            )}
+          >
+            {experience.status}
+          </span>
+          <p className="mt-2 inline-flex rounded-full border border-slate/15 bg-slate/10 px-3 py-1 font-nav text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-light/90">
+            {experience.role}
+          </p>
+        </div>
+        <div className="hidden items-center gap-3 tablet:flex">
+          <h3 className="truncate font-heading text-lg font-bold text-cream mobile:text-xl">
             {experience.organization}
           </h3>
           <span
@@ -50,19 +68,19 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             {experience.status}
           </span>
         </div>
-        <p className="mt-1.5 font-nav text-base text-slate-light">
+        <p className="hidden tablet:block mt-1.5 font-nav text-sm text-slate-light mobile:text-base">
           {experience.role}
         </p>
 
         {/* Tech preview */}
         <div className="mt-3 flex flex-wrap gap-1.5">
           {experience.technologies.slice(0, 5).map((tech) => (
-            <span key={tech} className="rounded-full border border-cream/10 bg-base/30 backdrop-blur-sm px-2.5 py-1 font-nav text-xs text-cream/60">
+            <span key={tech} className="rounded-full border border-cream/10 bg-base/30 backdrop-blur-sm px-2 py-1 font-nav text-[10px] text-cream/60 mobile:px-2.5 mobile:text-xs">
               {tech}
             </span>
           ))}
           {experience.technologies.length > 5 && (
-            <span className="rounded-full border border-cream/10 bg-base/30 backdrop-blur-sm px-2.5 py-1 font-nav text-xs text-cream/40">
+            <span className="rounded-full border border-cream/10 bg-base/30 backdrop-blur-sm px-2 py-1 font-nav text-[10px] text-cream/40 mobile:px-2.5 mobile:text-xs">
               +{experience.technologies.length - 5}
             </span>
           )}
@@ -91,10 +109,10 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             transition={expandTransition}
             className="overflow-hidden"
           >
-            <div className="border-t border-cream/5 px-5 pb-5 pt-4 tablet:px-6 tablet:pb-6">
+            <div className="border-t border-cream/5 px-4 pb-4 pt-4 mobile:px-5 mobile:pb-5 tablet:px-6 tablet:pb-6">
               <div className="mb-4 flex flex-wrap gap-1.5">
                 {experience.technologies.map((tech) => (
-                  <span key={tech} className="rounded-full border border-slate/30 bg-slate/10 px-2.5 py-0.5 font-nav text-xs text-slate-light">
+                  <span key={tech} className="rounded-full border border-slate/30 bg-slate/10 px-2.5 py-0.5 font-nav text-[10px] text-slate-light mobile:text-xs">
                     {tech}
                   </span>
                 ))}

@@ -35,13 +35,13 @@ export default function Shell({ children }: ShellProps) {
   });
 
   return (
-    <div className="relative min-h-screen bg-base">
+    <div className="relative min-h-screen overflow-x-hidden bg-base">
       {/* Warped checkered grid background — canvas */}
       <div ref={gridWrapRef} className="pointer-events-none fixed inset-0 z-0">
         <WarpedGrid />
       </div>
 
-      <main className="relative z-[1] mx-auto max-w-[1440px] px-4 pt-16 tablet:pl-20 tablet:pr-8 desktop:pl-24 desktop:pr-16">
+      <main className="relative z-[1] mx-auto max-w-[1440px] px-4 pt-16 pb-[calc(6rem+env(safe-area-inset-bottom))] tablet:pb-0 tablet:pl-20 tablet:pr-8 desktop:pl-24 desktop:pr-16">
         <FallbackProvider>
           {children}
         </FallbackProvider>

@@ -24,7 +24,17 @@ vi.mock('@gsap/react', () => ({
   useGSAP: vi.fn((cb) => cb()),
 }));
 
-import ProjectsSection from '@/components/sections/ProjectsSection';
+// Mock ProjectCard so we can inspect the glow prop passed by ProjectsSection
+vi.mock('@/components/ui/ProjectCard', () => ({
+  default: ({ project, glowColor }: { project: { title: string }; glowColor?: string }) =>
+    createElement(
+      'div',
+      { className: 'project-card', 'data-glow': glowColor },
+      project.title
+    ),
+}));
+
+import ProjectsSection, { getProjectGlowColor } from '@/components/sections/ProjectsSection';
 import { projects } from '@/data/projects';
 
 describe('ProjectsSection', () => {
@@ -52,5 +62,26 @@ describe('ProjectsSection', () => {
 
     const heading = screen.getByRole('heading', { level: 2 });
     expect(heading.textContent).toContain('Projects');
+  });
+
+  it('alternates project glow colors in a single-column layout', () => {
+    const glows = projects.map((_, index) => getProjectGlowColor(index, false));
+
+    for (let i = 1; i < glows.length; i += 1) {
+      expect(glows[i]).not.toBe(glows[i - 1]);
+    }
+  });
+
+  it('uses a checkerboard glow pattern in a two-column layout', () => {
+    const glows = projects.map((_, index) => getProjectGlowColor(index, true));
+
+    for (let i = 1; i < glows.length; i += 1) {
+      if (i % 2 === 1) {
+        expect(glows[i]).not.toBe(glows[i - 1]);
+      }
+      if (i + 2 < glows.length) {
+        expect(glows[i]).not.toBe(glows[i + 2]);
+      }
+    }
   });
 });

@@ -33,44 +33,83 @@ export default function EducationSection() {
   return (
     <Section id="education" depth={2}>
       <div ref={containerRef} className="mx-auto max-w-4xl px-4 tablet:px-6">
-        <div className="mb-12 flex items-center gap-4">
-          <h2 className="font-heading text-3xl text-cream tablet:text-4xl desktop:text-5xl">Education</h2>
-          <div className="h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent" />
+        <div className="mb-10 flex items-center gap-4">
+          <h2 className="font-heading text-2xl text-cream mobile:text-3xl tablet:text-4xl desktop:text-5xl">Education</h2>
+          <div className="hidden h-px flex-1 bg-gradient-to-r from-slate/20 to-transparent mobile:block" />
         </div>
 
-        <div className="space-y-5">
+        <div className="space-y-4 mobile:space-y-5">
           {education.map((entry) => {
-            const isInProgress = entry.status === 'In Progress';
+            const isUtd = entry.institution === 'The University of Texas at Dallas';
+            const isOrangeAccent = entry.status === 'In Progress' && !isUtd;
+            const isBlueAccent = isUtd;
             return (
               <div
                 key={entry.institution}
                 className={cn(
-                  'education-entry rounded-xl border border-cream/8 bg-base/30 backdrop-blur-sm p-6 transition-all duration-300 tablet:p-8',
-                  isInProgress
+                  'education-entry rounded-xl border border-cream/8 bg-base/30 p-5 backdrop-blur-sm transition-all duration-300 mobile:p-6 tablet:p-8',
+                  isOrangeAccent
                     ? 'hover:border-orange/50 hover:shadow-[0_0_25px_rgba(255,133,51,0.12)]'
-                    : 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]'
+                    : isBlueAccent
+                      ? 'hover:border-slate/50 hover:shadow-[0_0_25px_rgba(139,163,203,0.15)]'
+                      : 'hover:border-cream/15 hover:shadow-[0_0_20px_rgba(255,255,255,0.06)]'
                 )}
               >
-                <div className="flex flex-col gap-4 tablet:flex-row tablet:items-start tablet:justify-between">
+                <div className="tablet:hidden">
+                  <h3 className="font-heading text-lg font-bold leading-tight text-cream mobile:text-xl">
+                    {entry.institution}
+                  </h3>
+                  <p className="mt-1 text-sm text-cream/70 mobile:text-base">{entry.degree}</p>
+                  <p className="mt-0.5 font-nav text-xs text-cream/40">{entry.location}</p>
+                  <p className="mt-1.5 font-nav text-xs text-cream/40">{entry.period}</p>
+                  <div className="mt-3 flex items-center justify-between gap-3">
+                    {entry.gpa && (
+                      <span
+                        className={cn(
+                          'rounded-full px-4 py-1 font-heading text-base font-bold mobile:text-lg',
+                          isBlueAccent ? 'bg-slate/10 text-slate-light' : 'bg-orange/10 text-orange'
+                        )}
+                      >
+                        {entry.gpa}
+                      </span>
+                    )}
+                    <span
+                      className={cn(
+                        'ml-auto rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider',
+                        isBlueAccent ? 'bg-slate/15 text-slate-light' : isOrangeAccent ? 'bg-orange/15 text-orange' : 'bg-cream/5 text-cream/40'
+                      )}
+                    >
+                      {entry.status}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="hidden flex-col gap-4 tablet:flex tablet:flex-row tablet:items-start tablet:justify-between">
                   <div className="flex-1">
-                    <h3 className="font-heading text-xl font-bold text-cream tablet:text-2xl">
+                    <h3 className="font-heading text-lg font-bold text-cream mobile:text-xl tablet:text-2xl">
                       {entry.institution}
                     </h3>
-                    <p className="mt-1.5 text-base text-cream/70">{entry.degree}</p>
+                    <p className="mt-1.5 text-sm text-cream/70 mobile:text-base">{entry.degree}</p>
                     <p className="mt-0.5 font-nav text-xs text-cream/40">{entry.location}</p>
                   </div>
 
                   <div className="flex items-center gap-3 tablet:flex-col tablet:items-end tablet:gap-2">
                     <p className="font-nav text-xs text-cream/40">{entry.period}</p>
                     {entry.gpa && (
-                      <span className="rounded-full bg-orange/10 px-4 py-1 font-heading text-lg font-bold text-orange">
+                      <span
+                        className={cn(
+                          'rounded-full px-4 py-1 font-heading text-base font-bold mobile:text-lg',
+                          isBlueAccent ? 'bg-slate/10 text-slate-light' : 'bg-orange/10 text-orange'
+                        )}
+                      >
                         {entry.gpa}
                       </span>
                     )}
                     <span
-                      className={`rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider ${
-                        isInProgress ? 'bg-slate/15 text-slate-light' : 'bg-cream/5 text-cream/40'
-                      }`}
+                      className={cn(
+                        'rounded-full px-2.5 py-0.5 font-nav text-[10px] font-bold uppercase tracking-wider',
+                        isBlueAccent ? 'bg-slate/15 text-slate-light' : isOrangeAccent ? 'bg-orange/15 text-orange' : 'bg-cream/5 text-cream/40'
+                      )}
                     >
                       {entry.status}
                     </span>
@@ -80,7 +119,7 @@ export default function EducationSection() {
                 {entry.highlights.length > 0 && (
                   <ul className="mt-4 space-y-1.5 border-t border-cream/5 pt-4">
                     {entry.highlights.map((highlight) => (
-                      <li key={highlight} className="relative pl-3 text-sm text-cream/55 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-orange/40">
+                      <li key={highlight} className="relative pl-3 text-[13px] text-cream/55 before:absolute before:left-0 before:top-2 before:h-1 before:w-1 before:rounded-full before:bg-orange/40 mobile:text-sm">
                         {highlight}
                       </li>
                     ))}
