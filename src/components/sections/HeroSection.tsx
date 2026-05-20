@@ -91,7 +91,7 @@ export default function HeroSection() {
                     className="hero-title mb-7 font-nav text-base tracking-wider text-slate-light tablet:text-lg"
                     style={{ color: '#93c5fd' }}
                   >
-                    AI/ML Engineer • Data Scientist
+                    AI/ML Engineer <span className="text-orange">&bull;</span> Data Scientist
                   </p>
                   <p className="hero-about mb-9 max-w-lg text-base leading-relaxed text-cream/50">
                     Building production-grade conversational AI systems, ML pipelines, and data-driven solutions. Currently engineering voice bots handling 10,000+ daily interactions at Copart.
